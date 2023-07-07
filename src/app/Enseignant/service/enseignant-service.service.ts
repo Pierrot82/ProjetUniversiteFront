@@ -31,7 +31,11 @@ export class EnseignantServiceService {
   }
   
   updateEnseignant(enseignant:Enseignant):Observable<boolean>{
-    return this.http.put<boolean>("http://localhost:8080/modifierEnseignant/", enseignant);
+
+    
+
+    
+    return this.http.put<boolean>("http://localhost:8080/modifierEnseignant", enseignant);
   }
 
 }
