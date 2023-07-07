@@ -25,7 +25,7 @@ export class EnseignantServiceService {
     return this.http.get<Enseignant[]>("http://localhost:8080/listeEnseignant")
   }
   
-  
+
   getEnseignantbyId(id:number):Observable<Enseignant>{
     return this.http.get<Enseignant>("http://localhost:8080/getEnseignant/"+ id)
   }
