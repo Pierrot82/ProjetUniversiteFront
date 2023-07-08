@@ -1,0 +1,25 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Date de naissance</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">CV</th>
+        <th scope="col">Fichier</th>
+        <th scope="col">Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let postulant of listePostulant | async ">
+        <th scope="row">{{postulant.id}}</th>
+        <td>{{postulant.dateNaissance}}</td>
+        <td>{{postulant.nom}}</td>
+        <td>{{postulant.prenom}}</td>
+        <td>{{postulant.cv}}</td>
+        <td>{{postulant.fichiers}}</td>
+        <td>{{postulant.statut}}</td>
+      </tr>
+    </tbody>
+  </table>
