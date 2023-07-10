@@ -12,6 +12,9 @@ import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant
 import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
+import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
+import { UpdateCoursComponent } from './Cours/update-cours/update-cours.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormEnseignantComponent,
     UpdateEnseignantComponent,
     ListeEnseignantComponent,
-    EtudiantComponent,
-    UpdateEtudiantComponent,
+    ListeCoursComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent
   ],
