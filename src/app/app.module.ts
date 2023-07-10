@@ -23,6 +23,8 @@ import { UpdateCoursComponent } from './Cours/update-cours/update-cours.componen
     UpdateEnseignantComponent,
     ListeEnseignantComponent,
     ListeCoursComponent,
+    EtudiantComponent,
+    UpdateEtudiantComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent,
     FormCoursComponent,
