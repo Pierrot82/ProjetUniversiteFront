@@ -22,10 +22,11 @@
             <td>{{enseignant.prenom}} </td>
             <td>{{enseignant.dateNaissance}} </td>
             <td>{{enseignant.dateEmbauche}} </td>
-            <td> <!--
-        <button type="button" class="btn btn-warning" (click)="getEnseignantByEnseignant(Enseignant.id)">Modifier</button>
-        <button type="button" class="btn btn-danger" (click)="supprimer(Enseignant.id)">Supprimer</button>
-    -->        
+            <td> 
+        <button type="button" class="btn btn-warning" (click)="getEnseignantByEnseignant(enseignant.id)">Modifier</button>
+      
+        <button type="button" class="btn btn-danger" (click)="supprimerEnseignant(enseignant.id)">Supprimer</button>
+           
     </td>
             
         </tr>
