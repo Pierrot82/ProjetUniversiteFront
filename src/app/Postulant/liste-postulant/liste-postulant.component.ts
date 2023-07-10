@@ -15,6 +15,7 @@ export class ListePostulantComponent implements OnInit {
   constructor(private postulantService:PostulantService, private route:Router){}
 
   listePostulant!:Observable<Postulant[]>;
+  postulantRefuser!:Postulant;
 
   ngOnInit(): void {
     this.listePostulant = this.postulantService.findAllPostulant();
@@ -22,6 +23,12 @@ export class ListePostulantComponent implements OnInit {
 
   deletePostulant(id:number){
     this.postulantService.deletePostulant(id).subscribe();
+    this.route.navigateByUrl("listePostulant");
+  }
+
+  refuserPostulant(id:number){
+    this.postulantService.getPostulant(id).subscribe(result => this.postulantRefuser = result);
+    this.postulantService.refuserPostulant(this.postulantRefuser).subscribe();
     this.route.navigateByUrl("listePostulant");
   }
 
