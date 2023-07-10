@@ -12,18 +12,18 @@ export class EtudiantServiceService {
   constructor(private http:HttpClient) { }
 
   ajoutEtudiant(etudiant:Etudiant):Observable<Etudiant>{
-    return this.http.post<Etudiant>("http://localhost:8080/saveEtudiant", etudiant)
+    return this.http.post<Etudiant>("http://localhost:8080/ajoutEtudiant", etudiant)
   }
   
   
   
-  supprimerEtudiant(id:number):Observable<boolean>{
+  deleteEtudiant(id:number):Observable<boolean>{
     return this.http.delete<boolean>("http://localhost:8080/deleteEtudiant/" + id)
   }
   
   
-  findAllEtudiant():Observable<Etudiant[]>{
-    return this.http.get<Etudiant[]>("http://localhost:8080/listeEtudiant")
+  getListeEtudiant():Observable<Etudiant[]>{
+    return this.http.get<Etudiant[]>("http://localhost:8080/getListeEtudiant")
   }
   
   
@@ -32,7 +32,7 @@ export class EtudiantServiceService {
   }
   
   updateEtudiant(etudiant:Etudiant):Observable<boolean>{
-    return this.http.put<boolean>("http://localhost:8080/modifierEtudiant/", etudiant);
+    return this.http.put<boolean>("http://localhost:8080/updateEtudiant/", etudiant);
   }
 
 }

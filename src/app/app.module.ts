@@ -25,12 +25,17 @@ import { RouterModule } from '@angular/router';
     UpdateEnseignantComponent,
     ListeEnseignantComponent,
     ListeCoursComponent,
+    EtudiantComponent,
+    UpdateEtudiantComponent,
+    ListeEtudiantComponent,
+    FormEtudiantComponent,
     FormCoursComponent,
     UpdateCoursComponent,
     UpdateEtudiantComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent,
     UploadComponent
+    
   ],
   imports: [
     BrowserModule,
