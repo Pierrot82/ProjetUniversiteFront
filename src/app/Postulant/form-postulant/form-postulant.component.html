@@ -1,1 +1,41 @@
-<p>form-postulant works!</p>
+
+<div id="divFormPostulant">
+    <form [formGroup]="formPostulant">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+        <div class="col">
+            <div>
+            <input type="text" id="form6Example1" class="form-control" formControlName="nom" />
+            <label class="form-label" for="nom">Nom</label>
+            </div>
+        </div>
+        <div class="col">
+            <div>
+            <input type="text" id="form6Example2" class="form-control" formControlName="prenom" />
+            <label class="form-label" for="prenom">Prenom</label>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Date input -->
+        <div>
+        <input type="date" id="form6Example3" class="form-control" formControlName="dateNaissance" />
+        <label class="form-label" for="dateNaissance">Date de naissance</label>
+        </div>
+
+        <!-- CV input -->
+        <div>
+        <textarea class="form-control" id="form6Example7" rows="6" placeholder="Copier coller votre CV ici" formControlName="cv"></textarea>
+        <label class="form-label" for="cv">CV</label>
+        </div>
+
+        <!-- Fichiers input -->
+        <div>
+            <textarea class="form-control" id="form6Example7" rows="6" placeholder="Lettre de motivation, diplôme etc..." formControlName="fichiers"></textarea>
+            <label class="form-label" for="fichiers">Fichier</label>
+        </div>
+    
+        <!-- Submit button -->
+        <button type="submit" (click)="savePostulant()">Postuler</button>
+    </form>
+</div>

@@ -13,7 +13,10 @@ export class PostulantService {
   findAllPostulant():Observable<Postulant[]>{
   //permet de voir dans la console les données reçu
   //console.log(this.http.get<Postulant[]>("http://localhost:8080/listePostulant").subscribe(data => console.log(data)));
-   return this.http.get<Postulant[]>("http://localhost:8080/listePostulant");
-   
+   return this.http.get<Postulant[]>("http://localhost:8080/listePostulant"); 
   }
+
+  savePostulant(postulant:Postulant):Observable<boolean>{
+    return this.http.post<boolean>("http://localhost:8080/savePostulant", postulant);
+   }
 }
