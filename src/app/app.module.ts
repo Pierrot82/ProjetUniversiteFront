@@ -23,8 +23,11 @@ import { UpdateCoursComponent } from './Cours/update-cours/update-cours.componen
     UpdateEnseignantComponent,
     ListeEnseignantComponent,
     ListeCoursComponent,
+    ListeEtudiantComponent,
+    FormEtudiantComponent,
     FormCoursComponent,
     UpdateCoursComponent
+
   ],
   imports: [
     BrowserModule,
