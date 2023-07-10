@@ -19,4 +19,8 @@ export class PostulantService {
   savePostulant(postulant:Postulant):Observable<boolean>{
     return this.http.post<boolean>("http://localhost:8080/savePostulant", postulant);
    }
+
+  deletePostulant(id:number):Observable<boolean>{
+   return this.http.get<boolean>("http://localhost:8080/savePostulant/" + id);
+  }
 }

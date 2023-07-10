@@ -9,6 +9,7 @@
         <th scope="col">CV</th>
         <th scope="col">Fichier</th>
         <th scope="col">Statut</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
         <td>{{postulant.cv}}</td>
         <td>{{postulant.fichiers}}</td>
         <td>{{postulant.statut}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="deletePostulant(postulant.id)">Supprimer</button></td>
       </tr>
     </tbody>
   </table>
