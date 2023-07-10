@@ -10,7 +10,6 @@ import { EtudiantComponent } from './Etudiant/etudiant/etudiant.component';
 import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudiant.component';
 import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant.component';
 import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
