@@ -23,8 +23,13 @@ import { UpdateCoursComponent } from './Cours/update-cours/update-cours.componen
     UpdateEnseignantComponent,
     ListeEnseignantComponent,
     ListeCoursComponent,
+<<<<<<< HEAD
     ListeEtudiantComponent,
     FormEtudiantComponent
+=======
+    FormCoursComponent,
+    UpdateCoursComponent
+>>>>>>> 9103def4b21319409cdde8ea91c39f3f8e1f0269
   ],
   imports: [
     BrowserModule,

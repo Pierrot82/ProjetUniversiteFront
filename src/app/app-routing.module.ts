@@ -20,9 +20,14 @@ const routes: Routes = [
   { path: 'ajoutEtudiant', component: FormEtudiantComponent },
 =======
   { path: 'listeCours', component: ListeCoursComponent},
+<<<<<<< HEAD
   { path: 'ajouterCours', component: FormCoursComponent }
   { path: 'updateEnseignant/:id', component: UpdateEnseignantComponent },
 >>>>>>> 3265291ab476d1c42f97e39f81f68889533d8b94
+=======
+  { path: 'ajouterCours', component: FormCoursComponent },
+  { path: 'updateEnseignant/:id', component: UpdateEnseignantComponent }
+>>>>>>> 9103def4b21319409cdde8ea91c39f3f8e1f0269
  
   { path: 'getListeEtudiant', component: ListeEtudiantComponent },
 ];
