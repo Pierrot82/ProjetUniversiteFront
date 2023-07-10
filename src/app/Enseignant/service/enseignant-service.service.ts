@@ -20,7 +20,6 @@ export class EnseignantServiceService {
     return this.http.delete<boolean>("http://localhost:8080/deleteEnseignant/" + id)
   }
   
-  
   findAllEnseignant():Observable<Enseignant[]>{
     return this.http.get<Enseignant[]>("http://localhost:8080/listeEnseignant")
   }
