@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'ajoutEtudiant', component: FormEtudiantComponent },
   { path: 'updateEtudiant', component: UpdateEtudiantComponent },
   { path: 'getListeEtudiant', component: ListeEtudiantComponent },
-  { path: 'uploadImage', component: UploadComponent }
+  { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
 ];
