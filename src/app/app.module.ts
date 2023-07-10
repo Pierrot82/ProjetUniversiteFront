@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
 import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
 import { UpdateCoursComponent } from './Cours/update-cours/update-cours.component';
+import { UploadComponent } from './SupportCours/upload/upload.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,16 @@ import { UpdateCoursComponent } from './Cours/update-cours/update-cours.componen
     ListeEnseignantComponent,
     ListeCoursComponent,
     FormCoursComponent,
-    UpdateCoursComponent
+    UpdateCoursComponent,
+    UpdateEtudiantComponent,
+    ListeEtudiantComponent,
+    FormEtudiantComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    RouterModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule

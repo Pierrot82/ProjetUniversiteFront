@@ -7,6 +7,7 @@ import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.co
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
 import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
 import { UpdateEnseignantComponent } from './Enseignant/update-enseignant/update-enseignant.component';
+import { UploadComponent } from './SupportCours/upload/upload.component';
 
 const routes: Routes = [
   { path: 'ajouterEnseignant', component: FormEnseignantComponent },
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'ajouterCours', component: FormCoursComponent },
   { path: 'updateEnseignant/:id', component: UpdateEnseignantComponent },
   { path: 'getListeEtudiant', component: ListeEtudiantComponent },
+  { path: 'uploadImage', component: UploadComponent }
+
 ];
 
 @NgModule({
