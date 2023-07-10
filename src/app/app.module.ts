@@ -15,6 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
 import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
 import { UpdateCoursComponent } from './Cours/update-cours/update-cours.component';
+import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
+import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
+import { RepondreComponent } from './Discussion/repondre/repondre.component';
+import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { UpdateCoursComponent } from './Cours/update-cours/update-cours.componen
     ListeEnseignantComponent,
     ListeCoursComponent,
     FormCoursComponent,
-    UpdateCoursComponent
+    UpdateCoursComponent,
+    ListeQuestionComponent,
+    CreerQuestionComponent,
+    RepondreComponent,
+    GetDiscussionComponent
   ],
   imports: [
     BrowserModule,
