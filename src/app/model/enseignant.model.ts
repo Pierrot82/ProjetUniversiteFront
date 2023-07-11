@@ -13,8 +13,6 @@ export class Enseignant extends Personne {
 
 
 constructor(id:number, dateEmbauche:Date, nom:string, prenom:string, dateNaissance:Date){
-
-
     super(id, nom, prenom, dateNaissance);
 
 //    this.id=id;
@@ -22,11 +20,5 @@ constructor(id:number, dateEmbauche:Date, nom:string, prenom:string, dateNaissan
 //    this.dateNaissance=dateNaissance;
 //    this.nom=nom;
 //    this.prenom=prenom
-
-
-
-
-}
-
-
+    }
 }
