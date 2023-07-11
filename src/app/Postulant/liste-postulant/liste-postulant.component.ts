@@ -31,19 +31,40 @@ export class ListePostulantComponent implements OnInit {
     this.route.navigateByUrl("listePostulant");
   }
 
-  refuserPostulant(id:number){
-    this.postulantService.getPostulant(id).subscribe(result => this.postulantRefuser = result);
+  refuserPostulant(id:number):Promise<Postulant>{
+    return new Promise<Postulant>((resolve, reject) => {
+      this.postulantService.getPostulant(id).subscribe(
+        result => {
+          this.postulantRefuser = result;
+          resolve(this.postulantRefuser);
+        }
+      );
+    });
+  }
+  async refuserPostulantAwait(id:number){
+    this.postulantRefuser = await this.refuserPostulant(id)
     this.postulantService.refuserPostulant(this.postulantRefuser).subscribe();
     this.route.navigateByUrl("listePostulant");
   }
 
-  accepterPostulant(id:number){
-    this.postulantService.getPostulant(id).subscribe(result => this.postulantAccepter = result);
-    this.postulantService.accepterPostulant(this.postulantAccepter).subscribe();
-    this.date = new Date();
-    this.enseigantPostPostulation = new Enseignant(100, this.date, this.postulantAccepter.nom, this.postulantAccepter.prenom, this.postulantAccepter.dateNaissance);
-    this.enseignantService.ajoutEnseignant(this.enseigantPostPostulation).subscribe();
-    this.route.navigateByUrl("listePostulant");
+  accepterPostulant(id:number):Promise<Postulant>{
+    return new Promise<Postulant>((resolve, reject) => {
+      this.postulantService.getPostulant(id).subscribe(
+        result => {
+          this.postulantAccepter = result;
+          resolve(this.postulantAccepter);
+        }
+      );
+    });
   }
+
+ async accepterPostulantAwait(id:number){
+  this.postulantAccepter = await this.accepterPostulant(id);
+  this.postulantService.accepterPostulant(this.postulantAccepter).subscribe();
+  this.date = new Date();
+  this.enseigantPostPostulation = new Enseignant(0, this.date, this.postulantAccepter.nom, this.postulantAccepter.prenom, this.postulantAccepter.dateNaissance);
+  this.enseignantService.ajoutEnseignant(this.enseigantPostPostulation).subscribe();
+  this.route.navigateByUrl("listePostulant");
+ }
 
 }

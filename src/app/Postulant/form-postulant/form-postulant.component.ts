@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PostulantService } from '../service/postulant.service';
+import { __await } from 'tslib';
 
 @Component({
   selector: 'app-form-postulant',
@@ -27,8 +28,18 @@ export class FormPostulantComponent implements OnInit {
     )
   }
 
-  savePostulant(){
-    this.postulantService.savePostulant(this.formPostulant.value).subscribe(result => {this.isSave = result});
-    console.log(this.isSave);
+  savePostulant(): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.postulantService.savePostulant(this.formPostulant.value).subscribe(
+        result => {
+          this.isSave = result;
+          resolve(this.isSave);
+        }
+      );
+    });
+  }
+
+  async savePostulantAwait(){
+    this.isSave = await this.savePostulant();
   }
 }

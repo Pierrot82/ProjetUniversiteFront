@@ -21,9 +21,10 @@
         <td>{{postulant.cv}}</td>
         <td>{{postulant.fichiers}}</td>
         <td>{{postulant.statut}}</td>
-        <td><button type="button" class="btn btn-danger" (click)="deletePostulant(postulant.id)">Supprimer</button>
-          <button type="button" class="btn btn-warning" (click)="refuserPostulant(postulant.id)" >Refuser</button>
-          <button type="button" class="btn btn-success" (click)="accepterPostulant(postulant.id)">Success</button></td>
+        <td><button type="button" class="btn btn-success" (click)="accepterPostulantAwait(postulant.id)">Accepter</button>
+          <button type="button" class="btn btn-warning" (click)="refuserPostulantAwait(postulant.id)" >Refuser</button>
+          <button type="button" class="btn btn-danger" (click)="deletePostulant(postulant.id)">Supprimer</button>
+          </td>
       </tr>
     </tbody>
   </table>
