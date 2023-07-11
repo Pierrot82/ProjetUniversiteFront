@@ -1,3 +1,4 @@
+<h2>Liste des étudiants</h2>
 <table class="table">
     <thead>
         <tr>
@@ -18,8 +19,8 @@
             <td>{{etu.dateNaissance}} </td>
             <td>{{etu.dateInscription}} </td>
             <td>
-                <button class="boutonmodifier">Modifier</button>
-                <button class="boutonsupprimer">Supprimer</button>
+                <button class="boutonmodifier" (click)="getEtudiantById(etu.id)">Modifier</button>
+                <button class="boutonsupprimer" (click)="deleteEtudiant(etu.id)">Supprimer</button>
             </td>
         </tr>
     </tbody>

@@ -2,7 +2,8 @@
 <body>
     <section class="formEtudiant">
         <h2>Modifier un étudiant</h2>
-  <form [formGroup]="updateEtudiant" (ngSubmit)="onSubmit()">
+        <form [formGroup]="etudiantForm">
+        <input type="hidden" formControlName="id" class="form-control"/>
     <div>
       <label for="nom">Nom :</label>
       <input class="inputUpdateEtudiant" type="text" id="nom" formControlName="nom" required>
@@ -19,7 +20,7 @@
       <label for="dateInscription">Date d'inscription :</label>
       <input class="inputUpdateEtudiant" type="date" id="dateInscription" formControlName="dateInscription" required>
     </div>
-    <button type="submit">Enregistrer</button>
+    <button type="submit" (click)="updateEtudiant()">Enregistrer</button>
     <button type="reset">Recommencer saisie</button>
   </form>
   </section>

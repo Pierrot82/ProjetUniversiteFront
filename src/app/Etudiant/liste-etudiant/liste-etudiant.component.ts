@@ -7,14 +7,31 @@ import { Etudiant } from 'src/app/model/etudiant.model';
 @Component({
   selector: 'app-liste-etudiant',
   templateUrl: './liste-etudiant.component.html',
-  styleUrls: ['./liste-etudiant.component.css']
+  styleUrls: ['./liste-etudiant.component.css'],
 })
-export class ListeEtudiantComponent implements OnInit{
+export class ListeEtudiantComponent implements OnInit {
+  etudiants: any[] = [];
 
+  constructor(private etu: EtudiantServiceService, private route: Router) {}
 
-  constructor(private etu:EtudiantServiceService, private route:Router) {}
   getListeEtudiant!: Observable<Etudiant[]>;
+
   ngOnInit(): void {
-  this.getListeEtudiant = this.etu.getListeEtudiant();
-}
+    this.getListeEtudiant = this.etu.getListeEtudiant();
+  }
+
+  async deleteEtudiant(id: number) {
+    try {
+      await this.etu.deleteEtudiant(id).toPromise();
+      this.route.navigateByUrl('getListeEtudiant', { replaceUrl: true });
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  getEtudiantById(id:number){
+    this.route.navigateByUrl("updateEtudiant/" + id);
+  }
+  
 }
