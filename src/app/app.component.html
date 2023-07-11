@@ -55,6 +55,7 @@
             Administrateur
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="listePostulant">Liste des postulants</a></li>
             <li><a class="dropdown-item" routerLink="/ajoutEtudiant">Ajouter un étudiant</a></li>
             <li><a class="dropdown-item" routerLink="/updateEtudiant">Modifier un étudiant</a></li>
             <li><a class="dropdown-item" routerLink="/getListeEtudiant">Liste des étudiants</a></li>
@@ -62,6 +63,11 @@
             <li><a class="dropdown-item" routerLink="#">Moyennes des étudiants</a></li>
             <li><a class="dropdown-item" routerLink="#">Statistiques</a></li>
           </ul>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="savePostulant"  role="button" >
+            Postuler
+          </a>
         </li>
       </ul>
       <form class="d-flex">

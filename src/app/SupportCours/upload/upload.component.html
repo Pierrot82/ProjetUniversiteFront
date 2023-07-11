@@ -1,6 +1,11 @@
+<body>
 
+<h3>Déposez votre support de cours ici  : </h3>
+<form (ngSubmit)="uploadImage()"  [formGroup]="updateForm" enctype="multipart/form-data">
+    <input type="file" name="imageFile" formControlName="imageFile" (change)="onFileSelected($event)">
+   <br>
+   <br>
+    <button type="submit" style="--c:#E95A49">Upload</button>
 
-<form (ngSubmit)="uploadImage()" enctype="multipart/form-data">
-    <input type="file" name="imageFile" (change)="onFileSelected($event)">
-    <button type="submit">Upload</button>
   </form>
+</body>

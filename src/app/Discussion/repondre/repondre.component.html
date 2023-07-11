@@ -1,0 +1,29 @@
+<p>repondre works!</p>
+
+
+<p>form-enseignant works!</p>
+
+
+
+
+<form class="mx-1 mx-md-4" [formGroup]="reponseForm">
+
+
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="reponse">reponse :</label> 
+            <textarea type="text" formControlName="reponse" class="form-control"></textarea>
+        </div>
+    </div>
+
+
+
+
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button type="submit" class="btn btn-primary btn-lg" (click)="saveReponse()" >Enregistrer</button>
+        <button type="reset" class="btn btn-primary btn-lg">Recommencer saisie</button>
+    </div>
+
+</form>
