@@ -1,0 +1,35 @@
+<p>liste-question works!</p>
+
+
+<button type="button" class="btn btn-primary" (click)="poserUneQuestion()">Poser une question</button>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Question</th>
+            <th scope="col">date</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let discussion of listeDiscussion | async">
+            <th scope="row">{{discussion.idDiscussion}} </th>
+            <td>{{discussion.question}} </td>
+            <td>{{discussion.date}} </td>
+            <td> 
+                <!--
+        <button type="button" class="btn btn-warning" (click)="getEnseignantByEnseignant(enseignant.id)">Modifier</button>
+      
+        <button type="button" class="btn btn-danger" (click)="supprimerEnseignant(enseignant.id)">Supprimer</button>
+                -->
+                <button type="button" class="btn btn-secondary" (click)="selecionnerDiscussion(discussion.idDiscussion)">Selectionner</button>
+        
+
+    </td>
+            
+        </tr>
+    </tbody>
+</table>

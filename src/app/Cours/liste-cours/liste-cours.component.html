@@ -1,0 +1,15 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom du cours</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let c of listeCours | async">
+            <th scope="row">{{c.idCours}} </th>
+            <td>{{c.nom}} </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+<p>creer-question works!</p>
+
+
+
+
+
+
+<form class="mx-1 mx-md-4" [formGroup]="discussionForm">
+
+
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="nom">Intitulé Question :</label> 
+            <input type="text" formControlName="question" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button type="submit" class="btn btn-primary btn-lg" (click)="saveQuestion()" >Enregistrer</button>
+        <button type="reset" class="btn btn-primary btn-lg">Recommencer saisie</button>
+    </div>
+
+</form>

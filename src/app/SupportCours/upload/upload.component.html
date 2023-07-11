@@ -1,0 +1,6 @@
+
+
+<form (ngSubmit)="uploadImage()"  [formGroup]="updateForm" enctype="multipart/form-data">
+    <input type="file" name="imageFile" formControlName="imageFile" (change)="onFileSelected($event)">
+    <button type="submit">Upload</button>
+  </form>

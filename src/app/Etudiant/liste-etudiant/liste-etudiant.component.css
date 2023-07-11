@@ -1,0 +1,23 @@
+table {
+    margin: auto;
+    width: 80%;
+}
+
+
+.boutonmodifier {
+    padding: 5px 10px;
+    margin: 0 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: orange;
+}
+
+.boutonsupprimer{
+    padding: 5px 10px;
+    margin: 0 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: rgb(244, 21, 21);
+}

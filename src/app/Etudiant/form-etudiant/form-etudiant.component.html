@@ -1,1 +1,27 @@
-<p>form-etudiant works!</p>
+<body>
+  <section class="formEtudiant">
+    <h2>Créer un étudiant</h2>
+    <form [formGroup]="etudiantForm">
+      <div class="champs">
+        <div class="">
+          <label for="nom">Nom : </label>
+          <input class="inputUpdateEtudiant" type="text" class="" formControlName="nom" />
+        </div>
+      </div>
+      <div class="champs">
+        <div class="">
+          <label for="prenom">Prénom : </label>
+          <input class="inputUpdateEtudiant" type="text" class="" formControlName="prenom" />
+        </div>
+      </div>
+      <div class="champs">
+        <div class="">
+          <label for="dateNaissance">Date de Naissance :</label>
+          <input class="inputUpdateEtudiant" type="date" formControlName="dateNaissance" />
+        </div>
+      </div>
+        <button type="submit" (click)="ajoutEtudiant()">Enregistrer</button>
+        <button type="reset" class="">Recommencer Saisie</button>
+    </form>
+  </section>
+</body>
