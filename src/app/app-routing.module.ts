@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'listeEnseignant', component: ListeEnseignantComponent },
   { path: 'updateEnseignant/:id', component: UpdateEnseignantComponent },
   { path: 'ajoutEtudiant', component: FormEtudiantComponent },
-  { path: 'updateEtudiant', component: UpdateEtudiantComponent },
+  { path: 'updateEtudiant/:id', component: UpdateEtudiantComponent },
   { path: 'getListeEtudiant', component: ListeEtudiantComponent },
   { path: 'getListeDiscussion', component: ListeQuestionComponent},
   { path: 'ajouterDiscussion', component: CreerQuestionComponent},

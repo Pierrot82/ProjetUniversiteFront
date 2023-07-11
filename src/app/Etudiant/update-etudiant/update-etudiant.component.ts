@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EtudiantServiceService } from '../service/etudiant-service.service';
+import { Etudiant } from 'src/app/model/etudiant.model';
 
 @Component({
   selector: 'app-update-etudiant',
@@ -7,27 +10,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./update-etudiant.component.css']
 })
 export class UpdateEtudiantComponent implements OnInit {
-  updateEtudiant!: FormGroup;
+  
+  id!: number;
+  etudiantForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private etu: EtudiantServiceService,
+    private route: Router,
+    private activatedRoute: ActivatedRoute
+  ) { 
+    this.id = activatedRoute.snapshot.params['id'];
+  }
 
-  ngOnInit() {
-    this.updateEtudiant = this.formBuilder.group({
-      nom: ['', Validators.required],
-      prenom: ['', Validators.required],
-      dateNaissance: ['', Validators.required],
-      dateInscription: ['', Validators.required]
+  ngOnInit(): void {
+    this.etu.getEtudiantbyId(this.id).subscribe((data: Etudiant) => {
+      this.etudiantForm = this.formBuilder.group({
+        id: [data.id],
+        nom: [data.nom, Validators.required],
+        prenom: [data.prenom, Validators.required],
+        dateNaissance: [data.dateNaissance, Validators.required],
+        dateInscription: [data.dateInscription, Validators.required]
+      });
     });
   }
 
-  onSubmit() {
-    if (this.updateEtudiant.valid) {
-      // Récupérer les valeurs du formulaire
-      const formData = this.updateEtudiant.value;
-      // Effectuer les opérations de mise à jour de l'étudiant
-      // ...
-    }
+  updateEtudiant() {
+    this.etu.updateEtudiant(this.etudiantForm?.value).subscribe();
+    this.route.navigateByUrl('getListeEtudiant');
+    };
   }
-}
-
-

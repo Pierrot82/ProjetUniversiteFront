@@ -38,20 +38,12 @@ export class UpdateEnseignantComponent implements OnInit{
 
 
   }
-
-
-
-
   updateEnseignant(){
 
     console.log(this.enseignantForm?.value)
     console.log("fin oninit")
 
-
-
 this.es.updateEnseignant(this.enseignantForm?.value).subscribe();
-
-
 this.route.navigateByUrl("listeEnseignant")
 
   }

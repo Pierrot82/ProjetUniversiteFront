@@ -25,6 +25,8 @@ import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussi
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,7 @@ import { RouterModule } from '@angular/router';
     UpdateEtudiantComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent,
-    UploadComponent
+    UploadComponent,
     
   ],
   imports: [
