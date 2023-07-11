@@ -1,8 +1,12 @@
+h2{
+    margin: 35px auto;
+    width: 80%;
+}
+
 table {
     margin: auto;
     width: 80%;
 }
-
 
 .boutonmodifier {
     padding: 5px 10px;
@@ -20,4 +24,8 @@ table {
     border-radius: 10px;
     border: transparent;
     background-color: rgb(244, 21, 21);
+}
+
+.boutonmodifier:hover , .boutonsupprimer:hover{
+    opacity: 80%;
 }

@@ -11,10 +11,12 @@ import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant
 import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListePostulantComponent } from './Postulant/liste-postulant/liste-postulant.component';
+import { FormPostulantComponent } from './Postulant/form-postulant/form-postulant.component';
+import { UpdatePostulantComponent } from './Postulant/update-postulant/update-postulant.component';
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
 import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
 import { UpdateCoursComponent } from './Cours/update-cours/update-cours.component';
-
 import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
 import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
 import { RepondreComponent } from './Discussion/repondre/repondre.component';
@@ -22,6 +24,8 @@ import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussi
 
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
+
+
 
 @NgModule({
   declarations: [
@@ -34,6 +38,9 @@ import { RouterModule } from '@angular/router';
     UpdateEtudiantComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent,
+    ListePostulantComponent,
+    FormPostulantComponent,
+    UpdatePostulantComponent,
     FormCoursComponent,
     UpdateCoursComponent,
     ListeQuestionComponent,
@@ -43,7 +50,7 @@ import { RouterModule } from '@angular/router';
     UpdateEtudiantComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent,
-    UploadComponent
+    UploadComponent,
     
   ],
   imports: [
