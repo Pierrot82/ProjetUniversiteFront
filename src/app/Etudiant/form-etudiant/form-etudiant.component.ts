@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, RequiredValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EtudiantServiceService } from '../service/etudiant-service.service';
 

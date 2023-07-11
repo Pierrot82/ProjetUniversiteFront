@@ -32,7 +32,6 @@ export class EtudiantServiceService {
   }
   
   updateEtudiant(etudiant:Etudiant):Observable<boolean>{
-    console.log(etudiant)
     return this.http.put<boolean>("http://localhost:8080/updateEtudiant", etudiant);
   }
 
