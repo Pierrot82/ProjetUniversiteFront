@@ -13,8 +13,12 @@ body{
     background-color: #eef1f3
 }
     
-.mt-100{
-    margin-top:100px
+.mt-10{
+    margin-top:10px
+}
+
+.mt-50{
+    margin-bottom:50px
 }
 
 .card{
@@ -62,7 +66,7 @@ body{
     font-size: 13px
 }
 
-a{color: #E91E63;
+a{color: #1e3de9;
     text-decoration: none !important;
     background-color: transparent
 }

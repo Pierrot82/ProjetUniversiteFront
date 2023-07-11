@@ -17,13 +17,20 @@ const routes: Routes = [
   { path: 'updateEtudiant/:id', component: UpdateEtudiantComponent },
   { path: 'getListeEtudiant', component: ListeEtudiantComponent },
   { path: 'getListeDiscussion', component: ListeQuestionComponent},
-  { path: 'ajouterDiscussion', component: CreerQuestionComponent},
-  { path: 'getDiscussion/:id', component: GetDiscussionComponent },
-  { path: 'repondreDiscussion/:id', component: RepondreComponent },
+
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
-]
+
+
+  { path: 'ajouterDiscussion', component: CreerQuestionComponent},
+
+  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
+    children:[
+      { path: 'repondreDiscussion', component: RepondreComponent },
+    ]
+  },
+]   
 
 import { UpdateEnseignantComponent } from './Enseignant/update-enseignant/update-enseignant.component';
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
