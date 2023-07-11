@@ -20,18 +20,18 @@ export class EnseignantServiceService {
     return this.http.delete<boolean>("http://localhost:8080/deleteEnseignant/" + id)
   }
   
-  
   findAllEnseignant():Observable<Enseignant[]>{
     return this.http.get<Enseignant[]>("http://localhost:8080/listeEnseignant")
   }
   
-  
+
   getEnseignantbyId(id:number):Observable<Enseignant>{
     return this.http.get<Enseignant>("http://localhost:8080/getEnseignant/"+ id)
   }
   
   updateEnseignant(enseignant:Enseignant):Observable<boolean>{
-    return this.http.put<boolean>("http://localhost:8080/modifierEnseignant/", enseignant);
+
+    return this.http.put<boolean>("http://localhost:8080/modifierEnseignant", enseignant);
   }
 
 }

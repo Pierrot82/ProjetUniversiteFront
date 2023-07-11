@@ -20,11 +20,22 @@ export class ListeEnseignantComponent implements OnInit{
   ngOnInit(): void {
     
     this.listeEnseignant = this.es.findAllEnseignant();
+
+    console.log(this.listeEnseignant);
   }
 
 
   // supprimer 
+  supprimerEnseignant(id:number){
+    this.es.supprimerEnseignant(id).subscribe();
+    this.route.navigateByUrl("listeEnseignant")
+  }
 
   //modifier
+  getEnseignantByEnseignant(id:number){
+    this.route.navigateByUrl("updateEnseignant/" + id);
+  }
+
+
 
 }

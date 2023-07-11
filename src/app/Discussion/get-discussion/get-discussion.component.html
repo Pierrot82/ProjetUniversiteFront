@@ -1,0 +1,37 @@
+
+
+<div *ngIf="question | async as q">
+
+
+    <h1> {{ q.question }} </h1>
+
+
+
+<br>
+
+
+
+
+
+
+<div *ngFor="let rep of reponses | async" >
+    
+    <label for="question"> reponse n°{{ rep.idReponse }} : </label> <br>
+    <label for="question"> ->     {{ rep.reponse }}    </label> <br>
+    <label for="question"> date : {{ rep.date }} </label> <br>
+    <label for="">---------------------</label>
+
+<br><br>
+</div>
+
+
+<button type="button" class="btn btn-primary" (click)="repondre(q.idDiscussion)">Répondre</button>
+
+
+
+
+
+
+
+  
+</div>
