@@ -17,6 +17,8 @@ import { UpdateCoursComponent } from './Cours/update-cours/update-cours.componen
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { RouterModule } from '@angular/router';
     UpdateEtudiantComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent,
-    UploadComponent
+    UploadComponent,
     
   ],
   imports: [
