@@ -10,8 +10,7 @@
         </tr>
     </thead>
     <tbody>
-
-        <tr *ngFor="let c of listeCours | async">
+        <tr *ngFor="let c of listeCours | async; let i = index">
             <th scope="row">{{c.idCours}}</th>
             <td>{{c.nom}}</td>
             <td>		
@@ -23,14 +22,17 @@
                     <i class="star stargrey fas fa-star" id="star5" data-index="4" (click)="note(5, c.idCours)"></i>
                 </div>
             </td>
-            <td>		
-                <div class="stars">
+            <td>
+                <ng-container *ngFor="let moy of listeMoyennesNotesCours | async; let j = index">	
+                <div class="stars" *ngIf="i==j">
                     <i class="star stargrey fas fa-star" id="star1" data-index="0"></i>
                     <i class="star stargrey fas fa-star" id="star2" data-index="1"></i>
                     <i class="star stargrey fas fa-star" id="star3" data-index="2"></i>
                     <i class="star stargrey fas fa-star" id="star4" data-index="3"></i>
                     <i class="star stargrey fas fa-star" id="star5" data-index="4"></i>
+                    <p>{{moy}}</p>
                 </div>
+                </ng-container>	
             </td>
         </tr>
     </tbody>

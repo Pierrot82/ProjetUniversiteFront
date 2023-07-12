@@ -26,6 +26,10 @@ export class CoursServiceService {
     return this.http.get<Cours[]>("http://localhost:8080/listeCours")
   }
 
+  getListeMoyennesNotesCours():Observable<number[]>{
+    return this.http.get<number[]>("http://localhost:8080/getListeMoyennesNotesCours")
+  }
+
   getCourstbyId(id:number):Observable<Cours>{
     return this.http.get<Cours>("http://localhost:8080/getCours/"+ id)
   }
