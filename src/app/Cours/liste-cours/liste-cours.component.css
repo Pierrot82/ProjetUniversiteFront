@@ -1,0 +1,33 @@
+h2{
+    margin: 35px auto;
+    width: 80%;
+}
+
+.conteneur {
+    width: 80%;
+    margin: auto;
+    background-color: bisque;
+    border-radius: 25px;
+}
+
+.contenu {
+    padding: 50px;
+}
+
+th {
+    width: 100px;
+}
+
+.thead {
+    background-color: rgb(17, 134, 213);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 20px;
+}
+
+.tbody {
+    background-color:white;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 20px;
+}
