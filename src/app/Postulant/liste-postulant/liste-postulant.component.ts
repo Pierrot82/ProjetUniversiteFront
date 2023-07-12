@@ -16,14 +16,26 @@ export class ListePostulantComponent implements OnInit {
 
   constructor(private postulantService:PostulantService,private enseignantService:EnseignantServiceService, private route:Router){}
 
-  listePostulant!:Observable<Postulant[]>;
+
+  listePostulantFixe!:Postulant[];
   postulantRefuser!:Postulant;
   postulantAccepter!:Postulant;
   enseigantPostPostulation!:Enseignant;
   date!:Date;
 
-  ngOnInit(): void {
-    this.listePostulant = this.postulantService.findAllPostulant();
+
+  listePostulant():Promise<Postulant[]> {
+    return new Promise<Postulant[]>((resolve, reject) => {
+      this.postulantService.findAllPostulant().subscribe(
+        result => {
+          this.listePostulantFixe = result;
+          resolve(this.listePostulantFixe);
+        }
+      );
+    });
+  }
+    async ngOnInit() {
+    this.listePostulantFixe= await this.listePostulant();
   }
 
   deletePostulant(id:number){

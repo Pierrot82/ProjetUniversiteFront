@@ -23,6 +23,11 @@ const routes: Routes = [
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
+
+
+//  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
+//  children:[    { path: 'repondreDiscussion', component: RepondreComponent }]},
+
 ]
 
 import { UpdateEnseignantComponent } from './Enseignant/update-enseignant/update-enseignant.component';
