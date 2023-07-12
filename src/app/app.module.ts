@@ -17,13 +17,19 @@ import { UpdatePostulantComponent } from './Postulant/update-postulant/update-po
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
 import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
 import { UpdateCoursComponent } from './Cours/update-cours/update-cours.component';
+import { UploadComponent } from './SupportCours/upload/upload.component';
+import { RouterModule } from '@angular/router';
+
+
 import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
 import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
 import { RepondreComponent } from './Discussion/repondre/repondre.component';
 import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
 
-import { UploadComponent } from './SupportCours/upload/upload.component';
-import { RouterModule } from '@angular/router';
+import { CreerQuestionByConnexionComponent } from './Discussion/ByConnexion/creer-question-by-connexion/creer-question-by-connexion.component';
+import { ListeQuestionByConnexionComponent } from './Discussion/ByConnexion/liste-question-by-connexion/liste-question-by-connexion.component';
+import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-discussion-by-connexion/get-discussion-by-connexion.component';
+import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-by-connexion/repondre-by-connexion.component';
 
 
 
@@ -43,14 +49,21 @@ import { RouterModule } from '@angular/router';
     UpdatePostulantComponent,
     FormCoursComponent,
     UpdateCoursComponent,
-    ListeQuestionComponent,
-    CreerQuestionComponent,
-    RepondreComponent,
-    GetDiscussionComponent,
+
     UpdateEtudiantComponent,
     ListeEtudiantComponent,
     FormEtudiantComponent,
     UploadComponent,
+
+    ListeQuestionComponent,
+    CreerQuestionComponent,
+    RepondreComponent,
+    GetDiscussionComponent,
+
+    CreerQuestionByConnexionComponent,
+    ListeQuestionByConnexionComponent,
+    GetDiscussionByConnexionComponent,
+    RepondreByConnexionComponent,
     
   ],
   imports: [

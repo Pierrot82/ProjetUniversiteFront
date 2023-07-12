@@ -16,16 +16,30 @@ const routes: Routes = [
   { path: 'ajoutEtudiant', component: FormEtudiantComponent },
   { path: 'updateEtudiant/:id', component: UpdateEtudiantComponent },
   { path: 'getListeEtudiant', component: ListeEtudiantComponent },
-  { path: 'getListeDiscussion', component: ListeQuestionComponent},
-  { path: 'ajouterDiscussion', component: CreerQuestionComponent},
-  { path: 'getDiscussion/:id', component: GetDiscussionComponent },
-  { path: 'repondreDiscussion/:id', component: RepondreComponent },
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
 
 
-//  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
+  { path: 'getListeDiscussion', component: ListeQuestionComponent},
+  { path: 'ajouterDiscussion', component: CreerQuestionComponent},
+  { path: 'getDiscussion/:id', component: GetDiscussionComponent },
+  { path: 'repondreDiscussion/:id', component: RepondreComponent },
+
+  { path: 'etudiant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
+  { path: 'enseignant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
+  
+  { path: 'etudiant/:idUser/ajouterDiscussion', component: CreerQuestionByConnexionComponent},
+  { path: 'etudiant/:idUser/ajouterDiscussion/to/:idTo', component: CreerQuestionByConnexionComponent},
+  { path: 'etudiant/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent},
+  { path: 'enseignant/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent},
+
+  { path: 'etudiant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
+  { path: 'enseignant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
+
+
+
+  //  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
 //  children:[    { path: 'repondreDiscussion', component: RepondreComponent }]},
 
 ]
@@ -33,14 +47,21 @@ const routes: Routes = [
 import { UpdateEnseignantComponent } from './Enseignant/update-enseignant/update-enseignant.component';
 import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
 import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
-import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
-import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
-import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
-import { RepondreComponent } from './Discussion/repondre/repondre.component';
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
 import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant.component';
 import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudiant.component';
+
+
+import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
+import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
+import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
+import { RepondreComponent } from './Discussion/repondre/repondre.component';
+
+import { ListeQuestionByConnexionComponent } from './Discussion/ByConnexion/liste-question-by-connexion/liste-question-by-connexion.component';
+import { CreerQuestionByConnexionComponent } from './Discussion/ByConnexion/creer-question-by-connexion/creer-question-by-connexion.component';
+import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-discussion-by-connexion/get-discussion-by-connexion.component';
+import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-by-connexion/repondre-by-connexion.component';
 
 
 
