@@ -15,6 +15,7 @@ import { UploadComponent } from './SupportCours/upload/upload.component';
 import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
 import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant.component';
 import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudiant.component';
+import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
 import { NotesComponent } from './Notes/notes.component';
@@ -37,6 +38,9 @@ const routes: Routes = [
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
+  { path: 'statistiques', component: StatistiquesComponent},
+  { path: 'qcm', component: QcmComponent }
+
   { path: 'statistiques', component: StatistiquesComponent },
   { path: 'listeExamen', component: ExamenComponent },
   { path: 'notes', component: NotesComponent },

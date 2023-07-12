@@ -23,6 +23,7 @@ import { RepondreComponent } from './Discussion/repondre/repondre.component';
 import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
+import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
 import { NotesComponent } from './Notes/notes.component';
@@ -51,6 +52,7 @@ import { NotesComponent } from './Notes/notes.component';
     ListeEtudiantComponent,
     FormEtudiantComponent,
     UploadComponent,
+    QcmComponent,
     StatistiquesComponent,
     ExamenComponent,
     NotesComponent,
