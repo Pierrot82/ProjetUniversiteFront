@@ -21,4 +21,7 @@ export class ListeCoursComponent implements OnInit{
     
     this.listeCours = this.cs.listeCours();
   }
+  note(note:number){
+    console.log("ok")
+  }
 }

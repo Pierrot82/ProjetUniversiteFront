@@ -1,0 +1,9 @@
+
+.stargrey {
+	color: #96969d;
+}
+
+.star:hover {
+	cursor: pointer;
+    color: #fedc18;
+}
