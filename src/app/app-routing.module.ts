@@ -4,6 +4,19 @@ import { FormEnseignantComponent } from './Enseignant/form-enseignant/form-ensei
 import { ListeEnseignantComponent } from './Enseignant/liste-enseignant/liste-enseignant.component';
 import { ListePostulantComponent } from './Postulant/liste-postulant/liste-postulant.component';
 import { FormPostulantComponent } from './Postulant/form-postulant/form-postulant.component';
+import { UpdateEnseignantComponent } from './Enseignant/update-enseignant/update-enseignant.component';
+import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
+import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
+import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
+import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
+import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
+import { RepondreComponent } from './Discussion/repondre/repondre.component';
+import { UploadComponent } from './SupportCours/upload/upload.component';
+import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
+import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant.component';
+import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudiant.component';
+import { StatistiquesComponent } from './Statistiques/statistiques.component';
+
 
 const routes: Routes = [
   { path: 'ajouterEnseignant', component: FormEnseignantComponent },
@@ -23,26 +36,13 @@ const routes: Routes = [
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
+  { path: 'statistiques', component: StatistiquesComponent},
 
 
 //  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
 //  children:[    { path: 'repondreDiscussion', component: RepondreComponent }]},
 
 ]
-
-import { UpdateEnseignantComponent } from './Enseignant/update-enseignant/update-enseignant.component';
-import { ListeCoursComponent } from './Cours/liste-cours/liste-cours.component';
-import { FormCoursComponent } from './Cours/form-cours/form-cours.component';
-import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
-import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
-import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
-import { RepondreComponent } from './Discussion/repondre/repondre.component';
-import { UploadComponent } from './SupportCours/upload/upload.component';
-import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
-import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant.component';
-import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudiant.component';
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
