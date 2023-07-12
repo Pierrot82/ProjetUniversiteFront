@@ -13,6 +13,10 @@ export class CoursServiceService {
   ajoutCours(cours:Cours):Observable<Cours>{
     return this.http.post<Cours>("http://localhost:8080/saveCours", cours)
   }
+
+  modifierNoteCours(cours:Cours):Observable<Cours>{
+    return this.http.post<Cours>("http://localhost:8080/modifierNoteCours", cours)
+  }
   
   supprimerCours(id:number):Observable<boolean>{
     return this.http.delete<boolean>("http://localhost:8080/deleteCours/" + id)

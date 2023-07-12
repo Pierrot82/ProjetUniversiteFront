@@ -12,15 +12,15 @@
     <tbody>
 
         <tr *ngFor="let c of listeCours | async">
-            <th scope="row">{{c.idCours}} </th>
-            <td>{{c.nom}} </td>
+            <th scope="row">{{c.idCours}}</th>
+            <td>{{c.nom}}</td>
             <td>		
                 <div class="stars">
-                    <i class="star stargrey fas fa-star" id="star1" data-index="0" (click)="note(1)"></i>
-                    <i class="star stargrey fas fa-star" id="star2" data-index="1" (click)="note(2)"></i>
-                    <i class="star stargrey fas fa-star" id="star3" data-index="2" (click)="note(3)"></i>
-                    <i class="star stargrey fas fa-star" id="star4" data-index="3" (click)="note(4)"></i>
-                    <i class="star stargrey fas fa-star" id="star5" data-index="4" (click)="note(5)"></i>
+                    <i class="star stargrey fas fa-star" id="star1" data-index="0" (click)="note(1, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star2" data-index="1" (click)="note(2, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star3" data-index="2" (click)="note(3, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star4" data-index="3" (click)="note(4, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star5" data-index="4" (click)="note(5, c.idCours)"></i>
                 </div>
             </td>
             <td>		
