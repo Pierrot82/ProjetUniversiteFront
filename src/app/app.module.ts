@@ -24,6 +24,7 @@ import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussi
 
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
+import { QcmComponent } from './qcm/qcm.component';
 
 
 
@@ -51,6 +52,7 @@ import { RouterModule } from '@angular/router';
     ListeEtudiantComponent,
     FormEtudiantComponent,
     UploadComponent,
+    QcmComponent,
     
   ],
   imports: [

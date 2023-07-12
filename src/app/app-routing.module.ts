@@ -23,6 +23,8 @@ const routes: Routes = [
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
+  { path: 'qcm', component: QcmComponent }
+
 ]
 
 import { UpdateEnseignantComponent } from './Enseignant/update-enseignant/update-enseignant.component';
@@ -36,6 +38,7 @@ import { UploadComponent } from './SupportCours/upload/upload.component';
 import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.component';
 import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant.component';
 import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudiant.component';
+import { QcmComponent } from './qcm/qcm.component';
 
 
 
