@@ -25,7 +25,6 @@ import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,8 +49,7 @@ import { StatistiquesComponent } from './Statistiques/statistiques.component';
     ListeEtudiantComponent,
     FormEtudiantComponent,
     UploadComponent,
-    StatistiquesComponent,
-    
+    StatistiquesComponent,  
   ],
   imports: [
     BrowserModule,
