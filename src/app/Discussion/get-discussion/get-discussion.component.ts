@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Discussion } from 'src/app/model/discussion.model';
 import { Observable } from 'rxjs';
 import { Reponse } from 'src/app/model/reponse.model';
+import { Etudiant } from 'src/app/model/etudiant.model';
+import { Enseignant } from 'src/app/model/enseignant.model';
 
 @Component({
   selector: 'app-get-discussion',
@@ -19,6 +21,8 @@ export class GetDiscussionComponent implements OnInit {
   question!:Observable<Discussion>;
  reponses!:Observable<Reponse[]>;
 
+ 
+
 
 constructor(private ds:DiscussionServiceService, private route:Router, private formBuilder:FormBuilder, private ar:ActivatedRoute){
   this.id= ar.snapshot.params["id"];
@@ -30,7 +34,7 @@ constructor(private ds:DiscussionServiceService, private route:Router, private f
 
    this.reponses=this.ds.getReponsesDiscussionbyId(this.id);
 
- // console.log(this.question)
+  console.log(this.question)
 
   }
 

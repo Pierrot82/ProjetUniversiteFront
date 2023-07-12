@@ -1,26 +1,21 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Prénom</th>
-            <th scope="col">Date de naissance</th>
-            <th scope="col">Date d'inscription</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr *ngFor="let etu of getListeEtudiant | async">
-            <th>{{etu.id}} </th>
-            <td>{{etu.nom}} </td>
-            <td>{{etu.prenom}} </td>
-            <td>{{etu.dateNaissance}} </td>
-            <td>{{etu.dateInscription}} </td>
-            <td>
-                <button class="boutonmodifier">Modifier</button>
-                <button class="boutonsupprimer">Supprimer</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<h2>Liste des étudiants</h2>
+<div class="conteneur">
+    <div class="cards">
+    <div class="blocinfo" *ngFor="let etu of getListeEtudiant | async">
+        <div class="idicone">
+            <img src="https://cdn1.iconfinder.com/data/icons/ionicons-sharp-vol-2/512/person-circle-sharp-1024.png" alt="profile" draggable="false">
+            <div class="id">{{etu.id}} </div>
+        </div>
+        <div class="bloctexte">
+            <div class="nom">{{etu.nom}} </div>
+            <div class="prenom">{{etu.prenom}} </div>
+            <div class="dateNaissance">{{etu.dateNaissance}} </div>
+            <div class="dateInscription">{{etu.dateInscription}} </div>
+        </div>
+        <div class="boutons">
+            <button class="boutonmodifier" (click)="getEtudiantById(etu.id)">Modifier</button>
+            <button class="boutonsupprimer" (click)="deleteEtudiant(etu.id)">Supprimer</button>
+        </div>
+    </div>
+</div>
+</div>

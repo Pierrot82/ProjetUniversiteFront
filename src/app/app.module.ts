@@ -21,12 +21,12 @@ import { ListeQuestionComponent } from './Discussion/liste-question/liste-questi
 import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
 import { RepondreComponent } from './Discussion/repondre/repondre.component';
 import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
-
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
 import { QcmComponent } from './qcm/qcm.component';
-
-
+import { StatistiquesComponent } from './Statistiques/statistiques.component';
+import { ExamensComponent } from './Examens/examens.component';
+import { NotesComponent } from './Notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,9 @@ import { QcmComponent } from './qcm/qcm.component';
     FormEtudiantComponent,
     UploadComponent,
     QcmComponent,
-    
+    StatistiquesComponent,
+    ExamensComponent,
+    NotesComponent,  
   ],
   imports: [
     BrowserModule,

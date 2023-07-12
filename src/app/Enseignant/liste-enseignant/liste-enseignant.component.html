@@ -1,34 +1,20 @@
-<p>liste-enseignant works!</p>
+<h2>Liste des enseignants</h2>
+<div class="conteneur">
+    <div class="cards">
 
-
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nom</th>
-            <th scope="col">prenom</th>
-            <th scope="col">Date de naissance</th>
-            <th scope="col">Date d'Embauche</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr *ngFor="let enseignant of listeEnseignant | async">
-            <th scope="row">{{enseignant.id}} </th>
-            <td>{{enseignant.nom}} </td>
-            <td>{{enseignant.prenom}} </td>
-            <td>{{enseignant.dateNaissance}} </td>
-            <td>{{enseignant.dateEmbauche}} </td>
-            <td> 
-        <button type="button" class="btn btn-warning" (click)="getEnseignantByEnseignant(enseignant.id)">Modifier</button>
-      
-        <button type="button" class="btn btn-danger" (click)="supprimerEnseignant(enseignant.id)">Supprimer</button>
-           
-    </td>
-            
-        </tr>
-    </tbody>
-</table>
+            <div class="blocinfo" *ngFor="let enseignant of listeEnseignant | async">
+                <div class="idicone">
+                    <img src="https://cdn1.iconfinder.com/data/icons/ionicons-sharp-vol-2/512/person-circle-sharp-1024.png" alt="profile" draggable="false">
+                    <div class="id">{{enseignant.id}} </div>
+                </div>
+                <div>{{enseignant.nom}} </div>
+                <div>{{enseignant.prenom}} </div>
+                <div>{{enseignant.dateNaissance}} </div>
+                <div>{{enseignant.dateEmbauche}} </div>
+                <div class="boutons">
+                    <button class="boutonmodifier" type="button" (click)="getEnseignantByEnseignant(enseignant.id)">Modifier</button>
+                    <button class="boutonsupprimer"  type="button" (click)="supprimerEnseignant(enseignant.id)">Supprimer</button>  
+                </div>
+            </div>
+    </div>
+</div>

@@ -1,86 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Etudiant
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-            <li><a class="dropdown-item" routerLink="/listeCours">Liste des cours</a></li>
-            <li><a class="dropdown-item" routerLink="/listeEnseignant">Liste des enseignants</a></li>
-            <li><a class="dropdown-item" routerLink="/listeExamen">Liste des examens</a></li>
-            <li><a class="dropdown-item" routerLink="/listeCopie">Liste des notes</a></li>
-            <li><a class="dropdown-item" routerLink="#">Evaluer un cours/enseignant</a></li>
-            <!-- liste matières+liste profs+horaires -->
-            <li><a class="dropdown-item" routerLink="#">Emploi du temps</a></li>
-            
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Enseignant
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/uploadImage">Déposer un support de cours</a></li>
-            <li><a class="dropdown-item" href="#">Déposer un examen et la correction</a></li>
-            <li><a class="dropdown-item" href="#">Corriger un examen</a></li>
-            <li><a class="dropdown-item" href="#">Répondre aux questions</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Administrateur
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="listePostulant">Liste des postulants</a></li>
-            <li><a class="dropdown-item" routerLink="/ajoutEtudiant">Ajouter un étudiant</a></li>
-            <li><a class="dropdown-item" routerLink="/updateEtudiant">Modifier un étudiant</a></li>
-            <li><a class="dropdown-item" routerLink="/deleteEtudiant">Liste des étudiants</a></li>
-            <li><a class="dropdown-item" routerLink="#">Candidatures</a></li>
-            <li><a class="dropdown-item" routerLink="#">Moyennes des étudiants</a></li>
-            <li><a class="dropdown-item" routerLink="#">Statistiques</a></li>
-          </ul>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link" routerLink="savePostulant"  role="button" >
-            Postuler
-          </a>
-        </li>
+<nav class="dropdownmenu">
+  <ul>
+    <li class="blocmenu">
+      <a class="section">Etudiant</a>
+      <ul id="submenu">
+        <li><a class="sousection" routerLink="listeCours">Liste des cours</a></li>
+        <li><a class="sousection" routerLink="listeEnseignant">Liste des enseignants</a></li>
+        <li><a class="sousection" routerLink="listeExamen">Liste des examens</a></li>
+        <li><a class="sousection" routerLink="listeCopie">Liste des notes</a></li>
+        <li><a class="sousection" routerLink="getListeDiscussion">Liste des discussion</a></li>
+        <li><a class="sousectionlast" routerLink="">Evaluer un cours/enseignant</a></li>
+        <!-- <li><a routerLink="">Emploi du temps</a></li> -->
       </ul>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Que cherchez-vous?"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Rechercher</button>
-      </form>
-    </div>
-  </div>
+    </li>
+    <li class="blocmenu">
+      <a  class="section" routerLink="">Enseignant</a>
+      <ul id="submenu">
+        <li><a class="sousection" routerLink="uploadImage">Déposer un support de cours</a></li>
+        <li><a class="sousection" routerLink="#">Déposer un examen et la correction</a></li>
+        <li><a class="sousection" routerLink="#">Corriger un examen</a></li>
+        <li><a class="sousectionlast" routerLink="#">Répondre aux questions</a></li>
+      </ul>
+    </li>
+    <li class="blocmenu">
+      <a  class="section" routerLink="">Administrateur</a>
+      <ul id="submenu">
+        <li><a class="sousection" routerLink="listePostulant">Liste des postulants</a></li>
+        <li><a class="sousection" routerLink="getListeEtudiant">Liste des étudiants</a></li>
+        <li><a class="sousection" routerLink="ajoutEtudiant">Ajouter un étudiant</a></li>
+        <li><a class="sousection" routerLink="#">Candidatures</a></li>
+        <li><a class="sousectionlast" routerLink="#">Statistiques</a></li>
+      </ul>
+    </li>
+    <li class="blocmenu">
+      <a class="sectionnodropdown" routerLink="/savePostulant">Postuler</a>
+    </li>
+  </ul>
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Que cherchez-vous?" aria-label="Search"/>
+    <button class="btn btn-outline-success" type="submit">Rechercher</button>
+  </form>
 </nav>
 
 <router-outlet></router-outlet>

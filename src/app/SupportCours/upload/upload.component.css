@@ -31,6 +31,10 @@ button {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
-  body{
+  .conteneur{
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 25px;
+    padding: 50px;
     background-color: rgba(237, 231, 226, 0.6);
   }

@@ -1,28 +1,52 @@
-
-<body>
+<div *ngIf="etudiantForm">
+  <body>
     <section class="formEtudiant">
-        <h2>Modifier un étudiant</h2>
-  <form [formGroup]="updateEtudiant" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="nom">Nom :</label>
-      <input class="inputUpdateEtudiant" type="text" id="nom" formControlName="nom" required>
-    </div>
-    <div>
-      <label for="prenom">Prénom :</label>
-      <input class="inputUpdateEtudiant" type="text" id="prenom" formControlName="prenom" required>
-    </div>
-    <div>
-      <label for="dateNaissance">Date de naissance :</label>
-      <input class="inputUpdateEtudiant" type="date" id="dateNaissance" formControlName="dateNaissance" required>
-    </div>
-    <div>
-      <label for="dateInscription">Date d'inscription :</label>
-      <input class="inputUpdateEtudiant" type="date" id="dateInscription" formControlName="dateInscription" required>
-    </div>
-    <button type="submit">Enregistrer</button>
-    <button type="reset">Recommencer saisie</button>
-  </form>
-  </section>
-</body>
-
-  
+      <h2>Modifier un étudiant</h2>
+      <form [formGroup]="etudiantForm">
+        <input type="hidden" formControlName="id" class="form-control" />
+        <div>
+          <label for="nom">Nom :</label>
+          <input
+            class="inputUpdateEtudiant"
+            type="text"
+            id="nom"
+            formControlName="nom"
+            required
+          />
+        </div>
+        <div>
+          <label for="prenom">Prénom :</label>
+          <input
+            class="inputUpdateEtudiant"
+            type="text"
+            id="prenom"
+            formControlName="prenom"
+            required
+          />
+        </div>
+        <div>
+          <label for="dateNaissance">Date de naissance :</label>
+          <input
+            class="inputUpdateEtudiant"
+            type="date"
+            id="dateNaissance"
+            formControlName="dateNaissance"
+            required
+          />
+        </div>
+        <div>
+          <label for="dateInscription">Date d'inscription :</label>
+          <input
+            class="inputUpdateEtudiant"
+            type="date"
+            id="dateInscription"
+            formControlName="dateInscription"
+            required
+          />
+        </div>
+        <button type="submit" (click)="updateEtudiant()">Enregistrer</button>
+        <button type="reset">Recommencer saisie</button>
+      </form>
+    </section>
+  </body>
+</div>

@@ -1,12 +1,16 @@
-table {
-    margin: auto;
+h2{
+    margin: 35px auto;
     width: 80%;
 }
 
+.boutons {
+    position: relative;
+    text-align: right;
+}
 
 .boutonmodifier {
     padding: 5px 10px;
-    margin: 0 10px;
+    margin: 20px 5px 0 0;
     width: 100px;
     border-radius: 10px;
     border: transparent;
@@ -15,9 +19,60 @@ table {
 
 .boutonsupprimer{
     padding: 5px 10px;
-    margin: 0 10px;
+    margin: 20px 0 0 5px;
     width: 100px;
     border-radius: 10px;
     border: transparent;
     background-color: rgb(244, 21, 21);
+}
+
+.boutonmodifier:hover , .boutonsupprimer:hover {
+    opacity: 80%;
+}
+
+.conteneur {
+    width: 80%;
+    margin: auto;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    border: transparent;
+    gap: 25px;
+
+
+}
+
+.blocinfo {
+    background-color: bisque;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.bloctexte {
+    margin: auto;
+    width: 50%;
+    user-select: none;
+}
+
+.id {
+    background-color: lightgrey;
+    width: 40px;
+    border-radius: 10px;
+    padding: 13px;
+    user-select: none;
+}
+
+.idicone {
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+img {
+    width: 50px;
 }
