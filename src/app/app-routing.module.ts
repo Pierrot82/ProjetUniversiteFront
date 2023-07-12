@@ -16,33 +16,34 @@ import { FormEtudiantComponent } from './Etudiant/form-etudiant/form-etudiant.co
 import { ListeEtudiantComponent } from './Etudiant/liste-etudiant/liste-etudiant.component';
 import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudiant.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
-
+import { ExamenComponent } from './Examen/examen.component';
+import { NotesComponent } from './Notes/notes.component';
 
 const routes: Routes = [
   { path: 'ajouterEnseignant', component: FormEnseignantComponent },
-  {path:"listePostulant", component:ListePostulantComponent},
+  { path: 'listePostulant', component: ListePostulantComponent },
   { path: 'listeEnseignant', component: ListeEnseignantComponent },
-  {path:"savePostulant", component:FormPostulantComponent},
+  { path: 'savePostulant', component: FormPostulantComponent },
   { path: 'ajouterEnseignant', component: FormEnseignantComponent },
   { path: 'listeEnseignant', component: ListeEnseignantComponent },
   { path: 'updateEnseignant/:id', component: UpdateEnseignantComponent },
   { path: 'ajoutEtudiant', component: FormEtudiantComponent },
   { path: 'updateEtudiant/:id', component: UpdateEtudiantComponent },
   { path: 'getListeEtudiant', component: ListeEtudiantComponent },
-  { path: 'getListeDiscussion', component: ListeQuestionComponent},
-  { path: 'ajouterDiscussion', component: CreerQuestionComponent},
+  { path: 'getListeDiscussion', component: ListeQuestionComponent },
+  { path: 'ajouterDiscussion', component: CreerQuestionComponent },
   { path: 'getDiscussion/:id', component: GetDiscussionComponent },
   { path: 'repondreDiscussion/:id', component: RepondreComponent },
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
-  { path: 'statistiques', component: StatistiquesComponent},
+  { path: 'statistiques', component: StatistiquesComponent },
+  { path: 'listeExamen', component: ExamenComponent },
+  { path: 'notes', component: NotesComponent },
 
-
-//  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
-//  children:[    { path: 'repondreDiscussion', component: RepondreComponent }]},
-
-]
+  //  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
+  //  children:[    { path: 'repondreDiscussion', component: RepondreComponent }]},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

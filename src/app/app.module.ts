@@ -24,7 +24,7 @@ import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussi
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
-import { ExamensComponent } from './Examens/examens.component';
+import { ExamenComponent } from './Examen/examen.component';
 import { NotesComponent } from './Notes/notes.component';
 
 @NgModule({
@@ -52,8 +52,8 @@ import { NotesComponent } from './Notes/notes.component';
     FormEtudiantComponent,
     UploadComponent,
     StatistiquesComponent,
-    ExamensComponent,
-    NotesComponent,  
+    ExamenComponent,
+    NotesComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,10 +61,9 @@ import { NotesComponent } from './Notes/notes.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
