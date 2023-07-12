@@ -39,8 +39,7 @@ const routes: Routes = [
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
   { path: 'statistiques', component: StatistiquesComponent},
-  { path: 'qcm', component: QcmComponent }
-
+  { path: 'qcm', component: QcmComponent },
   { path: 'statistiques', component: StatistiquesComponent },
   { path: 'listeExamen', component: ExamenComponent },
   { path: 'notes', component: NotesComponent },
