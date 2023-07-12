@@ -32,6 +32,11 @@ import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-
 import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-by-connexion/repondre-by-connexion.component';
 
 
+import { QcmComponent } from './qcm/qcm.component';
+import { StatistiquesComponent } from './Statistiques/statistiques.component';
+import { ExamenComponent } from './Examen/examen.component';
+import { NotesComponent } from './Notes/notes.component';
+
 
 @NgModule({
   declarations: [
@@ -65,6 +70,11 @@ import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-
     GetDiscussionByConnexionComponent,
     RepondreByConnexionComponent,
     
+    QcmComponent,
+    StatistiquesComponent,
+    ExamenComponent,
+    NotesComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -72,10 +82,9 @@ import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-
     RouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

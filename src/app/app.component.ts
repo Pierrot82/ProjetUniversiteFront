@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+isVisibleOnMobile() {
+throw new Error('Method not implemented.');
+}
   title = 'ProjetUniversiteFront';
 }

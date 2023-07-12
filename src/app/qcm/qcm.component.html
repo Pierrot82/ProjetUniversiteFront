@@ -1,0 +1,17 @@
+<div class="qcm">
+    <h2>{{ currentQuestion.q }}</h2>
+    <ul>
+      <li *ngFor="let answer of currentQuestion.a">
+        <label>
+          <input type="radio" name="answer" [(ngModel)]="selectedOption" [value]="answer.isCorrect.toString()" [disabled]="isAnswerDisabled()"/>
+          {{ answer.text }}
+        </label>
+      </li>
+    </ul>
+    <button (click)="evaluateAnswer()">Evaluate</button>
+    <p>Result: {{ result }}</p>
+    <button (click)="nextQuestion()">Next</button>
+  </div>
+
+  
+  

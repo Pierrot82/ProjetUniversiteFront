@@ -31,3 +31,7 @@ a{
 .main-cursor {
     cursor: pointer;
   }
+.conteneur {
+    width: 90%;
+    margin: 50px auto;
+}
