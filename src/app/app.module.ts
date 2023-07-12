@@ -25,8 +25,11 @@ import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
 import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
+<<<<<<< Updated upstream
 import { ExamenComponent } from './Examen/examen.component';
 import { NotesComponent } from './Notes/notes.component';
+=======
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -52,10 +55,14 @@ import { NotesComponent } from './Notes/notes.component';
     ListeEtudiantComponent,
     FormEtudiantComponent,
     UploadComponent,
+<<<<<<< Updated upstream
     QcmComponent,
     StatistiquesComponent,
     ExamenComponent,
     NotesComponent,
+=======
+    StatistiquesComponent,  
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,11 @@
+<<<<<<< Updated upstream
 body {
     background-color: beige;
     height: 100vh;
 }
 
+=======
+>>>>>>> Stashed changes
 .dropdownmenu {
     display: flex;
     border-bottom: 1px solid lightgrey;
