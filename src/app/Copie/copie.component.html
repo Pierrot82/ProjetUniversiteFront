@@ -1,0 +1,26 @@
+<h2>Liste des notes</h2>
+
+<table class="conteneur">
+  <div class="contenu">
+    <div class="thead">
+      <thead>
+        <tr>
+          <th scope="col">Id examen</th>
+          <th scope="col">Intitulé</th>
+          <th scope="col">Elève</th>
+          <th scope="col">Note</th>
+        </tr>
+      </thead>
+    </div>
+    <div class="tbody">
+      <tbody>
+        <tr *ngFor="let c of getListeCopie | async">
+          <th scope="row">{{ c.idCopie.examen.idExamen }}</th>
+          <th scope="row">{{ c.idCopie.examen.intitule }}</th>
+          <th scope="row">{{ c.idCopie.etudiant.prenom }} {{ c.idCopie.etudiant.nom }}</th>
+          <td>{{ c.note }}</td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</table>

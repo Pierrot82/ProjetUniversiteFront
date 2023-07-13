@@ -37,15 +37,17 @@ export class ListeQuestionComponent implements OnInit{
     }
   
   
-//    // supprimer 
-//    supprimerEnseignant(id:number){
-//      this.es.supprimerEnseignant(id).subscribe();
-//      this.route.navigateByUrl("listeEnseignant")
+    // supprimer 
+    supprimerQuestion(id:number){
+      this.ds.supprimerDiscussion(id).subscribe();
+      this.route.navigateByUrl("listeDiscussion")
+    }
+    
     
   
     //modifier
-//    getEnseignantByEnseignant(id:number){
-//      this.route.navigateByUrl("updateEnseignant/" + id);
+//    getDiscussionByDiscussion(id:number){
+//      this.route.navigateByUrl("updateDiscussion/" + id);
 //    }
 
 

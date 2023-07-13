@@ -24,6 +24,11 @@ export class DiscussionServiceService {
   }
 
 
+  findAllDiscussionbyId1(id:number):Observable<Discussion[]>{
+    return this.http.get<Discussion[]>("http://localhost:8080/listeDiscussionbyId1/" + id)
+  }
+
+
 
   // faudrait gueté les réponse respective aussi ?
   getDiscussionbyId(id:number):Observable<Discussion>{
@@ -53,6 +58,13 @@ export class DiscussionServiceService {
 
   RepondreDiscussionID(reponse:Reponse, id:number):Observable<Reponse>{
     return this.http.post<Reponse>("http://localhost:8080/getReponse/repondre/"+ id, reponse)
+  }
+
+
+
+
+  supprimerDiscussion(id:number):Observable<boolean>{
+    return this.http.delete<boolean>("http://localhost:8080/deleteDiscussion/" + id)
   }
 
 }

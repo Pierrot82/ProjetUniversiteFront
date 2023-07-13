@@ -1,0 +1,37 @@
+.div_cont{
+    margin-top:20px;
+    background:#eee;
+    color: #708090;
+}
+.icon-1x {
+    font-size: 24px !important;
+}
+a{
+    text-decoration:none;    
+}
+.text-primary, a.text-primary:focus, a.text-primary:hover {
+    color: #00ADBB!important;
+}
+.text-black, .text-hover-black:hover {
+    color: #000 !important;
+}
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.seree-2{
+    margin-bottom: 2px;
+    
+}
+
+.gris{
+    color: #5c7172;
+}
+
+.main-cursor {
+    cursor: pointer;
+  }
+.conteneur {
+    width: 90%;
+    margin: 50px auto;
+}
