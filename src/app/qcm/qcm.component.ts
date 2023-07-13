@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ExamenService } from '../Examen/service/examen.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Examen } from '../model/examen.model';
+import { EtudiantServiceService } from '../Etudiant/service/etudiant-service.service';
+import { CopieService } from '../Copie/service/copie.service';
+import { NotExpr } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-qcm',
@@ -26,8 +29,11 @@ export class QcmComponent implements OnInit{
      coef: number = 1;
      date: Date = new Date();
      duree: number = 2;
+     idEtudiant!: number;
+     idExamen: number = 1;
+     roundedScore!:string;
 
-     constructor(private exs:ExamenService, private formBuilder:FormBuilder){
+     constructor(private exs:ExamenService, private formBuilder:FormBuilder, private cs: CopieService, private ets:EtudiantServiceService){
     
     }
 
@@ -128,18 +134,22 @@ export class QcmComponent implements OnInit{
         this.loadQuestion(this.currentIndex);
         if (this.currentIndex === this.totalQuestions - 1) {
           this.buttonText = 'Terminer le Qcm';
+          
         }
       } else {
         // Toutes les questions ont été répondues, calcul de la note sur 20
         const score = (this.correctAnswers / this.totalQuestions) * 20;
-        const roundedScore = score.toFixed(1); // Arrondi à une décimale
+        this.roundedScore = score.toFixed(1); // Arrondi à une décimale
 
         if (score >= 5) {
-          alert("Félicitations ! Votre note est " + roundedScore + "/20");
+          alert("Félicitations ! Votre note est " + this.roundedScore + "/20");
+          this.ajoutCopie(this.idEtudiant, this.idExamen, this.roundedScore);
         } else {
-          alert("Recalé. Votre note est " + roundedScore + "/20");
+          alert("Recalé. Votre note est " + this.roundedScore + "/20");
+          this.ajoutCopie(this.idEtudiant, this.idExamen, this.roundedScore);
         }
       }
+      
     }
   }
 
@@ -150,5 +160,9 @@ export class QcmComponent implements OnInit{
 
   isAnswerDisabled(): boolean {
     return this.isAnswerSelected;
+  }
+
+  ajoutCopie(idEtudiant:number, idExamen:number, note: string): void {
+    this.cs.ajoutCopie(idEtudiant, idExamen, parseFloat(note)).subscribe;
   }
 }

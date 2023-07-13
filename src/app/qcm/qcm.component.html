@@ -12,7 +12,7 @@
 
 <div *ngIf="!showInstructions">
 <div>{{intitule}}</div>
-<input type="number" >Saisissez votre id :</input>
+<input type="number" [(ngModel)]="idEtudiant"/>
 <div class="qcm">
     <h2>{{ currentQuestion.q }}</h2>
     <ul>
