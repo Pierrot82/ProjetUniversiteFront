@@ -38,8 +38,11 @@ export class CreerQuestionByConnexionComponent {
         {
           question:[null],
           date: new FormControl(new Date()),
+          dateTime: new FormControl(new Date()),
+
           id_etudiant: [this.idUser],
           id_destinataire:[this.idTo],
+          email:[null],
   
           etudiant:[null],
           enseignant:[null],
@@ -52,23 +55,37 @@ export class CreerQuestionByConnexionComponent {
   saveQuestion(){
   
     
+
+
+    
     this.etus.getEtudiantbyId(this.idUser).subscribe(
       (etudiant: Etudiant) => {
         this.discussionForm.value.etudiant = etudiant;
         
-        const iDdestinataire = this.discussionForm.value.id_destinataire;
-        this.ens.getEnseignantbyId(iDdestinataire).subscribe(
+        const email = this.discussionForm.value.email;
+        this.ens.getEnseignantbyEmail(email).subscribe(
           (enseignant: Enseignant | null) => {
             this.discussionForm.value.enseignant = enseignant;
             this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
           },
           (error) => {    
-            this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+
+            const idTo = this.discussionForm.value.idTo;
+            this.ens.getEnseignantbyId(idTo).subscribe(
+              (enseignant: Enseignant | null) => {
+                this.discussionForm.value.enseignant = enseignant;
+                this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+              },
+              (error) => {    
+    
+                this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+              }
+            );
+
+
+
           }
         );
-
-
-
       }
     );
   
@@ -81,6 +98,9 @@ export class CreerQuestionByConnexionComponent {
   
   }
 
-
+  retourListe(){
+    this.route.navigate(["../getListeDiscussion1"], { relativeTo: this.ar });
+  
+  }
 
 }

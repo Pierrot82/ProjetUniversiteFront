@@ -36,6 +36,7 @@ import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
 import { NotesComponent } from './Notes/notes.component';
+import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { NotesComponent } from './Notes/notes.component';
     StatistiquesComponent,
     ExamenComponent,
     NotesComponent,
+    LoginEtudiantComponent,
 
   ],
   imports: [

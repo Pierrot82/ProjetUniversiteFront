@@ -34,6 +34,8 @@ export class RepondreByConnexionComponent implements OnInit{
       {
         reponse:[null],
         date: new FormControl(new Date()),
+        dateTime: new FormControl(new Date()),
+
         discussion: new FormControl( null ),
         id_personne:[this.idUser],
 
@@ -50,6 +52,7 @@ export class RepondreByConnexionComponent implements OnInit{
 
   }
 
+  
 
   saveReponse(){
 
@@ -80,7 +83,29 @@ this.route.navigate(["../getDiscussion/" + this.idDiscussion], { relativeTo: thi
     });
   }
   */
-  this.route.navigate(["../../" + this.idDiscussion], { relativeTo: this.ar })
+  this.route.navigate([".."], { relativeTo: this.ar })
+
+
+
+
+
+
 
   }
+
+
+  retourListe(){
+  
+  
+  
+  
+  
+    this.route.navigate(["../../../getListeDiscussion1"], { relativeTo: this.ar });
+  
+  }
+
+
+
+
+
 }

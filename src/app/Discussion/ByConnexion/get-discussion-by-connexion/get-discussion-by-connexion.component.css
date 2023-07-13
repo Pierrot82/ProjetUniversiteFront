@@ -46,8 +46,8 @@ body{
 
 .btn-primary{
     color: #fff;
-    background-color: #3f6ad8;
-    border-color: #3f6ad8
+    background-color: #00ADBB;
+    border-color: #00ADBB
 }
 
 .btn{
@@ -80,3 +80,23 @@ a{color: #1e3de9;
 .gris{
     color: #5c7172;
 }
+
+
+
+#retour-liste-btn {
+    background-color: #00ADBB;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  #retour-liste-btn:hover {
+    background-color: #0099B3;
+  }
+  
+  #retour-liste-btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 173, 187, 0.5);
+  }
+  
+  #retour-liste-btn:active {
+    background-color: #008299;
+  }
