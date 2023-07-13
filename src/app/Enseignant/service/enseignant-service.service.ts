@@ -42,4 +42,9 @@ export class EnseignantServiceService {
     return this.http.put<boolean>("http://localhost:8080/modifierEnseignant", enseignant);
   }
 
+
+  connexionEnseignant(login:string, mdp:string):Observable<number>{
+    return this.http.get<number>("http://localhost:8080/loginEnseignant/" + login  +  "/" + mdp)
+  }
+
 }

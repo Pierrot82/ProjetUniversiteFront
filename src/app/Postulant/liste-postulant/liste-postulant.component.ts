@@ -74,7 +74,7 @@ export class ListePostulantComponent implements OnInit {
   this.postulantAccepter = await this.accepterPostulant(id);
   this.postulantService.accepterPostulant(this.postulantAccepter).subscribe();
   this.date = new Date();
-  this.enseigantPostPostulation = new Enseignant(0, this.date, this.postulantAccepter.nom, this.postulantAccepter.prenom, this.postulantAccepter.dateNaissance);
+  this.enseigantPostPostulation = new Enseignant(0, this.date, this.postulantAccepter.nom, this.postulantAccepter.prenom, this.postulantAccepter.dateNaissance, "","");
   this.enseignantService.ajoutEnseignant(this.enseigantPostPostulation).subscribe();
   this.route.navigateByUrl("listePostulant");
  }

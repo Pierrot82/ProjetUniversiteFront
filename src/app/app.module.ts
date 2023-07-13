@@ -37,6 +37,7 @@ import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
 import { NotesComponent } from './Notes/notes.component';
 import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
+import { LoginEnseignantComponent } from './connexion/login-enseignant/login-enseignant.component';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudian
     ExamenComponent,
     NotesComponent,
     LoginEtudiantComponent,
+    LoginEnseignantComponent,
 
   ],
   imports: [
