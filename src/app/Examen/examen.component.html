@@ -4,6 +4,7 @@
     <div class="blocinfo" *ngFor="let examen of listeExamen | async">
       <div class="id">{{ examen.idExamen }}</div>
       <div class="bloctexte">
+            <!-- <div><b>Matière : </b>{{ matiere.nom }}</div> -->
             <div><b>Cours : </b>{{ examen.intitule }}</div>
             <div><b>Coefficient : </b>{{ examen.coef }}</div>
             <div><b>Date de l'examen : </b>{{ examen.date }}</div>
@@ -14,7 +15,7 @@
           <button class="passerExamen" routerLink="/qcm">Passer l'examen</button>
         </div>
         <div class="ligne1">
-          <button class="boutonmodifier" (click)="getExamenById(examen.idExamen)">Modifier</button>
+          <button class="boutonmodifier" routerLink="/deposerExamen">Modifier</button>
           <button class="boutonsupprimer" (click)="deleteExamen(examen.idExamen)">Supprimer</button>          
         </div>
       </div>
