@@ -7,10 +7,10 @@
             <div class="id">{{etu.id}} </div>
         </div>
         <div class="bloctexte">
-            <div class="nom">{{etu.nom}} </div>
-            <div class="prenom">{{etu.prenom}} </div>
-            <div class="dateNaissance">{{etu.dateNaissance}} </div>
-            <div class="dateInscription">{{etu.dateInscription}} </div>
+            <div class="prenom"><b>Prénom : </b>{{etu.prenom}} </div>
+            <div class="nom"><b>Nom : </b>{{etu.nom}} </div>
+            <div class="dateNaissance"><b>Date de naissance : </b>{{etu.dateNaissance}} </div>
+            <div class="dateInscription"><b>Date d'inscription : </b>{{etu.dateInscription}} </div>
         </div>
         <div class="boutons">
             <button class="boutonmodifier" (click)="getEtudiantById(etu.id)">Modifier</button>
