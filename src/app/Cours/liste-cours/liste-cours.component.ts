@@ -16,6 +16,8 @@ export class ListeCoursComponent implements OnInit{
     listeCours!:Observable<Cours[]>;
     listeMoyennesNotesCours!:Observable<number[]>;
     coursRecup!:Cours;
+    moyArrondis!:number;
+    moyString!:string;
 
 
   
@@ -53,5 +55,29 @@ export class ListeCoursComponent implements OnInit{
     this.coursRecup.cinq = this.coursRecup.cinq + 1;
 
     this.cs.modifierNoteCours(this.coursRecup).subscribe();
+
+    location.reload();
+  }
+
+  getMoyConvertString(moy:number){
+    this.moyArrondis = Math.round(moy);
+    if(this.moyArrondis == 0){
+      this.moyString = "zero";
+    }
+    else if (this.moyArrondis == 1){
+      this.moyString = "un";
+    }
+    else if (this.moyArrondis == 2){
+      this.moyString = "deux";
+    }
+    else if (this.moyArrondis == 3){
+      this.moyString = "trois";
+    }
+    else if (this.moyArrondis == 4){
+      this.moyString = "quatre";
+    }
+    else if (this.moyArrondis == 5){
+      this.moyString = "cinq";
+    }
   }
 }
