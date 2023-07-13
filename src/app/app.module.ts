@@ -35,8 +35,7 @@ import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-
 import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
-import { NotesComponent } from './Notes/notes.component';
-
+import { CopieComponent } from './Copie/copie.component';
 
 @NgModule({
   declarations: [
@@ -73,8 +72,7 @@ import { NotesComponent } from './Notes/notes.component';
     QcmComponent,
     StatistiquesComponent,
     ExamenComponent,
-    NotesComponent,
-
+    CopieComponent,
   ],
   imports: [
     BrowserModule,

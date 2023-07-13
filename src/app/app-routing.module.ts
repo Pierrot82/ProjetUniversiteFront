@@ -14,6 +14,7 @@ import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudi
 import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
+<<<<<<< Updated upstream
 import { NotesComponent } from './Notes/notes.component';
 import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
 import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
@@ -25,6 +26,9 @@ import { CreerQuestionByConnexionComponent } from './Discussion/ByConnexion/cree
 import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-discussion-by-connexion/get-discussion-by-connexion.component';
 import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-by-connexion/repondre-by-connexion.component';
 
+=======
+import { CopieComponent } from './Copie/copie.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   
@@ -49,6 +53,14 @@ const routes: Routes = [
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
+<<<<<<< Updated upstream
+=======
+  { path: 'statistiques', component: StatistiquesComponent },
+  { path: 'qcm', component: QcmComponent },
+  { path: 'statistiques', component: StatistiquesComponent },
+  { path: 'listeExamen', component: ExamenComponent },
+  { path: 'getListeCopie', component: CopieComponent },
+>>>>>>> Stashed changes
 
 
   { path: 'getListeDiscussion', component: ListeQuestionComponent},

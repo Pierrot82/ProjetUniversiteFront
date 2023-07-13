@@ -1,16 +1,17 @@
 <div class="conteneur">
-    <h2>Liste des examens</h2>
-    <div class="cards">
-        <div class="blocinfo" *ngFor="let ex of listeExamen | async">
-                <div>{{ex.idExamen}} </div>
-                <div>{{ex.intitule}} </div>
-                <div>{{ex.coef}} </div>
-                <div>{{ex.date}} </div>
-                <div>{{ex.duree}} </div>
-            <div class="boutons">
-                <button class="boutonmodifier" (click)="getExamenById(ex.idExamen)">Modifier</button>
-                <button class="boutonsupprimer" (click)="deleteExamen(ex.idExamen)">Supprimer</button>
-            </div>
-        </div>
+  <h2>Liste des examens</h2>
+  <div class="cards">
+    <div class="blocinfo" *ngFor="let ex of listeExamen | async">
+      <div>{{ ex.idExamen }}</div>
+      <div>{{ ex.intitule }}</div>
+      <div>{{ ex.coef }}</div>
+      <div>{{ ex.date }}</div>
+      <div>{{ ex.duree }}</div>
+      <div class="boutons">
+        <button class="passerExamen" (click)="getExamenById(ex.idExamen)">Passer l'examen</button>
+        <button class="boutonmodifier" (click)="getExamenById(ex.idExamen)">Modifier</button>
+        <button class="boutonsupprimer" (click)="deleteExamen(ex.idExamen)">Supprimer</button>
+      </div>
     </div>
+  </div>
 </div>

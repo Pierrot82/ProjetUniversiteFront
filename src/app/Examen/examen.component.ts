@@ -5,12 +5,12 @@ import { ExamenService } from 'src/app/Examen/service/examen.service';
 import { Examen} from 'src/app/model/examen.model';
 
 @Component({
-  selector: 'app-examens',
+  selector: 'app-examen',
   templateUrl: './examen.component.html',
   styleUrls: ['./examen.component.css']
 })
 export class ExamenComponent implements OnInit {
-  examens: any[] = []
+  examen: any[] = []
 
   constructor(private ex: ExamenService, private route: Router) {}
   
