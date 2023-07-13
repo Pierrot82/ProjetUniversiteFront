@@ -22,6 +22,7 @@ export class ListePostulantComponent implements OnInit {
   postulantAccepter!:Postulant;
   enseigantPostPostulation!:Enseignant;
   date!:Date;
+  dot!:string;
 
 
   listePostulant():Promise<Postulant[]> {
@@ -77,6 +78,18 @@ export class ListePostulantComponent implements OnInit {
   this.enseigantPostPostulation = new Enseignant(0, this.date, this.postulantAccepter.nom, this.postulantAccepter.prenom, this.postulantAccepter.dateNaissance);
   this.enseignantService.ajoutEnseignant(this.enseigantPostPostulation).subscribe();
   this.route.navigateByUrl("listePostulant");
+ }
+
+ couleurBoutonStatut(statut:string){
+   if(statut == "En attente"){
+     this.dot = "dotAttente";
+   }
+   else if(statut == "Refusé"){
+    this.dot = "dotRefus";
+   }
+   else if(statut == "Accepté"){
+    this.dot = "dotAccepte";
+   }
  }
 
 }
