@@ -1,3 +1,18 @@
+<div class="qcm" *ngIf="showInstructions">
+    <!-- Consignes du QCM -->
+    <h2>Consignes du QCM</h2>
+    <p>- Cochez votre réponse <br>
+        - Cliquez sur "Valider" <br>
+        Attention : une fois votre réponse validée, vous ne pouvez pas revenir en arrière <br>
+        - Cliquez sur "Suivant"
+
+    </p>
+    <button class="start-button" (click)="startQuiz()">Commencer</button>
+  </div>
+
+<div *ngIf="!showInstructions">
+<div>{{intitule}}</div>
+<input type="number" >Saisissez votre id :</input>
 <div class="qcm">
     <h2>{{ currentQuestion.q }}</h2>
     <ul>
@@ -8,10 +23,11 @@
         </label>
       </li>
     </ul>
-    <button (click)="evaluateAnswer()">Evaluate</button>
+    <button (click)="evaluateAnswer()">Valider</button>
     <p>Result: {{ result }}</p>
-    <button (click)="nextQuestion()">Next</button>
+    <button (click)="nextQuestion()">{{ buttonText }}</button>
   </div>
+</div>
 
   
   
