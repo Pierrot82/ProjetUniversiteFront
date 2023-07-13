@@ -35,7 +35,15 @@ import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-
 import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
+
+
+//import { NotesComponent } from './Notes/notes.component';
+import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
+import { LoginEnseignantComponent } from './connexion/login-enseignant/login-enseignant.component';
+
 import { CopieComponent } from './Copie/copie.component';
+
+
 
 @NgModule({
   declarations: [
@@ -72,6 +80,10 @@ import { CopieComponent } from './Copie/copie.component';
     QcmComponent,
     StatistiquesComponent,
     ExamenComponent,
+   // NotesComponent,
+    LoginEtudiantComponent,
+    LoginEnseignantComponent,
+
     CopieComponent,
   ],
   imports: [

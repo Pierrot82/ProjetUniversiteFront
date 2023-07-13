@@ -47,5 +47,10 @@ constructor(private ds:DiscussionServiceService, private route:Router, private f
   
   }
 
+  retourListe(){
+    this.route.navigate(["../../getListeDiscussion1"], { relativeTo: this.ar });
+  
+  }
+
 
 }

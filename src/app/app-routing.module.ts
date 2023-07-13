@@ -22,6 +22,7 @@ import { ListeQuestionByConnexionComponent } from './Discussion/ByConnexion/list
 import { CreerQuestionByConnexionComponent } from './Discussion/ByConnexion/creer-question-by-connexion/creer-question-by-connexion.component';
 import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-discussion-by-connexion/get-discussion-by-connexion.component';
 import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-by-connexion/repondre-by-connexion.component';
+import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
 import { CopieComponent } from './Copie/copie.component';
 
 
@@ -53,7 +54,14 @@ const routes: Routes = [
   { path: 'etudiant/:idUser/ajouterDiscussion/to/:idTo', component: CreerQuestionByConnexionComponent},
   { path: 'etudiant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
   { path: 'enseignant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
-    //  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
+  
+
+{ path: 'connexionEtudiant', component: LoginEtudiantComponent},
+  
+  
+  
+  
+  //  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
   //  children:[    { path: 'repondreDiscussion', component: RepondreComponent }]},
 
   

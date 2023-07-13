@@ -1,0 +1,23 @@
+<div class="conteneur">
+    <section class="formEnseignant">
+        <h2>Connexion</h2>
+        <form [formGroup]="connexionForm">
+          <div class="champs">
+            <div class="">
+              <label for="nom">login : </label>
+              <input class="inputUpdateEtudiant" type="text" class="" formControlName="login" />
+            </div>
+          </div>
+          <div class="champs">
+            <div class="">
+              <label for="prenom">mot de passe : </label>
+              <input class="inputUpdateEtudiant" type="text" class="" formControlName="mdp" />
+            </div>
+          </div>
+            <button type="submit" (click)="connexion()">Enregistrer</button>
+            <button type="reset" class="">Recommencer Saisie</button>
+        </form>
+      </section>
+    </div>
+    
+    
