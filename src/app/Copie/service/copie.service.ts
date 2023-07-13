@@ -10,8 +10,12 @@ export class CopieService {
 
   constructor(private http:HttpClient) { }
 
-  ajoutCopie(cours:Copie):Observable<Copie>{
-    return this.http.post<Copie>("http://localhost:8080/saveCopie", cours)
+  ajoutCopie(idEtudiant:number, idExamen:number, note:number):Observable<Copie>{
+    console.log(idEtudiant);
+    console.log(idExamen);
+    console.log(note);
+    return this.http.get<Copie>("http://localhost:8080/saveCopie/" + idEtudiant + "/" + idExamen + "/" + note);
+    
   }
   
   deleteCopie(id:number):Observable<boolean>{
@@ -26,7 +30,7 @@ export class CopieService {
     return this.http.get<Copie>("http://localhost:8080/getCopie/"+ id)
   }
   
-  updateCopie(cours:Copie):Observable<boolean>{
-   return this.http.put<boolean>("http://localhost:8080/updateCopie/", cours);
+  updateCopie(copie:Copie):Observable<boolean>{
+   return this.http.put<boolean>("http://localhost:8080/updateCopie/", copie);
   }
 }
