@@ -8,13 +8,8 @@ import { Examen } from 'src/app/model/examen.model';
 })
 export class ExamenService {
 
-  idExamen:any;
-  intitule:any;
-  coef:any;
-  date:any;
-  duree:any;
-
   constructor(private http:HttpClient) { }
+  
     saveExamen(examen:Examen):Observable<Examen>{
       return this.http.post<Examen>("http://localhost:8080/saveExamen", examen)
     }
