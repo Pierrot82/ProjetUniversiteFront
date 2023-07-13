@@ -14,3 +14,5 @@ describe('StatistiquesService', () => {
     expect(service).toBeTruthy();
   });
 });
+
+export { StatistiquesService };

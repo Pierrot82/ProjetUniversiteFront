@@ -13,6 +13,10 @@ export class CoursServiceService {
   ajoutCours(cours:Cours):Observable<Cours>{
     return this.http.post<Cours>("http://localhost:8080/saveCours", cours)
   }
+
+  modifierNoteCours(cours:Cours):Observable<Cours>{
+    return this.http.post<Cours>("http://localhost:8080/modifierNoteCours", cours)
+  }
   
   supprimerCours(id:number):Observable<boolean>{
     return this.http.delete<boolean>("http://localhost:8080/deleteCours/" + id)
@@ -20,6 +24,10 @@ export class CoursServiceService {
   
   listeCours():Observable<Cours[]>{
     return this.http.get<Cours[]>("http://localhost:8080/listeCours")
+  }
+
+  getListeMoyennesNotesCours():Observable<number[]>{
+    return this.http.get<number[]>("http://localhost:8080/getListeMoyennesNotesCours")
   }
 
   getCourstbyId(id:number):Observable<Cours>{

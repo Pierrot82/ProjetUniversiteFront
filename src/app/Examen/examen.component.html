@@ -1,16 +1,24 @@
+<h2>Liste des examens</h2>
 <div class="conteneur">
-    <h2>Liste des examens</h2>
-    <div class="cards">
-        <div class="blocinfo" *ngFor="let ex of listeExamen | async">
-                <div>{{ex.idExamen}} </div>
-                <div>{{ex.intitule}} </div>
-                <div>{{ex.coef}} </div>
-                <div>{{ex.date}} </div>
-                <div>{{ex.duree}} </div>
-            <div class="boutons">
-                <button class="boutonmodifier" (click)="getExamenById(ex.idExamen)">Modifier</button>
-                <button class="boutonsupprimer" (click)="deleteExamen(ex.idExamen)">Supprimer</button>
-            </div>
+  <div class="cards">
+    <div class="blocinfo" *ngFor="let examen of listeExamen | async">
+      <div class="id">{{ examen.idExamen }}</div>
+      <div class="bloctexte">
+            <!-- <div><b>Matière : </b>{{ matiere.nom }}</div> -->
+            <div><b>Cours : </b>{{ examen.intitule }}</div>
+            <div><b>Coefficient : </b>{{ examen.coef }}</div>
+            <div><b>Date de l'examen : </b>{{ examen.date }}</div>
+            <div><b>Durée de l'examen : </b>{{ examen.duree }}H</div>
+      </div>
+      <div class="boutons">
+        <div class="ligne1">
+          <button class="passerExamen" routerLink="/qcm">Passer l'examen</button>
         </div>
+        <div class="ligne1">
+          <button class="boutonmodifier" routerLink="/deposerExamen">Modifier</button>
+          <button class="boutonsupprimer" (click)="deleteExamen(examen.idExamen)">Supprimer</button>          
+        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { ExamenService } from 'src/app/Examen/service/examen.service';
+import { ExamenService } from '../Examen/service/examen.service';
 import { Examen} from 'src/app/model/examen.model';
 
 @Component({
-  selector: 'app-examens',
+  selector: 'app-examen',
   templateUrl: './examen.component.html',
   styleUrls: ['./examen.component.css']
 })
 export class ExamenComponent implements OnInit {
-  examens: any[] = []
 
-  constructor(private ex: ExamenService, private route: Router) {}
-  
+  constructor(private examen: ExamenService, private route: Router) {}
   listeExamen!: Observable<Examen[]>;
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.listeExamen = this.examen.listeExamen();
   }
 
   async deleteExamen(id: number) {
     try {
-      await this.ex.deleteExamen(id).toPromise();
+      await this.examen.deleteExamen(id).toPromise();
       this.route.navigateByUrl('listeExamen', { replaceUrl: true });
       window.location.reload();
     } catch (error) {
@@ -33,4 +31,13 @@ export class ExamenComponent implements OnInit {
   getExamenById(id:number){
     this.route.navigateByUrl("updateExamen/" + id);
   }
+
+  qcm(id:number){
+    this.route.navigateByUrl("qcm/" + id);
+  }
+
+  deposerExamen(id:number){
+    this.route.navigateByUrl("qcm/" + id);
+  }
+
 }

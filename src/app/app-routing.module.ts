@@ -14,29 +14,19 @@ import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudi
 import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
-import { NotesComponent } from './Notes/notes.component';
 import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
 import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
 import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
 import { RepondreComponent } from './Discussion/repondre/repondre.component';
-
 import { ListeQuestionByConnexionComponent } from './Discussion/ByConnexion/liste-question-by-connexion/liste-question-by-connexion.component';
 import { CreerQuestionByConnexionComponent } from './Discussion/ByConnexion/creer-question-by-connexion/creer-question-by-connexion.component';
 import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-discussion-by-connexion/get-discussion-by-connexion.component';
 import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-by-connexion/repondre-by-connexion.component';
 import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
+import { CopieComponent } from './Copie/copie.component';
 
 
 const routes: Routes = [
-  
-  { path: 'statistiques', component: StatistiquesComponent},
-  { path: 'qcm', component: QcmComponent },
-  { path: 'listeExamen', component: ExamenComponent },
-  { path: 'notes', component: NotesComponent },
-
-
-
-
 
   { path: 'ajouterEnseignant', component: FormEnseignantComponent },
   {path:"listePostulant", component:ListePostulantComponent},
@@ -50,21 +40,18 @@ const routes: Routes = [
   { path: 'uploadImage', component: UploadComponent },
   { path: 'listeCours', component: ListeCoursComponent },
   { path: 'ajouterCours', component: FormCoursComponent },
-
-
+  { path: 'statistiques', component: StatistiquesComponent },
+  { path: 'qcm', component: QcmComponent },
+  { path: 'listeExamen', component: ExamenComponent },
+  { path: 'getListeCopie', component: CopieComponent },
   { path: 'getListeDiscussion', component: ListeQuestionComponent},
   { path: 'ajouterDiscussion', component: CreerQuestionComponent},
   { path: 'getDiscussion/:id', component: GetDiscussionComponent },
   { path: 'repondreDiscussion/:id', component: RepondreComponent },
-
   { path: 'etudiant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
   { path: 'enseignant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
-  
   { path: 'etudiant/:idUser/ajouterDiscussion', component: CreerQuestionByConnexionComponent},
   { path: 'etudiant/:idUser/ajouterDiscussion/to/:idTo', component: CreerQuestionByConnexionComponent},
-  { path: 'etudiant/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent},
-  { path: 'enseignant/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent},
-
   { path: 'etudiant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
   { path: 'enseignant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
   

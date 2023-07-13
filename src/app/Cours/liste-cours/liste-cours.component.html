@@ -1,24 +1,63 @@
-<h2>Liste des cours</h2>
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-    <table class="conteneur">
-        <div class="contenu">
-            <div class="thead">
-                       <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nom du cours</th>
-            </tr>
-        </thead> 
-            </div>
-<div class="tbody">
-        <tbody>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom du cours</th>
+            <th scope="col">Attribuer une note au cours</th>
+            <th scope="col">Notation generale</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of listeCours | async; let i = index">
+            <th scope="row">{{c.idCours}}</th>
+            <td>{{c.nom}}</td>
+            <td>		
+                <div class="stars">
+                    <i class="star stargrey fas fa-star" id="star1" data-index="0" (click)="note(1, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star2" data-index="1" (click)="note(2, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star3" data-index="2" (click)="note(3, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star4" data-index="3" (click)="note(4, c.idCours)"></i>
+                    <i class="star stargrey fas fa-star" id="star5" data-index="4" (click)="note(5, c.idCours)"></i>
+                </div>
+            </td>
+            <td>
+                <ng-container *ngFor="let moy of listeMoyennesNotesCours | async; let j = index">
+                    {{getMoyConvertString(moy)}}	
+                    <div class="stars" *ngIf="i==j" [id]="moyString">
+                        <i class="star1 star2 star3 star4 star5 stargrey fas fa-star" id="star1" data-index="0"></i>
+                        <i class="star2 star3 star4 star5 stargrey fas fa-star" id="star2" data-index="1"></i>
+                        <i class="star3 star4 star5 stargrey fas fa-star" id="star3" data-index="2"></i>
+                        <i class="star4 star5 stargrey fas fa-star" id="star4" data-index="3"></i>
+                        <i class="star5 stargrey fas fa-star" id="star5" data-index="4"></i>
+                        <p>{{moy}}</p>
+                    </div>
+                </ng-container>	
+            </td>
 
-            <tr *ngFor="let c of listeCours | async">
-                <th scope="row">{{c.idCours}} </th>
-                <td>{{c.nom}} </td>
-            </tr>
-        </tbody>
-</div>
+<!--<h2>Liste des cours</h2>
+<table class="conteneur">
+  <div class="contenu">
+    <div class="thead">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nom du cours</th>
+        </tr>
+      </thead>
+    </div>
+    <div class="tbody">
+      <tbody>
+        <tr *ngFor="let c of listeCours | async">
+          <th scope="row">{{ c.idCours }}</th>
+          <!-- <th scope="row">{{ c.idCours.matiere.nom }}</th> -->
+          <td>{{ c.nom }}</td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</table> -->
 
-        </div>
-    </table>
+
+

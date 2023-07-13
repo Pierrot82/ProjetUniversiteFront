@@ -35,9 +35,14 @@ import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-
 import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
-import { NotesComponent } from './Notes/notes.component';
+
+
 import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
 import { LoginEnseignantComponent } from './connexion/login-enseignant/login-enseignant.component';
+
+
+import { CopieComponent } from './Copie/copie.component';
+
 
 
 @NgModule({
@@ -75,10 +80,14 @@ import { LoginEnseignantComponent } from './connexion/login-enseignant/login-ens
     QcmComponent,
     StatistiquesComponent,
     ExamenComponent,
+<<<<<<< HEAD
     NotesComponent,
     LoginEtudiantComponent,
     LoginEnseignantComponent,
 
+=======
+    CopieComponent,
+>>>>>>> cf98b6eff8c568102019b26fe123cc845bb4f163
   ],
   imports: [
     BrowserModule,
