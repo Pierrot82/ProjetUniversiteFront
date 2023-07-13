@@ -37,9 +37,9 @@ import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
 
 
+//import { NotesComponent } from './Notes/notes.component';
 import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
 import { LoginEnseignantComponent } from './connexion/login-enseignant/login-enseignant.component';
-
 
 import { CopieComponent } from './Copie/copie.component';
 
@@ -80,14 +80,11 @@ import { CopieComponent } from './Copie/copie.component';
     QcmComponent,
     StatistiquesComponent,
     ExamenComponent,
-<<<<<<< HEAD
-    NotesComponent,
+   // NotesComponent,
     LoginEtudiantComponent,
     LoginEnseignantComponent,
 
-=======
     CopieComponent,
->>>>>>> cf98b6eff8c568102019b26fe123cc845bb4f163
   ],
   imports: [
     BrowserModule,
