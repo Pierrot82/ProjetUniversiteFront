@@ -1,24 +1,22 @@
 <h2>Liste des cours</h2>
 
-    <table class="conteneur">
-        <div class="contenu">
-            <div class="thead">
-                       <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nom du cours</th>
-            </tr>
-        </thead> 
-            </div>
-<div class="tbody">
-        <tbody>
-
-            <tr *ngFor="let c of listeCours | async">
-                <th scope="row">{{c.idCours}} </th>
-                <td>{{c.nom}} </td>
-            </tr>
-        </tbody>
-</div>
-
-        </div>
-    </table>
+<table class="conteneur">
+  <div class="contenu">
+    <div class="thead">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nom du cours</th>
+        </tr>
+      </thead>
+    </div>
+    <div class="tbody">
+      <tbody>
+        <tr *ngFor="let c of listeCours | async">
+          <th scope="row">{{ c.idCours }}</th>
+          <td>{{ c.nom }}</td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</table>
