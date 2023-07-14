@@ -22,10 +22,12 @@ export class CreerQuestionByConnexionComponent {
   constructor(private ens:EnseignantServiceService, private etus:EtudiantServiceService , private route:Router, private ds:DiscussionServiceService, private formBuilder:FormBuilder, private ar:ActivatedRoute){
     this.idUser = ar.snapshot.params["idUser"],
     this.idTo = ar.snapshot.params["idTo"]
+    this.classe = ar.snapshot.params["classe"]
   }
 
   discussionForm!:FormGroup;
   
+  classe!:string;
   disc!:Discussion;
   idUser!:number;
   idTo=null;

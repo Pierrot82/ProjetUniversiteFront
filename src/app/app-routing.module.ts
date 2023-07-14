@@ -48,17 +48,23 @@ const routes: Routes = [
   { path: 'ajouterDiscussion', component: CreerQuestionComponent},
   { path: 'getDiscussion/:id', component: GetDiscussionComponent },
   { path: 'repondreDiscussion/:id', component: RepondreComponent },
-  { path: 'etudiant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
-  { path: 'enseignant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
+  { path: ':classe/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
+//  { path: 'enseignant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
   { path: 'etudiant/:idUser/ajouterDiscussion', component: CreerQuestionByConnexionComponent},
   { path: 'etudiant/:idUser/ajouterDiscussion/to/:idTo', component: CreerQuestionByConnexionComponent},
-  { path: 'etudiant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
-  { path: 'enseignant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
+  { path: ':classe/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
+//  { path: 'enseignant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
   
+
+
+{ path: ':classe/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent },
+
 
 { path: 'connexionEtudiant', component: LoginEtudiantComponent},
   
   
+
+{ path: ':classe/:idUser/listeEnseignant', component: ListeEnseignantComponent },
   
   
   //  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
