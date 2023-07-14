@@ -14,10 +14,6 @@ import { UpdateEtudiantComponent } from './Etudiant/update-etudiant/update-etudi
 import { QcmComponent } from './qcm/qcm.component';
 import { StatistiquesComponent } from './Statistiques/statistiques.component';
 import { ExamenComponent } from './Examen/examen.component';
-import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
-import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
-import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
-import { RepondreComponent } from './Discussion/repondre/repondre.component';
 import { ListeQuestionByConnexionComponent } from './Discussion/ByConnexion/liste-question-by-connexion/liste-question-by-connexion.component';
 import { CreerQuestionByConnexionComponent } from './Discussion/ByConnexion/creer-question-by-connexion/creer-question-by-connexion.component';
 import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-discussion-by-connexion/get-discussion-by-connexion.component';
@@ -29,9 +25,9 @@ import { CopieComponent } from './Copie/copie.component';
 const routes: Routes = [
 
   { path: 'ajouterEnseignant', component: FormEnseignantComponent },
-  {path:"listePostulant", component:ListePostulantComponent},
+  { path:"listePostulant", component:ListePostulantComponent},
   { path: 'listeEnseignant', component: ListeEnseignantComponent },
-  {path:"savePostulant", component:FormPostulantComponent},
+  { path:"savePostulant", component:FormPostulantComponent},
   { path: 'listeEnseignant', component: ListeEnseignantComponent },
   { path: 'updateEnseignant/:id', component: UpdateEnseignantComponent },
   { path: 'ajoutEtudiant', component: FormEtudiantComponent },
@@ -44,31 +40,13 @@ const routes: Routes = [
   { path: 'qcm', component: QcmComponent },
   { path: 'listeExamen', component: ExamenComponent },
   { path: 'getListeCopie', component: CopieComponent },
-  { path: 'getListeDiscussion', component: ListeQuestionComponent},
-  { path: 'ajouterDiscussion', component: CreerQuestionComponent},
-  { path: 'getDiscussion/:id', component: GetDiscussionComponent },
-  { path: 'repondreDiscussion/:id', component: RepondreComponent },
+  { path: ':classe/connexion', component: LoginEtudiantComponent},
   { path: ':classe/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
-//  { path: 'enseignant/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},
   { path: 'etudiant/:idUser/ajouterDiscussion', component: CreerQuestionByConnexionComponent},
-  { path: 'etudiant/:idUser/ajouterDiscussion/to/:idTo', component: CreerQuestionByConnexionComponent},
+  { path: ':classe/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent },
   { path: ':classe/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
-//  { path: 'enseignant/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
-  
-
-
-{ path: ':classe/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent },
-
-
-{ path: 'connexionEtudiant', component: LoginEtudiantComponent},
-  
-  
-
-{ path: ':classe/:idUser/listeEnseignant', component: ListeEnseignantComponent },
-  
-  
-  //  { path: 'getDiscussion/:id', component: GetDiscussionComponent,
-  //  children:[    { path: 'repondreDiscussion', component: RepondreComponent }]},
+  { path: ':classe/:idUser/listeEnseignant', component: ListeEnseignantComponent },
+  { path: 'etudiant/:idUser/ajouterDiscussion/to/:idTo', component: CreerQuestionByConnexionComponent},
 
   
 ]
