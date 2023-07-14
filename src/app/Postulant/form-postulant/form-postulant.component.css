@@ -4,3 +4,13 @@
     margin-right: auto;
     margin-top: 2%;
 }
+
+#addInputSymbole{
+    font-weight: bold;
+    font-size: 2em;
+}
+#addInputSymbole:hover{
+    cursor: pointer;
+    color: red;
+}
+

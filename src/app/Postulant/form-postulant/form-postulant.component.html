@@ -5,34 +5,35 @@
         <div class="row mb-4">
         <div class="col">
             <div>
-            <input type="text" id="form6Example1" class="form-control" formControlName="nom" />
             <label class="form-label" for="nom">Nom</label>
+            <input type="text" id="form6Example1" class="form-control" formControlName="nom" />
             </div>
         </div>
         <div class="col">
             <div>
-            <input type="text" id="form6Example2" class="form-control" formControlName="prenom" />
             <label class="form-label" for="prenom">Prenom</label>
+            <input type="text" id="form6Example2" class="form-control" formControlName="prenom" />
             </div>
         </div>
         </div>
     
         <!-- Date input -->
         <div>
-        <input type="date" id="form6Example3" class="form-control" formControlName="dateNaissance" />
         <label class="form-label" for="dateNaissance">Date de naissance</label>
+        <input type="date" id="form6Example3" class="form-control" formControlName="dateNaissance" />
         </div>
 
         <!-- CV input -->
         <div>
-        <textarea class="form-control" id="form6Example7" rows="6" placeholder="Copier coller votre CV ici" formControlName="cv"></textarea>
         <label class="form-label" for="cv">CV</label>
+        <textarea class="form-control" id="form6Example7" rows="6" placeholder="Copier coller votre CV ici" formControlName="cv"></textarea>
         </div>
 
         <!-- Fichiers input -->
-        <div>
-            <textarea class="form-control" id="form6Example7" rows="6" placeholder="Lettre de motivation, diplôme etc..." formControlName="fichiers"></textarea>
+        <div id="fichierInput">
             <label class="form-label" for="fichiers">Fichier</label>
+            <a src="" onclick="addInput()"><span id="addInputSymbole">+</span></a>
+            <textarea class="form-control" id="form6Example7" rows="6" placeholder="Lettre de motivation, diplôme etc..." formControlName="fichiers"></textarea>
         </div>
     
         <!-- Submit button -->
