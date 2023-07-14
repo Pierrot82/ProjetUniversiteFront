@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PostulantService } from '../service/postulant.service';
 import { __await } from 'tslib';
@@ -14,6 +14,9 @@ export class FormPostulantComponent implements OnInit {
   formPostulant!:FormGroup;
   isSave!:boolean;
   messagePostForm!:string;
+
+  
+@ViewChild('resetButtonRef') resetButton!: ElementRef;
 
   ngOnInit(): void {
    this.formPostulant = this.formBuilder.group(
@@ -47,7 +50,13 @@ export class FormPostulantComponent implements OnInit {
     if(this.isSave){
       this.messagePostForm= "Votre candidature a bien été prise en compte nous vous répondrons dans les plus bref délais!"
     }
-    else
+    else{
     this.messagePostForm= "Votre candidature n'a pas aboutis veuillez réessayer ou contacter le support"
+    }
+    this.resetButtonClick();
+  }
+
+  resetButtonClick(){
+    this.resetButton.nativeElement.click();
   }
 }
