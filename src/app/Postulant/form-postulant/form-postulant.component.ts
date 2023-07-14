@@ -13,6 +13,7 @@ export class FormPostulantComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,private postulantService:PostulantService){}
   formPostulant!:FormGroup;
   isSave!:boolean;
+  messagePostForm!:string;
 
   ngOnInit(): void {
    this.formPostulant = this.formBuilder.group(
@@ -40,6 +41,13 @@ export class FormPostulantComponent implements OnInit {
   }
 
   async savePostulantAwait(){
+    this.formPostulant.get("statut")?.setValue("En attente");
     this.isSave = await this.savePostulant();
+
+    if(this.isSave){
+      this.messagePostForm= "Votre candidature a bien été prise en compte nous vous répondrons dans les plus bref délais!"
+    }
+    else
+    this.messagePostForm= "Votre candidature n'a pas aboutis veuillez réessayer ou contacter le support"
   }
 }

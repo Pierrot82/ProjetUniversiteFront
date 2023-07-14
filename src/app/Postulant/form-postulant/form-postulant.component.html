@@ -1,6 +1,6 @@
 
 <div id="divFormPostulant">
-    <form [formGroup]="formPostulant">
+    <form [formGroup]="formPostulant" (ngSubmit)="savePostulantAwait()">
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-4">
         <div class="col">
@@ -36,7 +36,11 @@
             <textarea class="form-control" id="form6Example7" rows="6" placeholder="Lettre de motivation, diplôme etc..." formControlName="fichiers"></textarea>
         </div>
     
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary" (click)="savePostulantAwait()">Postuler</button>
+        <!-- Submit Reset button -->
+        <div>
+        {{messagePostForm}}
+        </div>
+        <button type="submit" class="btn btn-primary">Postuler</button>
+        <button type="reset" class="btn btn-primary">Effacer</button>
     </form>
 </div>
