@@ -27,6 +27,7 @@ export class UpdateEtudiantComponent implements OnInit {
     this.etu.getEtudiantbyId(this.id).subscribe((data: Etudiant) => {
       this.etudiantForm = this.formBuilder.group({
         id: [data.id],
+        login: [data.login, Validators.required],
         nom: [data.nom, Validators.required],
         prenom: [data.prenom, Validators.required],
         dateNaissance: [data.dateNaissance, Validators.required],

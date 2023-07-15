@@ -15,16 +15,29 @@
             <label class="form-label" for="prenom">Prenom</label>
             </div>
         </div>
-
-
-        <!-- email input-->
-        <div>
-            <input type="text" id="form6Example3" class="form-control" formControlName="email" />
-            <label class="form-label" for="dateNaissance">email</label>
-            </div>
-
         </div>
     
+                <!-- email & matiere input-->
+                <div class="row mb-4">
+                <div class="col">
+                    <div>
+                    <input type="text" id="form6Example1" class="form-control" formControlName="email" />
+                    <label class="form-label" for="email">Email</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                   <!-- <input type="text" id="form6Example2" class="form-control" formControlName="matiere" />
+                   -->
+                    <select class="custom-select" id="form6Example2" class="form-control" formControlName="idMatiere">
+                        <option *ngFor="let mat of listeMatiere | async" [value]="mat.idMatiere" >{{mat.nom}} </option>
+                      </select>
+                    
+                    <label class="form-label" for="matiere">Matiere</label>
+                    </div>
+                </div>
+            </div>
+
 
 
 
