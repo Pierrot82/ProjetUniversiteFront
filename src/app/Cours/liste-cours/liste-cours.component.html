@@ -1,6 +1,10 @@
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-<table class="table">
+<h2>Liste des cours</h2>
+
+<table class="conteneur">
+  <div class="contenu">
+    <div class="thead">
     <thead>
         <tr>
             <th scope="col">Id</th>
@@ -9,6 +13,8 @@
             <th scope="col">Notation generale</th>
         </tr>
     </thead>
+    </div>
+    <div class="tbody">
     <tbody>
         <tr *ngFor="let c of listeCours | async; let i = index">
             <th scope="row">{{c.idCours}}</th>
@@ -33,30 +39,12 @@
                         <i class="star5 stargrey fas fa-star" id="star5" data-index="4"></i>
                         <p>{{moy}}</p>
                     </div>
-                </ng-container>	
+                 </ng-container>	
             </td>
-
-<!--<h2>Liste des cours</h2>
-<table class="conteneur">
-  <div class="contenu">
-    <div class="thead">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Nom du cours</th>
-        </tr>
-      </thead>
+          </tr>
+     </tbody>
     </div>
-    <div class="tbody">
-      <tbody>
-        <tr *ngFor="let c of listeCours | async">
-          <th scope="row">{{ c.idCours }}</th>
-          <td>{{ c.nom }}</td>
-        </tr>
-      </tbody>
-    </div>
-  </div>
-</table> -->
-
+   </div>
+</table>
 
 
