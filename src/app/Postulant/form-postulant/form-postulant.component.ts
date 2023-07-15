@@ -20,6 +20,7 @@ export class FormPostulantComponent implements OnInit {
         id:[null],
         nom:[null],
         prenom:[null],
+        email:[null],
         dateNaissance:[null],
         cv:[null],
         fichiers:[null],

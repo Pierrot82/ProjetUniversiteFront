@@ -20,12 +20,15 @@ export class FormEtudiantComponent implements OnInit {
       {
         nom:[null],
         prenom:[null],
+        login:[null],
         dateNaissance:[null],
-        dateInscription:[null]
+        dateInscription:[null],
+        mdp:[null],
       }
     )
   }
   ajoutEtudiant() {
+    this.etudiantForm.value.mdp = this.etudiantForm.value.dateNaissance.toLocaleString();
     this.etu.ajoutEtudiant(this.etudiantForm.value).subscribe(() => {
       this.route.navigateByUrl("getListeEtudiant").then(() => {
         this.route.navigate(["getListeEtudiant"], { replaceUrl: true });

@@ -30,7 +30,7 @@ export class CreerQuestionByConnexionComponent {
   classe!:string;
   disc!:Discussion;
   idUser!:number;
-  idTo=null;
+  idTo;
   
   
     ngOnInit(): void {
@@ -67,25 +67,30 @@ export class CreerQuestionByConnexionComponent {
         const email = this.discussionForm.value.email;
         this.ens.getEnseignantbyEmail(email).subscribe(
           (enseignant: Enseignant | null) => {
-            this.discussionForm.value.enseignant = enseignant;
-            this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
-          },
-          (error) => {    
 
-            const idTo = this.discussionForm.value.idTo;
-            this.ens.getEnseignantbyId(idTo).subscribe(
-              (enseignant: Enseignant | null) => {
+            if (email == null && this.idTo == null){
+              this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+            } else { 
+
+              if (enseignant != null){
                 this.discussionForm.value.enseignant = enseignant;
                 this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
-              },
-              (error) => {    
-    
-                this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+              } else {
+
+                if (this.idTo == null){
+                  alert("email non attribué")
+                } else {
+                  this.ens.getEnseignantbyId(this.idTo).subscribe(
+                    (enseignant: Enseignant | null) => {
+                      this.discussionForm.value.enseignant = enseignant;
+                      this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+                    }
+                  );
+                }
               }
-            );
-
-
-
+            }
+          },
+          (error) => {    
           }
         );
       }

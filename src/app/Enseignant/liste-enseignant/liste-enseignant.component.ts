@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EnseignantServiceService } from '../service/enseignant-service.service';
 import { Enseignant } from 'src/app/model/enseignant.model';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-enseignant',
@@ -11,8 +11,14 @@ import { Router } from '@angular/router';
 })
 export class ListeEnseignantComponent implements OnInit{
 
-  constructor(private es:EnseignantServiceService, private route:Router){}
 
+
+
+
+  constructor(private ar:ActivatedRoute, private es:EnseignantServiceService, private route:Router){
+    this.idUser = ar.snapshot.params["idUser"];
+  }
+    idUser=null;
     listeEnseignant!:Observable<Enseignant[]>;
 
 
@@ -22,6 +28,7 @@ export class ListeEnseignantComponent implements OnInit{
     this.listeEnseignant = this.es.findAllEnseignant();
 
     console.log(this.listeEnseignant);
+    
   }
 
 
@@ -36,6 +43,9 @@ export class ListeEnseignantComponent implements OnInit{
     this.route.navigateByUrl("updateEnseignant/" + id);
   }
 
-
+contacter(id:number){
+  this.route.navigateByUrl("etudiant/"+ this.idUser + "/listeEnseignant/contacter/" + id);
+  
+}
 
 }

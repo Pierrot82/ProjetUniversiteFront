@@ -46,7 +46,8 @@ const routes: Routes = [
   { path: ':classe/:idUser/getDiscussion/:idDiscussion', component: GetDiscussionByConnexionComponent },
   { path: ':classe/:idUser/getDiscussion/:idDiscussion/repondre', component: RepondreByConnexionComponent},
   { path: ':classe/:idUser/listeEnseignant', component: ListeEnseignantComponent },
-  { path: 'etudiant/:idUser/ajouterDiscussion/to/:idTo', component: CreerQuestionByConnexionComponent},
+  { path: 'etudiant/:idUser/listeEnseignant/contacter/:idTo', component: CreerQuestionByConnexionComponent},
+
 
   
 ]
