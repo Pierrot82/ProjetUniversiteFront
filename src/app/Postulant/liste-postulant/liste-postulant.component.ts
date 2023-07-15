@@ -41,7 +41,8 @@ export class ListePostulantComponent implements OnInit {
 
   deletePostulant(id:number){
     this.postulantService.deletePostulant(id).subscribe();
-    this.route.navigateByUrl("listePostulant");
+    // this.route.navigateByUrl("listePostulant");
+    location.reload();
   }
 
   refuserPostulant(id:number):Promise<Postulant>{
@@ -57,7 +58,8 @@ export class ListePostulantComponent implements OnInit {
   async refuserPostulantAwait(id:number){
     this.postulantRefuser = await this.refuserPostulant(id)
     this.postulantService.refuserPostulant(this.postulantRefuser).subscribe();
-    this.route.navigateByUrl("listePostulant");
+    // this.route.navigateByUrl("listePostulant");   NE FONCTIONNE PAS
+    location.reload();
   }
 
   accepterPostulant(id:number):Promise<Postulant>{
@@ -77,7 +79,8 @@ export class ListePostulantComponent implements OnInit {
   this.date = new Date();
   this.enseigantPostPostulation = new Enseignant(0, this.date, this.postulantAccepter.nom, this.postulantAccepter.prenom, this.postulantAccepter.dateNaissance);
   this.enseignantService.ajoutEnseignant(this.enseigantPostPostulation).subscribe();
-  this.route.navigateByUrl("listePostulant");
+  // this.route.navigateByUrl("listePostulant");
+  location.reload();
  }
 
  couleurBoutonStatut(statut:string){
