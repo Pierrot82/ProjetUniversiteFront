@@ -20,6 +20,8 @@ import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-
 import { RepondreByConnexionComponent } from './Discussion/ByConnexion/repondre-by-connexion/repondre-by-connexion.component';
 import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
 import { CopieComponent } from './Copie/copie.component';
+import { CreerExamenComponent } from './Examen/creerExamen/creer-examen/creer-examen.component';
+import { CreerQcmComponent } from './Examen/creerExamen/creer-qcm/creer-qcm.component';
 
 
 const routes: Routes = [
@@ -48,7 +50,11 @@ const routes: Routes = [
   { path: ':classe/:idUser/listeEnseignant', component: ListeEnseignantComponent },
   { path: 'etudiant/:idUser/listeEnseignant/contacter/:idTo', component: CreerQuestionByConnexionComponent},
 
-
+  { path: 'enseignant/:idUser/creerExamen', component: CreerExamenComponent},
+ 
+  { path: 'enseignant/:idUser/creerExamen/:idExamen/creerQcm', component: CreerQcmComponent},
+   
+  { path: ':classe/:idUser/notes', component: CopieComponent },
   
 ]
 

@@ -35,6 +35,8 @@ import { ExamenComponent } from './Examen/examen.component';
 import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
 
 import { CopieComponent } from './Copie/copie.component';
+import { CreerExamenComponent } from './Examen/creerExamen/creer-examen/creer-examen.component';
+import { CreerQcmComponent } from './Examen/creerExamen/creer-qcm/creer-qcm.component';
 
 
 
@@ -72,6 +74,8 @@ import { CopieComponent } from './Copie/copie.component';
     LoginEtudiantComponent,
 
     CopieComponent,
+      CreerExamenComponent,
+      CreerQcmComponent,
   ],
   imports: [
     BrowserModule,
