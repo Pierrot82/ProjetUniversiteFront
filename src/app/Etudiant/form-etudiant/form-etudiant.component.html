@@ -32,6 +32,19 @@
           <input class="inputUpdateEtudiant" type="date" formControlName="dateInscription" />
         </div>
       </div>
+
+
+      <label for="langage">Matieres :</label>
+      
+        <select formControlName="selectedEnseignants" size="4" [(ngModel)]="selectedEnseignants" multiple>
+          <option *ngFor="let enseignant of listeAllEnseignant | async" [value]="enseignant.id"> {{enseignant.matiere.nom}} ({{enseignant.nom}} {{enseignant.prenom}}) </option>
+      </select>
+
+
+
+
+
+
         <button type="submit" (click)="ajoutEtudiant()">Enregistrer</button>
         <button type="reset" class="">Recommencer Saisie</button>
     </form>

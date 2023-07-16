@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Etudiant } from 'src/app/model/etudiant.model';
+import { Enseignant } from 'src/app/model/enseignant.model';
 
 
 @Injectable({
@@ -16,7 +17,16 @@ export class EtudiantServiceService {
   constructor(private http:HttpClient) { }
 
   ajoutEtudiant(etudiant:Etudiant):Observable<Etudiant>{
+    alert(etudiant)
     return this.http.post<Etudiant>("http://localhost:8080/ajoutEtudiant", etudiant)
+  }
+
+  ajoutEtudiantAffectee(etudiant:Etudiant, listeIdEnseignant:number[]):Observable<Etudiant>{
+    const body = {
+      etudiant: etudiant,
+      listeIdEnseignant: listeIdEnseignant
+    };
+    return this.http.post<Etudiant>("http://localhost:8080/ajoutEtudiantAffectee", body)
   }
   
   deleteEtudiant(id:number):Observable<boolean>{

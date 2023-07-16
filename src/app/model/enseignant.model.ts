@@ -1,5 +1,6 @@
 
 
+import { Etudiant } from "./etudiant.model";
 import { Matiere } from "./matiere.model";
 import { Personne } from "./personne.model";
 
@@ -10,6 +11,7 @@ export class Enseignant extends Personne {
     mdp:string
     email:string;
     matiere:Matiere;
+    listeEtu:Etudiant[];
 
 //    id:number;
 //    nom:string;
@@ -26,6 +28,7 @@ this.email = email;
     this.login = login;
     this.mdp = mdp;
     this.matiere=matiere
+    this.listeEtu = [];
     
 //    this.dateNaissance=dateNaissance;
 //    this.nom=nom;

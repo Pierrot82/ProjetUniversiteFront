@@ -2,6 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, RequiredValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EtudiantServiceService } from '../service/etudiant-service.service';
+import { EnseignantServiceService } from 'src/app/Enseignant/service/enseignant-service.service';
+import { Observable } from 'rxjs';
+import { Enseignant } from 'src/app/model/enseignant.model';
 
 @Component({
   selector: 'app-form-etudiant',
@@ -10,11 +13,14 @@ import { EtudiantServiceService } from '../service/etudiant-service.service';
 })
 export class FormEtudiantComponent implements OnInit {
   etudiants: any;
-  constructor(private etu:EtudiantServiceService, private route:Router, private formBuilder:FormBuilder) {}  
+  constructor(private ens:EnseignantServiceService ,private etu:EtudiantServiceService, private route:Router, private formBuilder:FormBuilder) {}  
   
   etudiantForm!:FormGroup;
-  
+  listeAllEnseignant!:Observable<Enseignant[]>;
+  selectedEnseignants: number[] = [];
+
   ngOnInit(): void {
+    this.listeAllEnseignant = this.ens.findAllEnseignant();
     this.etudiants = this.etu.getListeEtudiant();
     this.etudiantForm = this.formBuilder.group(
       {
@@ -24,12 +30,14 @@ export class FormEtudiantComponent implements OnInit {
         dateNaissance:[null],
         dateInscription:[null],
         mdp:[null],
+        selectedEnseignants:[null],
       }
     )
   }
   ajoutEtudiant() {
+    const listeP = this.etudiantForm.value.selectedEnseignants;
     this.etudiantForm.value.mdp = this.etudiantForm.value.dateNaissance.toLocaleString();
-    this.etu.ajoutEtudiant(this.etudiantForm.value).subscribe(() => {
+    this.etu.ajoutEtudiantAffectee(this.etudiantForm.value, listeP).subscribe(() => {
       this.route.navigateByUrl("getListeEtudiant").then(() => {
         this.route.navigate(["getListeEtudiant"], { replaceUrl: true });
       });
