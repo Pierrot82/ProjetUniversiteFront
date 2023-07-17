@@ -12,7 +12,7 @@ Utiliser la commande:
 `npm run start` ou `ng serve --open`
 
 ## Description de l'application
--Partie front-end de l'application
+-Partie front-end de l'application  
 -L'application utilise une API REST retrouvable [ici](https://github.com/Pierrot82/ProjetUniversiteBack)
 
 ### Descriptif de l'application
