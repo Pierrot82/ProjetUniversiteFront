@@ -36,4 +36,8 @@ export class ExamenComponent implements OnInit {
     this.route.navigateByUrl("qcm/" + id);
   }
 
+  deposerExamen(id:number){
+    this.route.navigateByUrl("qcm/" + id);
+  }
+
 }

@@ -1,0 +1,65 @@
+<div class="qcm" *ngIf="showInstructions">
+    <!-- Consignes du QCM -->
+    <h2>Consignes de création de QCM</h2>
+    <p>- insérer la question & ses proposition <br>
+        - cocher la bonne réponse <br>
+        Attention : une fois votre question ajoutée, vous ne pouvez pas revenir en arrière <br>
+       
+
+    </p>
+    <button class="start-button" (click)="startQuiz()">Commencer</button>
+  </div>
+
+<div *ngIf="!showInstructions">
+
+
+<form [formGroup]="listeQuestionEtProposition">
+<div class="qcm">
+    
+    <h2> <textarea formControlName="intituleQuestion" cols="35" rows="3"></textarea>
+    </h2>
+    <ul>
+        <!----------------------------->
+      <li >
+        <label>
+          <input type="radio" formControlName="bonChoix"  value="1"  [disabled]="isAnswerDisabled()"/>
+          <input type="text" formControlName="proposition1">
+        </label>
+      </li>
+      <li >
+        <label>
+          <input type="radio"  value="2" formControlName="bonChoix" [disabled]="isAnswerDisabled()"/>
+          <input type="text" formControlName="proposition2">
+        </label>
+      </li>
+      <li >
+        <label>
+          <input type="radio"  value="3" formControlName="bonChoix" [disabled]="isAnswerDisabled()"/>
+          <input type="text" formControlName="proposition3">
+        </label>
+      </li>
+      <li >
+        <label>
+          <input type="radio"   value="4" formControlName="bonChoix" [disabled]="isAnswerDisabled()"/>
+          <input type="text" formControlName="proposition4">
+        </label>
+      </li>
+
+
+
+
+      <!---------------------------->
+
+
+
+
+    </ul>
+    <button (click)="ajoutQuestion()">Valider & Ajouter une question</button>
+    <button (click)="terminer()">Valider & Terminer</button>
+  </div>
+
+  </form>
+</div>
+
+  
+  

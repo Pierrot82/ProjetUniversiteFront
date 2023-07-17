@@ -9,6 +9,7 @@ export class Discussion {
 idDiscussion:number;
 question:string;
 date:Date;
+dateTime:Date;
 
 etudiant:Etudiant;
 enseignant:Enseignant;
@@ -16,7 +17,7 @@ enseignant:Enseignant;
 
 // on rajoute la liste de réponse?
 
-constructor(idDiscussion:number, question:string, date:Date, etudiant:Etudiant, enseignant:Enseignant){
+constructor(idDiscussion:number, question:string, date:Date, dateTime:Date, etudiant:Etudiant, enseignant:Enseignant){
     
     
     this.idDiscussion=idDiscussion;
@@ -24,6 +25,7 @@ constructor(idDiscussion:number, question:string, date:Date, etudiant:Etudiant, 
     this.question=question;
     this.etudiant=etudiant;
     this.enseignant=enseignant;
+    this.dateTime=dateTime;
 }
 
 }

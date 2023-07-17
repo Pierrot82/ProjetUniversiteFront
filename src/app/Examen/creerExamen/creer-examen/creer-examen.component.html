@@ -1,0 +1,22 @@
+<h2>Liste des examens</h2>
+<div class="conteneur">
+  <div class="cards">
+    <form [formGroup]="examinForm">
+    <div class="blocinfo">
+        
+      <div class="bloctexte">
+            <!-- <div><b>Matière : </b>{{ matiere.nom }}</div> -->
+            <div><b>Intitule : </b>   <input type="text" formControlName="intitule">       </div>
+            <div><b>Coefficient : </b>  <input type="number" formControlName="coef">           </div>
+            <div><b>Date de l'examen : </b>  <input type="date" formControlName="date">      </div>
+            <div><b>Durée de l'examen : </b>  <input type="text" formControlName="duree">    </div>
+      </div>
+      <div class="boutons">
+        <div class="ligne1">
+          <button type="submit" class="passerExamen" (click)="creerQcm()">Creer le Qcm </button>
+        </div>
+      </div>
+    </div>
+</form>
+  </div>
+</div>

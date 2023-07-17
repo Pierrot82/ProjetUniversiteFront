@@ -4,6 +4,12 @@
     <form [formGroup]="etudiantForm">
       <div class="champs">
         <div class="">
+          <label for="login">Login : </label>
+          <input class="inputUpdateEtudiant" type="text" class="" formControlName="login" />
+        </div>
+      </div>
+      <div class="champs">
+        <div class="">
           <label for="nom">Nom : </label>
           <input class="inputUpdateEtudiant" type="text" class="" formControlName="nom" />
         </div>
@@ -26,6 +32,19 @@
           <input class="inputUpdateEtudiant" type="date" formControlName="dateInscription" />
         </div>
       </div>
+
+
+      <label for="langage">Matieres :</label>
+      
+        <select formControlName="selectedEnseignants" size="4" [(ngModel)]="selectedEnseignants" multiple>
+          <option *ngFor="let enseignant of listeAllEnseignant | async" [value]="enseignant.id"> {{enseignant.matiere.nom}} ({{enseignant.nom}} {{enseignant.prenom}}) </option>
+      </select>
+
+
+
+
+
+
         <button type="submit" (click)="ajoutEtudiant()">Enregistrer</button>
         <button type="reset" class="">Recommencer Saisie</button>
     </form>
