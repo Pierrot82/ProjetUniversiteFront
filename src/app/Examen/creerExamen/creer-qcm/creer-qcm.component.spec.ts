@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RepondreComponent } from './repondre.component';
+import { CreerQcmComponent } from './creer-qcm.component';
 
-describe('RepondreComponent', () => {
-  let component: RepondreComponent;
-  let fixture: ComponentFixture<RepondreComponent>;
+describe('CreerQcmComponent', () => {
+  let component: CreerQcmComponent;
+  let fixture: ComponentFixture<CreerQcmComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RepondreComponent]
+      declarations: [CreerQcmComponent]
     });
-    fixture = TestBed.createComponent(RepondreComponent);
+    fixture = TestBed.createComponent(CreerQcmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

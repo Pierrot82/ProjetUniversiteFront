@@ -1,0 +1,19 @@
+
+
+.button-cl {
+    background-color: #00ADBB;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .button-cl:hover {
+    background-color: #0099B3;
+  }
+  
+  .button-cl:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 173, 187, 0.5);
+  }
+  
+  .button-clactive {
+    background-color: #008299;
+  }

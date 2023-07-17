@@ -1,5 +1,5 @@
 .div_cont{
-    margin-top:20px;
+    padding:10px;
     background:#eee;
     color: #708090;
 }
@@ -30,4 +30,47 @@ a{
 
 .main-cursor {
     cursor: pointer;
+  }
+
+
+
+
+
+
+  #poser-question-btn {
+    background-color: #00ADBB;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  #poser-question-btn:hover {
+    background-color: #0099B3;
+  }
+  
+  #poser-question-btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 173, 187, 0.5);
+  }
+  
+  #poser-question-btn:active {
+    background-color: #008299;
+  }
+
+
+
+
+  #supprimer-question-btn {
+    background-color: transparent;
+    color: #5c7172;
+    font-size: 14px;
+    margin-left: auto;
+    
+  }
+  
+  #supprimer-question-btn:hover {
+    color: #000;
+  }
+  
+  .btn-sm {
+    font-size: 12px;
+    padding: 0.25rem 0.5rem;
   }

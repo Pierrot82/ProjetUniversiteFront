@@ -1,0 +1,44 @@
+h2{
+    margin: 35px auto;
+    width: 80%;
+    user-select: none;
+}
+
+.conteneur {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+.card {
+    width: 27.3%;
+    height: 250px;
+    border: transparent;
+    margin: 3%;
+    padding: 3%;
+    cursor: pointer;
+    border-radius: 25px;
+    text-align: center;
+    user-select: none;
+}
+
+span {
+    margin: auto;
+    font-size: 50px;
+}
+
+@media (max-width: 800px) {
+    .card {
+        width: 44%;
+        margin: 3%;
+        padding: 7%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+        width: 94%;
+        margin: 3%;
+        padding: 15%;
+    }
+  }

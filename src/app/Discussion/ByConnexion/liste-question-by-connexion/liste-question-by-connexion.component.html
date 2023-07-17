@@ -1,8 +1,3 @@
-<p>liste-question works!</p>
-
-
-
-
 
 
         
@@ -13,7 +8,7 @@
 
     <div class="container ">
     
-      <button *ngIf="!enseignant"  type="button" class="btn btn-primary" (click)="poserUneQuestion()">Poser une question</button>
+      <button id="poser-question-btn" *ngIf="!enseignant"  type="button" class="btn btn-primary" (click)="poserUneQuestion()">Poser une question</button>
     
     
           <div class="row">
@@ -22,15 +17,23 @@
               <!-- End of post 1 -->
               <div *ngFor="let discussion of listeDiscussion | async" class="card row-hover pos-relative  px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
                 <div class="row align-items-center">
-                  <div class="col-md-8 mb-3 mb-sm-0">
+                  
+                  
+                  <div class=" mb-3 mb-sm-0">
                     <h3 >
-                      <a  (click)="selecionnerDiscussion(discussion.idDiscussion)" class="text-primary main-cursor">{{discussion.question}} </a>
+                      <a  (click)="selecionnerDiscussion(discussion.idDiscussion)" class="text-primary main-cursor">{{discussion.question}} </a>   
                     </h3>
                     <p *ngIf="enseignant" class="text-sm seree-2"><span class="op-6 "> par {{discussion.etudiant.nom}} {{discussion.etudiant.prenom}}</span> <span class="gris" *ngIf="discussion.enseignant"> (en privé) </span> </p>
                     <p *ngIf="!enseignant" class="text-sm seree-2"><span class="op-6 " *ngIf="discussion.enseignant"> à {{discussion.enseignant.nom}} {{discussion.enseignant.prenom}}</span> <span class="gris" *ngIf="discussion.enseignant"> (en privé) </span> </p>
                     
                     
-                    <div class="text-sm op-5 gris">  le {{discussion.date}} </div>
+                    <div class="text-sm op-5 gris d-flex justify-content-between" >  le {{discussion.date}} 
+
+                      
+                      <button  id="supprimer-question-btn" *ngIf="!enseignant" type="button" class="btn btn-sm ml-auto" (click)="supprimerQuestion(discussion.idDiscussion)">Supprimer</button>
+  
+
+                    </div>
                     
                 </div>
                 <!--
@@ -44,6 +47,8 @@
                 -->
                 </div>
     
+                
+
               </div>
               <!-- /End of post 1 -->
             </div>

@@ -32,7 +32,9 @@ export class DiscussionServiceService {
 
   // faudrait gueté les réponse respective aussi ?
   getDiscussionbyId(id:number):Observable<Discussion>{
+    
     return this.http.get<Discussion>("http://localhost:8080/getDiscussion/"+ id)
+  
   }
 
 

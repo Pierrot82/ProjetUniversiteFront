@@ -22,13 +22,15 @@ export class CreerQuestionByConnexionComponent {
   constructor(private ens:EnseignantServiceService, private etus:EtudiantServiceService , private route:Router, private ds:DiscussionServiceService, private formBuilder:FormBuilder, private ar:ActivatedRoute){
     this.idUser = ar.snapshot.params["idUser"],
     this.idTo = ar.snapshot.params["idTo"]
+    this.classe = ar.snapshot.params["classe"]
   }
 
   discussionForm!:FormGroup;
   
+  classe!:string;
   disc!:Discussion;
   idUser!:number;
-  idTo=null;
+  idTo;
   
   
     ngOnInit(): void {
@@ -38,8 +40,11 @@ export class CreerQuestionByConnexionComponent {
         {
           question:[null],
           date: new FormControl(new Date()),
+          dateTime: new FormControl(new Date()),
+
           id_etudiant: [this.idUser],
           id_destinataire:[this.idTo],
+          email:[null],
   
           etudiant:[null],
           enseignant:[null],
@@ -52,23 +57,42 @@ export class CreerQuestionByConnexionComponent {
   saveQuestion(){
   
     
+
+
+    
     this.etus.getEtudiantbyId(this.idUser).subscribe(
       (etudiant: Etudiant) => {
         this.discussionForm.value.etudiant = etudiant;
         
-        const iDdestinataire = this.discussionForm.value.id_destinataire;
-        this.ens.getEnseignantbyId(iDdestinataire).subscribe(
+        const email = this.discussionForm.value.email;
+        this.ens.getEnseignantbyEmail(email).subscribe(
           (enseignant: Enseignant | null) => {
-            this.discussionForm.value.enseignant = enseignant;
-            this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+
+            if (email == null && this.idTo == null){
+              this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+            } else { 
+
+              if (enseignant != null){
+                this.discussionForm.value.enseignant = enseignant;
+                this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+              } else {
+
+                if (this.idTo == null){
+                  alert("email non attribué")
+                } else {
+                  this.ens.getEnseignantbyId(this.idTo).subscribe(
+                    (enseignant: Enseignant | null) => {
+                      this.discussionForm.value.enseignant = enseignant;
+                      this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
+                    }
+                  );
+                }
+              }
+            }
           },
           (error) => {    
-            this.ds.ajoutDiscussion(this.discussionForm.value).subscribe();
           }
         );
-
-
-
       }
     );
   
@@ -81,6 +105,9 @@ export class CreerQuestionByConnexionComponent {
   
   }
 
-
+  retourListe(){
+    this.route.navigate(["../getListeDiscussion1"], { relativeTo: this.ar });
+  
+  }
 
 }

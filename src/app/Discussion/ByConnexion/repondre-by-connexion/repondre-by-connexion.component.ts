@@ -21,9 +21,12 @@ export class RepondreByConnexionComponent implements OnInit{
   constructor(private ps:PersonneServiceService, private enss:EnseignantServiceService ,private etus:EtudiantServiceService ,private route:Router, private ds:DiscussionServiceService, private formBuilder:FormBuilder, private ar:ActivatedRoute){
 
     this.idUser = ar.snapshot.params["idUser"];
-    this.idDiscussion= ar.snapshot.params["idDiscussion"]
+    this.idDiscussion= ar.snapshot.params["idDiscussion"];
+    
+    this.classe = ar.snapshot.params["classe"];
   }
 
+  classe!:string;
   idUser:number;
   reponseForm!:FormGroup;
   discussion$!: Observable<Discussion>
@@ -34,6 +37,8 @@ export class RepondreByConnexionComponent implements OnInit{
       {
         reponse:[null],
         date: new FormControl(new Date()),
+        dateTime: new FormControl(new Date()),
+
         discussion: new FormControl( null ),
         id_personne:[this.idUser],
 
@@ -50,6 +55,7 @@ export class RepondreByConnexionComponent implements OnInit{
 
   }
 
+  
 
   saveReponse(){
 
@@ -80,7 +86,29 @@ this.route.navigate(["../getDiscussion/" + this.idDiscussion], { relativeTo: thi
     });
   }
   */
-  this.route.navigate(["../../" + this.idDiscussion], { relativeTo: this.ar })
+  this.route.navigate([".."], { relativeTo: this.ar })
+
+
+
+
+
+
 
   }
+
+
+  retourListe(){
+  
+  
+  
+  
+  
+    this.route.navigate(["../../../getListeDiscussion1"], { relativeTo: this.ar });
+  
+  }
+
+
+
+
+
 }

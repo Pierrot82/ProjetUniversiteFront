@@ -1,3 +1,5 @@
+import { Matiere } from "./matiere.model";
+
 export class Examen {
 
     idExamen:number;
@@ -5,6 +7,7 @@ export class Examen {
     coef:number;
     date:Date;
     duree:number;
+    matiere!:Matiere;
 
     constructor(idExamen:number,intitule:string,coef:number,date:Date,duree:number,) {
 
@@ -13,5 +16,6 @@ export class Examen {
             this.coef = coef;
             this.date = date;
             this.duree = duree;
+            
     }
 }

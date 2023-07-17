@@ -14,6 +14,8 @@ export class EnseignantServiceService {
     return this.http.post<Enseignant>("http://localhost:8080/saveEnseignant", enseignant)
   }
   
+
+
   
   
   supprimerEnseignant(id:number):Observable<boolean>{
@@ -29,9 +31,20 @@ export class EnseignantServiceService {
     return this.http.get<Enseignant>("http://localhost:8080/getEnseignant/"+ id)
   }
   
+  getEnseignantbyEmail(email:string):Observable<Enseignant>{
+    
+    return this.http.get<Enseignant>("http://localhost:8080/getEnseignantbyEmail/"+ email)
+  }
+
+
   updateEnseignant(enseignant:Enseignant):Observable<boolean>{
 
     return this.http.put<boolean>("http://localhost:8080/modifierEnseignant", enseignant);
+  }
+
+
+  connexionEnseignant(login:string, mdp:string):Observable<number>{
+    return this.http.get<number>("http://localhost:8080/loginEnseignant/" + login  +  "/" + mdp)
   }
 
 }
