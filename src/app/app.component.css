@@ -3,7 +3,17 @@ html {
     height: 100%;
 }
 
+.conteneur {
+    width: 80%;
+    margin: auto;
+}
 
+h2{
+    margin: 35px auto;
+    width: 80%;
+}
+
+/* Menu */
 .dropdownmenu {
     display: flex;
     border-bottom: 1px solid lightgrey;
