@@ -20,12 +20,6 @@ import { UpdateCoursComponent } from './Cours/update-cours/update-cours.componen
 import { UploadComponent } from './SupportCours/upload/upload.component';
 import { RouterModule } from '@angular/router';
 
-
-import { ListeQuestionComponent } from './Discussion/liste-question/liste-question.component';
-import { CreerQuestionComponent } from './Discussion/creer-question/creer-question.component';
-import { RepondreComponent } from './Discussion/repondre/repondre.component';
-import { GetDiscussionComponent } from './Discussion/get-discussion/get-discussion.component';
-
 import { CreerQuestionByConnexionComponent } from './Discussion/ByConnexion/creer-question-by-connexion/creer-question-by-connexion.component';
 import { ListeQuestionByConnexionComponent } from './Discussion/ByConnexion/liste-question-by-connexion/liste-question-by-connexion.component';
 import { GetDiscussionByConnexionComponent } from './Discussion/ByConnexion/get-discussion-by-connexion/get-discussion-by-connexion.component';
@@ -39,9 +33,10 @@ import { ExamenComponent } from './Examen/examen.component';
 
 //import { NotesComponent } from './Notes/notes.component';
 import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudiant.component';
-import { LoginEnseignantComponent } from './connexion/login-enseignant/login-enseignant.component';
 
 import { CopieComponent } from './Copie/copie.component';
+import { CreerExamenComponent } from './Examen/creerExamen/creer-examen/creer-examen.component';
+import { CreerQcmComponent } from './Examen/creerExamen/creer-qcm/creer-qcm.component';
 
 
 
@@ -67,11 +62,6 @@ import { CopieComponent } from './Copie/copie.component';
     FormEtudiantComponent,
     UploadComponent,
 
-    ListeQuestionComponent,
-    CreerQuestionComponent,
-    RepondreComponent,
-    GetDiscussionComponent,
-
     CreerQuestionByConnexionComponent,
     ListeQuestionByConnexionComponent,
     GetDiscussionByConnexionComponent,
@@ -82,9 +72,10 @@ import { CopieComponent } from './Copie/copie.component';
     ExamenComponent,
    // NotesComponent,
     LoginEtudiantComponent,
-    LoginEnseignantComponent,
 
     CopieComponent,
+      CreerExamenComponent,
+      CreerQcmComponent,
   ],
   imports: [
     BrowserModule,

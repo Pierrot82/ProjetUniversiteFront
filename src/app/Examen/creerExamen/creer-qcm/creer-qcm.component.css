@@ -1,0 +1,96 @@
+/* Styles pour le conteneur principal */
+.qcm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles pour le titre de la question */
+  .qcm h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ff7f50;
+  }
+  
+  /* Styles pour les options de réponse */
+  .qcm ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .qcm li {
+    margin-bottom: 10px;
+  }
+  
+  .qcm label {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .qcm input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  /* Styles pour le bouton d'évaluation */
+  .qcm button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .qcm button:hover {
+    background-color: #ff6347;
+  }
+  
+  /* Styles pour le résultat */
+  .qcm p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ff7f50;
+  }
+  
+  /* Styles pour le bouton suivant */
+  .qcm button:last-child {
+    margin-top: 20px;
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .qcm button:last-child:hover {
+    background-color: #ff6347;
+  }
+  
+  .qcm .start-button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .qcm .start-button:hover {
+    background-color: #ff6347;
+  }

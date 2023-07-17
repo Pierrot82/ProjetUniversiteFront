@@ -22,28 +22,28 @@ export class GetDiscussionByConnexionComponent implements OnInit{
  reponses!:Observable<Reponse[]>;
 
  idDiscussion!:number;
+ classe!:string;
  
 
 constructor(private ds:DiscussionServiceService, private route:Router, private formBuilder:FormBuilder, private ar:ActivatedRoute){
   this.idUser= ar.snapshot.params["idUser"];
 
   this.idDiscussion= ar.snapshot.params["idDiscussion"];
+  
+  this.classe = ar.snapshot.params["classe"]
 }
 
   ngOnInit(): void {
     this.question = this.ds.getDiscussionbyId(this.idDiscussion);
-
-
    this.reponses=this.ds.getReponsesDiscussionbyId(this.idDiscussion);
 
    
 
-  console.log(this.question)
-
   }
 
   repondre(){
-    this.route.navigate(["../../getDiscussion/" + this.idDiscussion+"/repondre"], { relativeTo: this.ar });
+    
+    this.route.navigate(["repondre"], { relativeTo: this.ar });
   
   }
 

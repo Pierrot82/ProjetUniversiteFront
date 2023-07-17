@@ -10,11 +10,15 @@
                 <div class="bloctexte">
                     <div><b>Nom : </b>{{enseignant.nom}} </div>
                     <div><b>Prénom : </b>{{enseignant.prenom}} </div>
+                    <div><b>email : </b>{{enseignant.email}} </div>
                     <div><b>Date de naissance : </b>{{enseignant.dateNaissance}} </div>
                     <div><b>Date d'embauche : </b>{{enseignant.dateEmbauche}} </div>
                 </div>
 
                 <div class="boutons">
+
+                    <button class="boutonmodifier" type="button" (click)="contacter(enseignant.id)">Contacter</button>
+                    
                     <button class="boutonmodifier" type="button" (click)="getEnseignantByEnseignant(enseignant.id)">Modifier</button>
                     <button class="boutonsupprimer"  type="button" (click)="supprimerEnseignant(enseignant.id)">Supprimer</button>  
                 </div>

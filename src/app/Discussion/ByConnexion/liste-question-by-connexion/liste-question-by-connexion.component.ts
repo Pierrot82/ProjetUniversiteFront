@@ -19,8 +19,10 @@ export class ListeQuestionByConnexionComponent implements OnInit{
 
     constructor(private ens:EnseignantServiceService, private ds:DiscussionServiceService, private route:Router, private ar:ActivatedRoute){
       this.idUser = ar.snapshot.params["idUser"];
+      this.classe = ar.snapshot.params["classe"];
     }
-  
+    
+    classe!:string
     idUser!:number;
     listeDiscussion!:Observable<Discussion[]>;
   
@@ -42,18 +44,19 @@ export class ListeQuestionByConnexionComponent implements OnInit{
       );;
 
 
-      console.log(this.enseignant)
 
 
     }
 
 
     poserUneQuestion(){
+      
       this.route.navigate(["../ajouterDiscussion"], { relativeTo: this.ar });
     }
 
 
     selecionnerDiscussion(id:number){
+      
 //      this.ds.getDiscussionbyId(id);
       this.route.navigate(["../getDiscussion/" + id], { relativeTo: this.ar });
     }

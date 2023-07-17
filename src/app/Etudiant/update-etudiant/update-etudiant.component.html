@@ -5,6 +5,16 @@
       <form [formGroup]="etudiantForm">
         <input type="hidden" formControlName="id" class="form-control" />
         <div>
+          <label for="login">Login :</label>
+          <input
+            class="inputUpdateEtudiant"
+            type="text"
+            id="login"
+            formControlName="login"
+            required
+          />
+        </div>
+        <div>
           <label for="nom">Nom :</label>
           <input
             class="inputUpdateEtudiant"
