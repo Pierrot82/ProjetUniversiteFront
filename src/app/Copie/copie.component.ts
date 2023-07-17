@@ -17,4 +17,6 @@ export class CopieComponent implements OnInit{
   ngOnInit(): void {    
     this.getListeCopie = this.c.getListeCopie();
   }
+
+  
 }

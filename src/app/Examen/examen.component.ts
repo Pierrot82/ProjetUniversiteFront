@@ -18,10 +18,11 @@ export class ExamenComponent implements OnInit {
     this.listeExamen = this.examen.listeExamen();
   }
 
-  async deleteExamen(id: number) {
+  deleteExamen(id: number) {
     try {
-      await this.examen.deleteExamen(id).toPromise();
-      this.route.navigateByUrl('listeExamen', { replaceUrl: true });
+      this.examen.deleteExamen(id).subscribe();
+      console.log()
+      this.route.navigateByUrl('listeExamen');
       window.location.reload();
     } catch (error) {
       console.error(error);
