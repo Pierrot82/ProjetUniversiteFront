@@ -22,6 +22,7 @@ import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudian
 import { CopieComponent } from './Copie/copie.component';
 import { CreerExamenComponent } from './Examen/creerExamen/creer-examen/creer-examen.component';
 import { CreerQcmComponent } from './Examen/creerExamen/creer-qcm/creer-qcm.component';
+import { AfficherCVComponent } from './Postulant/afficher-cv/afficher-cv.component';
 
 
 const routes: Routes = [
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'enseignant/:idUser/creerExamen/:idExamen/creerQcm', component: CreerQcmComponent},
    
   { path: ':classe/:idUser/notes', component: CopieComponent },
+  { path: "listePostulant/afficherCV/:id", component:AfficherCVComponent },
   
 ]
 

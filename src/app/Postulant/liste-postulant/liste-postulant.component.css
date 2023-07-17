@@ -24,6 +24,13 @@ img {
 .card{
     width: 330px;
     margin: auto;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: aliceblue;
+}
+.card:hover{
+  border: grey 3px solid;
 }
 .statut{
     font-style: italic;

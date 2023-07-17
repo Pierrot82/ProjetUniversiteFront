@@ -1,0 +1,11 @@
+<button type="button" (click)="redirect()" class="btn btn-light">Retour</button>
+
+<div id="divM">
+    <h4>Candidature de {{postulant.nom}} {{postulant.prenom}} </h4>
+    <h4>contact: <a href="mailto:{{postulant.email}}">{{postulant.email}}</a></h4>
+    <h3>CV</h3>
+    <div class="divF">{{postulant.cv}}</div>
+
+    <h3>Autre fichier</h3>
+    <div class="divF">{{postulant.fichiers}}</div>
+</div>
