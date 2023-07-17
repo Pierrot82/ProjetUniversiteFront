@@ -25,7 +25,7 @@ export class QcmComponent implements OnInit{
      buttonText: string = 'Suivant';
      showInstructions: boolean = true;
      examenform!: FormGroup;
-     intitule: string = "HTML";
+     intitule: string = "Examen HTML";
      coef: number = 1;
      date: Date = new Date();
      duree: number = 2;
@@ -33,21 +33,11 @@ export class QcmComponent implements OnInit{
      idExamen: number = 1;
      roundedScore!:string;
 
-     constructor(private exs:ExamenService, private formBuilder:FormBuilder, private cs: CopieService, private ets:EtudiantServiceService){
+     constructor(private exs:ExamenService, private cs: CopieService, private ets:EtudiantServiceService){
     
     }
 
   ngOnInit(): void {
-
-    this.examenform = this.formBuilder.group(
-      {
-        idExamen:[null],
-        intitule: [this.intitule],
-        coef: [this.coef],
-        date:[this.date],
-        duree:[this.duree]
-      }
-    )
 
     this.questions = [
       {
@@ -163,6 +153,6 @@ export class QcmComponent implements OnInit{
   }
 
   ajoutCopie(idEtudiant:number, idExamen:number, note: string): void {
-    this.cs.ajoutCopie(idEtudiant, idExamen, parseFloat(note)).subscribe;
+    this.cs.ajoutCopie(idEtudiant, idExamen, parseFloat(note)).subscribe();
   }
 }

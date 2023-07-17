@@ -1,19 +1,21 @@
 <div class="qcm" *ngIf="showInstructions">
     <!-- Consignes du QCM -->
     <h2>Consignes du QCM</h2>
-    <p>- Cochez votre réponse <br>
+    <p>- Entrez votre numéro étudiant <br>
+        - Cochez votre réponse <br>
         - Cliquez sur "Valider" <br>
         Attention : une fois votre réponse validée, vous ne pouvez pas revenir en arrière <br>
         - Cliquez sur "Suivant"
-
     </p>
     <button class="start-button" (click)="startQuiz()">Commencer</button>
   </div>
 
 <div *ngIf="!showInstructions">
-<div>{{intitule}}</div>
-<input type="number" [(ngModel)]="idEtudiant"/>
+
+
 <div class="qcm">
+    <div>{{intitule}}</div>
+    <input type="number" placeholder="Entrez votre id Etudiant" [(ngModel)]="idEtudiant"/>
     <h2>{{ currentQuestion.q }}</h2>
     <ul>
       <li *ngFor="let answer of currentQuestion.a">
