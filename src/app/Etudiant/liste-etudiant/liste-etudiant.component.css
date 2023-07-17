@@ -1,3 +1,14 @@
+.conteneur {
+    width: 80%;
+    margin: 50px auto;
+    height: 100%;
+    }
+
+h2 {
+    margin: 35px auto;
+    width: 80%;
+    }
+
 .boutons {
     position: relative;
     text-align: right;

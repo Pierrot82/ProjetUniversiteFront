@@ -1,3 +1,5 @@
+<h2>Liste des postulants</h2>
+<div class="conteneur">
 <div id="groupementPar3" *ngFor="let postulant of listePostulantFixe; let i = index">
   <div class="card" *ngIf="listePostulantFixe[i * 4]">
     {{couleurBoutonStatut(listePostulantFixe[i * 4].statut)}}
@@ -59,4 +61,5 @@
         <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i*4+3].id)">Supprimer</button>
     </div>
   </div>
+</div>
 </div>

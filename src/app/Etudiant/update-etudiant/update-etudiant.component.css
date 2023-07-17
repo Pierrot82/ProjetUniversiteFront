@@ -1,58 +1,64 @@
-body {
-    margin: 50px auto 0px auto;
-    width: 500px;
+.conteneur {
+  width: 80%;
+  margin: 50px auto;
+  height: 100%;
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    margin: 50px auto 0px auto;
-    padding: 50px;
-    border-radius: 40px;
-    background-color: lightsteelblue;
+h2 {
+  margin: 35px auto;
+  width: 80%;
   }
 
-  .inputUpdateEtudiant {
-    width: 50%;
-    margin: 0;
-    }
+form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 50px auto 0px auto;
+  padding: 50px;
+  border-radius: 40px;
+  background-color: bisque;
+}
 
-    button {
-        display: block;
-        position: relative;
-        top: 20px;
-        }
-
-  h1 {
-    text-align: center;
-  }
-
-  label, input {
-    display: block;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border-color: transparent;
-  }
-
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.inputUpdateEtudiant {
+  width: 50%;
+  margin: 0;
   }
 
   button {
-    background-color: steelblue;
-    border-radius: 10px;
-    border: transparent;
-    padding: 5px;
-    margin: 5px;
-  }
+      display: block;
+      position: relative;
+      top: 20px;
+      }
 
-  .submit {
-    margin-top: 30px;
-  }
+h1 {
+  text-align: center;
+}
+
+label, input {
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button {
+  background-color: rgb(17, 134, 213);
+  color: white;
+  border-radius: 10px;
+  border: transparent;
+  padding: 5px;
+  margin: 5px;
+}
+
+.submit {
+  margin-top: 30px;
+}

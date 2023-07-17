@@ -1,10 +1,29 @@
 #groupementPar3{
     display: flex;
-    margin-left: 5%;
+  }
+
+  .conteneur {
+    background-color: bisque;
+    border-radius: 25px;
+    margin: 50px auto;
+    width: 80%;
+    padding: 50px;
+  }
+
+  h2{
+    margin: 35px auto;
+    width: 80%;
+    user-select: none;
 }
+
+img {
+  margin: auto;
+  width: 150px;
+}
+
 .card{
-    margin-left: 2%;
-    margin-top: 2%;
+    width: 330px;
+    margin: auto;
 }
 .statut{
     font-style: italic;
@@ -44,4 +63,11 @@ h5{
   .btn-danger{
     margin-left: 2px;
     margin-right: 2px;
+  }
+
+  @media (max-width: 1024px) {
+    #groupementPar3 {
+      flex-direction: column;
+      gap: 25px;
+    }
   }

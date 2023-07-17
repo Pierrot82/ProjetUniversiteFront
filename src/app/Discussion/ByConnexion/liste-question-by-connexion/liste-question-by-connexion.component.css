@@ -1,7 +1,10 @@
 .div_cont{
     padding:10px;
-    background:#eee;
+    background:bisque;
     color: #708090;
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 25px;
 }
 .icon-1x {
     font-size: 24px !important;
@@ -32,11 +35,6 @@ a{
     cursor: pointer;
   }
 
-
-
-
-
-
   #poser-question-btn {
     background-color: #00ADBB;
     color: #fff;
@@ -53,9 +51,9 @@ a{
   
   #poser-question-btn:active {
     background-color: #008299;
+    margin: auto;
+    width: 20%;
   }
-
-
 
 
   #supprimer-question-btn {

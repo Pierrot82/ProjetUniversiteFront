@@ -1,16 +1,8 @@
 html {
     background-color: beige;
-    height: 100%;
-}
-
-.conteneur {
-    width: 80%;
-    margin: auto;
-}
-
-h2{
-    margin: 35px auto;
-    width: 80%;
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 1000px;
 }
 
 /* Menu */
