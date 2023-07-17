@@ -17,7 +17,7 @@
 
                 <div class="boutons">
 
-                    <button class="boutonmodifier" type="button" (click)="contacter(enseignant.id)">Contacter</button>
+                    <button *ngIf="classe == 'etudiant'" class="boutonmodifier" type="button" (click)="contacter(enseignant.id)">Contacter</button>
                     
                     <button class="boutonmodifier" type="button" (click)="getEnseignantByEnseignant(enseignant.id)">Modifier</button>
                     <button class="boutonsupprimer"  type="button" (click)="supprimerEnseignant(enseignant.id)">Supprimer</button>  
