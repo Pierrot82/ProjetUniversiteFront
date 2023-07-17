@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PostulantService } from '../service/postulant.service';
 import { __await } from 'tslib';
@@ -16,7 +16,12 @@ export class FormPostulantComponent implements OnInit {
   constructor(private ms:MatiereServiceService, private formBuilder:FormBuilder,private postulantService:PostulantService){}
   formPostulant!:FormGroup;
   isSave!:boolean;
+  messagePostForm!:string;
   listeMatiere!:Observable<Matiere[]>;
+  
+@ViewChild('resetButtonRef') resetButton!: ElementRef;
+  
+
 
   ngOnInit(): void {
     this.listeMatiere = this.ms.findAllMatiere();
@@ -49,25 +54,35 @@ export class FormPostulantComponent implements OnInit {
   }
 
   async savePostulantAwait(){
+    this.formPostulant.get("statut")?.setValue("En attente");
 
-
-
-      const selectedMatiereId = this.formPostulant.value.idMatiere;
+    const selectedMatiereId = this.formPostulant.value.idMatiere;
   
-      if (selectedMatiereId) {
-        this.ms.getMatiere(selectedMatiereId).subscribe(
-          (matiere: Matiere) => {
-            this.formPostulant.value.matiere = matiere;
-          }
-        );
-      }
-    
-    // bizzarrd ce truc : 
-    this.formPostulant.value.matiere.idMatiere=this.formPostulant.value.matiere.idMatiere
-  //  this.formPostulant.value.matiere = this.ms.getMatiere(this.formPostulant.value.idMatiere)
-    
+    if (selectedMatiereId) {
+      this.ms.getMatiere(selectedMatiereId).subscribe(
+        (matiere: Matiere) => {
+          this.formPostulant.value.matiere = matiere;
+        }
+      );
+    }
+  
+  // bizzarrd ce truc : 
+  this.formPostulant.value.matiere.idMatiere=this.formPostulant.value.matiere.idMatiere
+//  this.formPostulant.value.matiere = this.ms.getMatiere(this.formPostulant.value.idMatiere)
+
 
     this.isSave = await this.savePostulant();
-    
+
+    if(this.isSave){
+      this.messagePostForm= "Votre candidature a bien été prise en compte nous vous répondrons dans les plus bref délais!"
+    }
+    else{
+    this.messagePostForm= "Votre candidature n'a pas aboutis veuillez réessayer ou contacter le support"
+    }
+    this.resetButtonClick();
+  }
+
+  resetButtonClick(){
+    this.resetButton.nativeElement.click();
   }
 }
