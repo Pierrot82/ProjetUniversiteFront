@@ -14,3 +14,4 @@ spring.servlet.multipart.max-request-size=10MB
 l'image ne s'enregistre pas en BDD car elle ne se transforme pas en string
 avec un serveur externe on aurait pu facilement stocker les images/fichiers
 
+

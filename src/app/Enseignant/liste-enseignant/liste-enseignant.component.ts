@@ -17,10 +17,12 @@ export class ListeEnseignantComponent implements OnInit{
 
   constructor(private ar:ActivatedRoute, private es:EnseignantServiceService, private route:Router){
     this.idUser = ar.snapshot.params["idUser"];
+    this.classe = ar.snapshot.params["classe"];
+
   }
     idUser=null;
     listeEnseignant!:Observable<Enseignant[]>;
-
+    classe=null;
 
   
   ngOnInit(): void {

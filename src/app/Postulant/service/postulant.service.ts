@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Matiere } from 'src/app/model/matiere.model';
 import { Postulant } from 'src/app/model/postulant.model';
 
 @Injectable({
@@ -35,4 +36,11 @@ export class PostulantService {
   accepterPostulant(postulant:Postulant):Observable<boolean>{
     return this.http.post<boolean>("http://localhost:8080/accepterPostulant", postulant);
   }
+
+
+  savePostulantMatiere(postulant:Postulant, idMatiere:number):Observable<boolean>{
+    return this.http.post<boolean>("http://localhost:8080/savePostulantMatiere/" + idMatiere, postulant);
+   }
+
+
 }
