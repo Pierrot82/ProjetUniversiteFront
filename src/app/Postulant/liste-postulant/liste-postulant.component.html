@@ -1,6 +1,7 @@
 <div id="groupementPar3" *ngFor="let postulant of listePostulantFixe; let i = index">
   <div class="card" *ngIf="listePostulantFixe[i * 4]">
     {{couleurBoutonStatut(listePostulantFixe[i * 4].statut)}}
+    {{disableButton(listePostulantFixe[i * 4].statut)}}
     <div class="divInline">
       <span [class]="dot"></span><span class="statut">{{listePostulantFixe[i * 4].statut}}</span>
     </div>
@@ -10,11 +11,12 @@
         <p class="card-text">{{listePostulantFixe[i * 4].dateNaissance}}</p>
         <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4].id)">Accepter</button>
         <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4].id)" >Refuser</button>
-        <button type="button" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4].id)">Supprimer</button>
+        <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4].id)">Supprimer</button>
     </div>
   </div>
     <div class="card" *ngIf="listePostulantFixe[i * 4 +1]">
     {{couleurBoutonStatut(listePostulantFixe[i * 4 + 1].statut)}}
+    {{disableButton(listePostulantFixe[i * 4 + 1].statut)}}
     <div class="divInline">
       <span [class]="dot"></span><span class="statut">{{listePostulantFixe[i * 4 + 1].statut}}</span>
     </div>
@@ -24,11 +26,12 @@
       <p class="card-text">{{listePostulantFixe[i * 4 + 1].dateNaissance}}</p>
         <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4 + 1].id)">Accepter</button>
         <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4 + 1].id)" >Refuser</button>
-        <button type="button" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4 + 1].id)">Supprimer</button>
+        <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4 + 1].id)">Supprimer</button>
     </div>
   </div>
   <div class="card" *ngIf="listePostulantFixe[i * 4 +2]">
     {{couleurBoutonStatut(listePostulantFixe[i * 4 + 2].statut)}}
+    {{disableButton(listePostulantFixe[i * 4 + 2].statut)}}
     <div class="divInline">
       <span [class]="dot"></span><span class="statut">{{listePostulantFixe[i * 4 + 2].statut}}</span>
     </div>
@@ -38,11 +41,12 @@
       <p class="card-text">{{listePostulantFixe[i * 4 + 2].dateNaissance}}</p>
         <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4 + 2].id)">Accepter</button>
         <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4 + 2].id)" >Refuser</button>
-        <button type="button" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4 + 2].id)">Supprimer</button>
+        <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4 + 2].id)">Supprimer</button>
     </div>
   </div>
   <div class="card" *ngIf="listePostulantFixe[i * 4 +3]">
     {{couleurBoutonStatut(listePostulantFixe[i * 4 + 3].statut)}}
+    {{disableButton(listePostulantFixe[i * 4 + 3].statut)}}
     <div class="divInline">
       <span [class]="dot"></span><span class="statut">{{listePostulantFixe[i * 4 + 3].statut}}</span>
     </div>
@@ -52,7 +56,7 @@
       <p class="card-text">{{listePostulantFixe[i*4+3].dateNaissance}}</p>
         <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i*4+3].id)">Accepter</button>
         <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i*4+3].id)" >Refuser</button>
-        <button type="button" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i*4+3].id)">Supprimer</button>
+        <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i*4+3].id)">Supprimer</button>
     </div>
   </div>
 </div>

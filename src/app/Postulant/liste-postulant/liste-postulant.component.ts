@@ -23,6 +23,7 @@ export class ListePostulantComponent implements OnInit {
   enseigantPostPostulation!:Enseignant;
   date!:Date;
   dot!:string;
+  isWaiting!:boolean;
 
 
   listePostulant():Promise<Postulant[]> {
@@ -93,6 +94,18 @@ export class ListePostulantComponent implements OnInit {
    else if(statut == "Accepté"){
     this.dot = "dotAccepte";
    }
+ }
+
+ disableButton(statut:string){
+  if(statut == "En attente"){
+    this.isWaiting= true;
+  }
+  else if(statut == "Refusé"){
+    this.isWaiting= false;
+  }
+  else if(statut == "Accepté"){
+    this.isWaiting= false;
+  }
  }
 
 }
