@@ -24,6 +24,7 @@ img {
 .card{
     width: 330px;
     margin: auto;
+    cursor: pointer;
 }
 .statut{
     font-style: italic;
