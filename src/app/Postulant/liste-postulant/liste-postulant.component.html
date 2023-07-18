@@ -12,8 +12,8 @@
       <h5 class="card-title">{{listePostulantFixe[i * 4].nom}} {{listePostulantFixe[i * 4].prenom}}</h5>
         <p class="card-text">{{listePostulantFixe[i * 4].dateNaissance}}</p> <a routerLink="afficherCV/{{listePostulantFixe[i * 4].id}}">Voir CV et autres</a>
         <p class="card-text">{{listePostulantFixe[i * 4].email}}</p>
-        <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4].id)">Accepter</button>
-        <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4].id)" >Refuser</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4].id)">Accepter</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4].id)" >Refuser</button>
         <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4].id)">Supprimer</button>
     </div>
   </div>
@@ -28,8 +28,8 @@
       <h5 class="card-title">{{listePostulantFixe[i * 4 + 1].nom}} {{listePostulantFixe[i * 4 + 1].prenom}}</h5>
       <p class="card-text">{{listePostulantFixe[i * 4 + 1].dateNaissance}}</p> <a routerLink="afficherCV/{{listePostulantFixe[i * 4 + 1].id}}">Voir CV et autres</a>
       <p class="card-text">{{listePostulantFixe[i * 4 + 1].email}}</p>
-        <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4 + 1].id)">Accepter</button>
-        <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4 + 1].id)" >Refuser</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4 + 1].id)">Accepter</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4 + 1].id)" >Refuser</button>
         <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4 + 1].id)">Supprimer</button>
     </div>
   </div>
@@ -44,8 +44,8 @@
       <h5 class="card-title">{{listePostulantFixe[i * 4 + 2].nom}} {{listePostulantFixe[i * 4 + 2].prenom}}</h5>
       <p class="card-text">{{listePostulantFixe[i * 4 + 2].dateNaissance}}</p> <a routerLink="afficherCV/{{listePostulantFixe[i * 4 + 2].id}}">Voir CV et autres</a>
       <p class="card-text">{{listePostulantFixe[i * 4 + 2].email}}</p>
-        <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4 + 2].id)">Accepter</button>
-        <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4 + 2].id)" >Refuser</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i * 4 + 2].id)">Accepter</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i * 4 + 2].id)" >Refuser</button>
         <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i * 4 + 2].id)">Supprimer</button>
     </div>
   </div>
@@ -60,8 +60,8 @@
       <h5 class="card-title">{{listePostulantFixe[i*4+3].nom}} {{listePostulantFixe[i*4+3].prenom}}</h5>
       <p class="card-text">{{listePostulantFixe[i*4+3].dateNaissance}}</p> <a routerLink="afficherCV/{{listePostulantFixe[i * 4 + 3].id}}">Voir CV et autres</a>
       <p class="card-text">{{listePostulantFixe[i * 4 + 3].email}}</p>
-        <button type="button" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i*4+3].id)">Accepter</button>
-        <button type="button" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i*4+3].id)" >Refuser</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-success" (click)="accepterPostulantAwait(listePostulantFixe[i*4+3].id)">Accepter</button>
+        <button type="button" [disabled]="isNotWaiting" class="btn btn-danger" (click)="refuserPostulantAwait(listePostulantFixe[i*4+3].id)" >Refuser</button>
         <button type="button" [disabled]="isWaiting" class="btn btn-secondary" (click)="deletePostulant(listePostulantFixe[i*4+3].id)">Supprimer</button>
     </div>
   </div>
