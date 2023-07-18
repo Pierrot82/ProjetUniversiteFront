@@ -37,6 +37,7 @@ import { LoginEtudiantComponent } from './connexion/login-etudiant/login-etudian
 import { CopieComponent } from './Copie/copie.component';
 import { CreerExamenComponent } from './Examen/creerExamen/creer-examen/creer-examen.component';
 import { CreerQcmComponent } from './Examen/creerExamen/creer-qcm/creer-qcm.component';
+import { AfficherCVComponent } from './Postulant/afficher-cv/afficher-cv.component';
 
 
 
@@ -76,6 +77,7 @@ import { CreerQcmComponent } from './Examen/creerExamen/creer-qcm/creer-qcm.comp
     CopieComponent,
       CreerExamenComponent,
       CreerQcmComponent,
+      AfficherCVComponent,
   ],
   imports: [
     BrowserModule,

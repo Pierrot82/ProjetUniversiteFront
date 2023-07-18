@@ -1,12 +1,18 @@
 .conteneur {
+  width: 80%;
   margin: 50px auto;
-  width: 500px;
-}
+  height: 100%;
+  }
+
+h2 {
+  margin: 35px auto;
+  width: 80%;
+  }
 
 form {
   display: flex;
+  width: 80%;
   flex-direction: column;
-  width: 500px;
   margin: 50px auto 0px auto;
   padding: 50px;
   border-radius: 40px;

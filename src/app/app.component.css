@@ -1,16 +1,8 @@
 html {
     background-color: beige;
-    height: 100%;
-}
-
-.conteneur {
-    width: 80%;
-    margin: auto;
-}
-
-h2{
-    margin: 35px auto;
-    width: 80%;
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 1000px;
 }
 
 /* Menu */
@@ -27,7 +19,7 @@ h2{
 
 .dropdownmenu ul {
     list-style: none;
-    width: 70%;
+    width: 80%;
 }
 .dropdownmenu li {
     float: left;
@@ -89,10 +81,30 @@ li:hover ul#submenu{
     background-color: lightgrey;
 }
 
-    .d-flex {
+    .grouperecherche {
         display: flex;
-        width: 30%;
-        margin: 10px;
+        margin: 10px 0;
+        border-left: 1px solid grey;
+        padding-left: 15px;
+
+    }
+
+    .insertiondetexte {
+        border: 1 px solid black;
+        border-radius: 25px;
+        border: 1px solid transparent;
+        padding: 5px;
+    }
+
+    .boutonrecherche {
+        border: 2px solid rgb(27, 176, 27);
+        background-color: beige;
+        border-radius: 25px;
+        margin-left: 15px;
+    }
+
+    .boutonrecherche:hover {
+        background-color: rgb(27, 176, 27);
     }
 
     .blocmenu {
@@ -106,3 +118,12 @@ li:hover ul#submenu{
 .sectionnodropdown:hover{
     border-radius: 25px;
 }
+
+@media (max-width: 800px) {
+    .grouperecherche {
+        display: none;
+    }
+    .dropdownmenu ul {
+        width: 100%;
+        }
+  }

@@ -1,0 +1,8 @@
+.divF {
+    border: lightgrey 2px solid;
+}
+#divM {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

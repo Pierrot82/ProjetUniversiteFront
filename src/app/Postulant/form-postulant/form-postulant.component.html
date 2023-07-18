@@ -5,13 +5,13 @@
         <div class="row mb-4">
         <div class="col">
             <div>
-            <label class="form-label" for="nom">Nom</label>
+            <label class="form-label" for="nom">Nom*</label>
             <input type="text" id="form6Example1" class="form-control" formControlName="nom" />
             </div>
         </div>
         <div class="col">
             <div>
-            <label class="form-label" for="prenom">Prenom</label>
+            <label class="form-label" for="prenom">Prenom*</label>
             <input type="text" id="form6Example2" class="form-control" formControlName="prenom" />
             </div>
         </div>
@@ -21,19 +21,18 @@
                 <div class="row mb-4">
                 <div class="col">
                     <div>
-                    <input type="text" id="form6Example1" class="form-control" formControlName="email" />
-                    <label class="form-label" for="email">Email</label>
+                    <label class="form-label" for="email">Email*</label>
+                    <input type="email" id="form6Example1" class="form-control" formControlName="email" />
                     </div>
                 </div>
                 <div class="col">
                     <div>
                    <!-- <input type="text" id="form6Example2" class="form-control" formControlName="matiere" />
                    -->
-                    <select class="custom-select" id="form6Example2" class="form-control" formControlName="idMatiere">
-                        <option *ngFor="let mat of listeMatiere | async" [value]="mat.idMatiere" >{{mat.nom}} </option>
-                      </select>
-                    
-                    <label class="form-label" for="matiere">Matiere</label>
+                        <label class="form-label" for="matiere">Matiere*</label>
+                        <select class="custom-select" id="form6Example2" class="form-control" [(ngModel)]="selectedMatiereId" formControlName="idMatiere">
+                            <option *ngFor="let mat of listeMatiere | async" [value]="mat.idMatiere" >{{mat.nom}} </option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -49,22 +48,23 @@
 
         <!-- CV input -->
         <div>
-        <label class="form-label" for="cv">CV</label>
+        <label class="form-label" for="cv">CV*</label>
         <textarea class="form-control" id="form6Example7" rows="6" placeholder="Copier coller votre CV ici" formControlName="cv"></textarea>
         </div>
 
         <!-- Fichiers input -->
         <div id="fichierInput">
-            <label class="form-label" for="fichiers">Fichier</label>
+            <label class="form-label" for="fichiers">Fichier*</label>
             <a src="" onclick="addInput()"><span id="addInputSymbole">+</span></a>
             <textarea class="form-control" id="form6Example7" rows="6" placeholder="Lettre de motivation, diplôme etc..." formControlName="fichiers"></textarea>
         </div>
     
         <!-- Submit Reset button -->
         <div>
+        <p>*Champs obligatoires</p>
         {{messagePostForm}}
         </div>
         <button type="submit" class="btn btn-primary">Postuler</button>
-        <button #resetButtonRef type="reset" class="btn btn-primary" id="buttonReset">Effacer</button>
+        <button #resetButtonRef (click)="onReset()" class="btn btn-primary" id="buttonReset">Effacer</button>
     </form>
 </div>

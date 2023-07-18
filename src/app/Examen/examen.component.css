@@ -6,21 +6,13 @@ h2{
 .boutons {
     position: relative;
     text-align: right;
-}
-
-.boutonmodifier {
-    padding: 5px 10px;
-    margin: 20px 5px 0 0;
-    width: 100px;
-    border-radius: 10px;
-    border: transparent;
-    background-color: orange;
+    margin: 15px;
 }
 
 .boutonsupprimer{
     padding: 5px 10px;
-    margin: 20px 0 0 5px;
-    width: 100px;
+    margin: 0 5px;
+    width: 150px;
     border-radius: 10px;
     border: transparent;
     background-color: rgb(244, 21, 21);
@@ -28,7 +20,8 @@ h2{
 
 .passerExamen {
     padding: 5px 10px;
-    width: 210px;
+    margin: 0 5px;
+    width: 150px;
     border-radius: 10px;
     border: transparent;
     background-color: rgb(27, 176, 27);
@@ -84,3 +77,19 @@ margin-bottom: 20px;
 img {
     width: 50px;
 }
+
+@media (max-width: 800px) {
+    .boutons {
+        text-align: center;
+    }
+    .bloctexte {
+        width: 90%;
+    }
+
+    .ligne1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            }
+  }

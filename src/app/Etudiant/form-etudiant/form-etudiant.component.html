@@ -40,11 +40,6 @@
           <option *ngFor="let enseignant of listeAllEnseignant | async" [value]="enseignant.id"> {{enseignant.matiere.nom}} ({{enseignant.nom}} {{enseignant.prenom}}) </option>
       </select>
 
-
-
-
-
-
         <button type="submit" (click)="ajoutEtudiant()">Enregistrer</button>
         <button type="reset" class="">Recommencer Saisie</button>
     </form>
