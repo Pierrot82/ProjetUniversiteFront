@@ -1,21 +1,22 @@
 
 
         
-<div class="div_cont">
+<div class="div_cont ">
 
 
   
 
     <div class="container ">
     
-      <button id="poser-question-btn" *ngIf="!enseignant"  type="button" class="btn btn-primary" (click)="poserUneQuestion()">Poser une question</button>
+      <button id="poser-question-btn" *ngIf="classe!='enseignant'"  type="button" class="btn btn-primary" (click)="poserUneQuestion()">Poser une question</button>
     
     
-          <div class="row">
+          <div class="row ">
             <!-- Main content -->
-            <div class="col-lg-9 mb-3 py-3">
+            <div class="col-lg-9 mb-3 py-3 ">
               <!-- End of post 1 -->
-              <div *ngFor="let discussion of listeDiscussion | async" class="card row-hover pos-relative  px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+
+              <div *ngFor="let discussion of listeDiscussion | async; let i = index " class="card row-hover pos-relative  px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
                 <div class="row align-items-center">
                   
                   
@@ -23,14 +24,29 @@
                     <h3 >
                       <a  (click)="selecionnerDiscussion(discussion.idDiscussion)" class="text-primary main-cursor">{{discussion.question}} </a>   
                     </h3>
-                    <p *ngIf="enseignant" class="text-sm seree-2"><span class="op-6 "> par {{discussion.etudiant.nom}} {{discussion.etudiant.prenom}}</span> <span class="gris" *ngIf="discussion.enseignant"> (en privé) </span> </p>
-                    <p *ngIf="!enseignant" class="text-sm seree-2"><span class="op-6 " *ngIf="discussion.enseignant"> à {{discussion.enseignant.nom}} {{discussion.enseignant.prenom}}</span> <span class="gris" *ngIf="discussion.enseignant"> (en privé) </span> </p>
+                    
+                    
+      <div class="small-secondary" *ngIf="listeLastReponseFixe[i]"> <span class="text-secondary">{{ listeLastReponseFixe[i]?.reponse?.slice(0, 50) }} <span *ngIf="listeLastReponseFixe[i]?.reponse?.slice(0, 50)?.length ==50">...</span></span>( <!--derniere réponse le {{ listeLastReponseFixe[i]?.dateTime | date: 'dd/MM/yyyy HH:mm' }} --> 
+        <span *ngIf="listeLastReponseFixe[i]?.etudiant?.id==idUser">Vous</span>
+        <span *ngIf="listeLastReponseFixe[i]?.etudiant && listeLastReponseFixe[i]?.etudiant?.id!=idUser">
+          de {{ listeLastReponseFixe[i]?.etudiant?.nom }} {{ listeLastReponseFixe[i]?.etudiant?.prenom }}
+        </span>
+        <span *ngIf="listeLastReponseFixe[i]?.enseignant"> 
+          de {{ listeLastReponseFixe[i]?.enseignant?.nom }} {{ listeLastReponseFixe[i]?.enseignant?.prenom }}
+        </span>, le {{ listeLastReponseFixe[i]?.dateTime | date: 'dd/MM/yyyy à HH:mm' }} )
+      </div>
+      
+
+
+                    
+                    <p *ngIf="classe=='enseignant'" class="text-sm seree-2"><span class="op-6 "> par {{discussion.etudiant.nom}} {{discussion.etudiant.prenom}}</span> <span class="gris" *ngIf="discussion.enseignant"> (en privé) </span> </p>
+                    <p *ngIf="classe!='enseignant'" class="text-sm seree-2"><span class="op-6 " *ngIf="discussion.enseignant"> à {{discussion.enseignant.nom}} {{discussion.enseignant.prenom}}</span> <span class="gris" *ngIf="discussion.enseignant"> (en privé) </span> </p>
                     
                     
                     <div class="text-sm op-5 gris d-flex justify-content-between" >  le {{discussion.date}} 
 
                       
-                      <button  id="supprimer-question-btn" *ngIf="!enseignant" type="button" class="btn btn-sm ml-auto" (click)="supprimerQuestion(discussion.idDiscussion)">Supprimer</button>
+                      <button  id="supprimer-question-btn" *ngIf="classe!='enseignant'" type="button" class="btn btn-sm ml-auto" (click)="supprimerQuestion(discussion.idDiscussion)">Supprimer</button>
   
 
                     </div>
@@ -58,3 +74,10 @@
     
     
       </div>
+
+
+
+
+      <!--
+        <p *ngIf="lastReponse_(87) | async as rep"> méthode 3 :   {{ rep.idReponse }} </p>
+      -->

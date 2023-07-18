@@ -48,9 +48,10 @@ export class DiscussionServiceService {
   findAllReponse():Observable<Reponse[]>{
     return this.http.get<Reponse[]>("http://localhost:8080/listeReponse")
   }
-  getReponsebyId(id:number):Observable<Reponse>{
-    return this.http.get<Reponse>("http://localhost:8080/getReponse/"+ id)
+  getReponsebyId(id: number): Observable<Reponse> {
+    return this.http.get<Reponse>("http://localhost:8080/getReponse/" + id);
   }
+  
 
 
   getReponsesDiscussionbyId(id:number):Observable<Reponse[]>{
@@ -67,6 +68,19 @@ export class DiscussionServiceService {
 
   supprimerDiscussion(id:number):Observable<boolean>{
     return this.http.delete<boolean>("http://localhost:8080/deleteDiscussion/" + id)
+  }
+
+
+
+  getLastReponsesByIdDiscussion(id:number):Observable<Reponse>{
+    return this.http.get<Reponse>("http://localhost:8080/getLastReponsesByIdDiscussion/"+ id)
+
+  }
+
+  
+
+  getAllLastReponsesByIdDiscussion(id:number):Observable<Reponse[]>{
+    return this.http.get<Reponse[]>("http://localhost:8080/getAllLastReponsesByIdDiscussion/"+ id)
   }
 
 }

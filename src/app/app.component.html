@@ -11,7 +11,7 @@
         <li><a class="sousection" routerLink="listeExamen">Liste des examens</a></li>
         <li *ngIf="classeShared != 'etudiant'"><a class="sousection" routerLink="getListeCopie">Liste des notes</a></li>
         <li *ngIf="classeShared == 'etudiant'"><a class="sousection" [routerLink]="'etudiant/' + idUserShared + '/notes'">Liste des notes</a></li>
-        <li *ngIf="classeShared != 'etudiant'"><a class="sousection" routerLink="etudiant/connexion">Liste des discussion</a></li>
+        <li *ngIf="classeShared != 'etudiant'"><a class="sousectionlast" routerLink="etudiant/connexion">Liste des discussion</a></li>
         <li *ngIf="classeShared == 'etudiant'"><a class="sousectionlast" [routerLink]="'etudiant/' + idUserShared + '/getListeDiscussion1'">Liste des discussion</a></li>
         <!-- <li><a routerLink="">Emploi du temps</a></li> -->
       </ul>

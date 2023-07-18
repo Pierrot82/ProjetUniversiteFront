@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { EnseignantServiceService } from 'src/app/Enseignant/service/enseignant-service.service';
@@ -35,7 +35,7 @@ export class RepondreByConnexionComponent implements OnInit{
   ngOnInit(): void {
     this.reponseForm = this.formBuilder.group(
       {
-        reponse:[null],
+        reponse:[null, [Validators.required, Validators.maxLength(250)]],
         date: new FormControl(new Date()),
         dateTime: new FormControl(new Date()),
 

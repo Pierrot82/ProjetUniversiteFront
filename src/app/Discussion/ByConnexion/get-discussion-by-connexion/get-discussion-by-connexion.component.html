@@ -39,7 +39,7 @@
                             <div class="px-4 pt-3"> <a href="javascript:void(0)" class="text-muted d-inline-flex align-items-center align-middle" data-abc="true"> <i class="fa fa-heart text-danger"></i>&nbsp; <span class="align-middle">445</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-eye text-muted fsize-3"></i>&nbsp; <span class="align-middle">14532</span> </span> </div>
                             -->
                             <!---->
-                            <div class="text-muted small gris">  <span *ngIf="q.enseignant" > (en privé) </span> le {{ q.date }} 
+                            <div class="text-muted small gris">  <span *ngIf="q.enseignant" > (en privé) </span> le {{ q.dateTime | date: 'dd/MM/yyyy à HH:mm' }} 
                             </div>
                             
 
@@ -115,7 +115,7 @@
                         -->
 
                         <!---->
-                        <div class="text-muted small gris">  {{ rep.date }}</div>
+                        <div class="text-muted small gris px-1">  {{ rep.dateTime | date: 'dd/MM/yyyy à HH:mm' }}</div>
                   
                         <div class="px-4 pt-3" *ngIf="l_last"> <button type="button" class="btn btn-primary" (click)="repondre()" ><i class="ion ion-md-create"></i>&nbsp; Répondre</button> </div>
 

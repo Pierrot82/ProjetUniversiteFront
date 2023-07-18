@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Discussion } from 'src/app/model/discussion.model';
 import { Enseignant } from 'src/app/model/enseignant.model';
-import { EnseignantServiceService } from 'src/app/Enseignant/service/enseignant-service.service';
 import { DiscussionServiceService } from '../../service/discussion-service.service';
+import { Reponse } from 'src/app/model/reponse.model';
 
 @Component({
   selector: 'app-liste-question-by-connexion',
@@ -16,8 +16,7 @@ export class ListeQuestionByConnexionComponent implements OnInit{
 
 
 
-
-    constructor(private ens:EnseignantServiceService, private ds:DiscussionServiceService, private route:Router, private ar:ActivatedRoute){
+    constructor(private ds:DiscussionServiceService, private route:Router, private ar:ActivatedRoute){
       this.idUser = ar.snapshot.params["idUser"];
       this.classe = ar.snapshot.params["classe"];
     }
@@ -25,39 +24,58 @@ export class ListeQuestionByConnexionComponent implements OnInit{
     classe!:string
     idUser!:number;
     listeDiscussion!:Observable<Discussion[]>;
+    listeLastRep!:Observable<Reponse[]>;
   
-    isEnseigant!:boolean;
-    enseignant!:any;
+    reponseObs!:Observable<Reponse>;
+
+    listeDiscussionFixe!:Discussion[];
+    listeLastReponseFixe!:Reponse[];
+
     
-    ngOnInit(): void {
-      
+    async  ngOnInit() {
+
       this.listeDiscussion = this.ds.findAllDiscussionbyId1(this.idUser);
-      console.log(this.listeDiscussion);
+//      this.listeLastRep = this.ds.getAllLastReponsesByIdDiscussion(this.idUser)
 
-      this.ens.getEnseignantbyId(this.idUser).subscribe(
-        (enseignant: Enseignant | null ) => {
-          this.enseignant = enseignant;
-        },
-        (error) => {    
-          // this.enseignant=null;
-        }
-      );;
-
-
-
+// this.listeDiscussionFixe= await this.listeDiscussion1();
+this.listeLastReponseFixe= await this.listeLastReponse1();
+    
 
     }
 
 
+    listeDiscussion1():Promise<Discussion[]> {
+      return new Promise<Discussion[]>((resolve, reject) => {
+        this.ds.findAllDiscussionbyId1(this.idUser).subscribe(
+          result => {
+            this.listeDiscussionFixe = result;
+            resolve(this.listeDiscussionFixe);
+          }
+        );
+      });
+    }
+    listeLastReponse1():Promise<Reponse[]> {
+      return new Promise<Reponse[]>((resolve, reject) => {
+        this.ds.getAllLastReponsesByIdDiscussion(this.idUser).subscribe(
+          result => {
+            this.listeLastReponseFixe = result;
+            resolve(this.listeLastReponseFixe);
+          }
+        );
+      });
+    }
+
+
+
+    
+
+
     poserUneQuestion(){
-      
       this.route.navigate(["../ajouterDiscussion"], { relativeTo: this.ar });
     }
 
 
     selecionnerDiscussion(id:number){
-      
-//      this.ds.getDiscussionbyId(id);
       this.route.navigate(["../getDiscussion/" + id], { relativeTo: this.ar });
     }
   
@@ -68,13 +86,16 @@ export class ListeQuestionByConnexionComponent implements OnInit{
       this.route.navigate(["../getListeDiscussion1"], { relativeTo: this.ar });
     }
   
-    //modifier
-//    getEnseignantByEnseignant(id:number){
-//      this.route.navigateByUrl("updateEnseignant/" + id);
-//    }
 
 
 
+lastReponseObs!: Observable<Reponse>;
+reponseObs87_1 = this.ds.getReponsebyId(87)
+lastReponse_(id:number){
+  this.reponseObs = this.ds.getReponsebyId(id)
+  this.reponseObs = this.reponseObs87_1
+  return this.reponseObs;
+}
 
 
 

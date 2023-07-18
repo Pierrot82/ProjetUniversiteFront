@@ -11,7 +11,21 @@ a{
 }
 .text-primary, a.text-primary:focus, a.text-primary:hover {
     color: #00ADBB!important;
+    margin-bottom: 0px!important;
 }
+
+.text-secondary {
+  
+  font-size: 22px!important;
+  color: #1362ac!important;
+}
+.small-secondary {
+  margin-left: 30px;
+  margin-top: -10px!important;
+  color: #708090;
+}
+
+
 .text-black, .text-hover-black:hover {
     color: #000 !important;
 }

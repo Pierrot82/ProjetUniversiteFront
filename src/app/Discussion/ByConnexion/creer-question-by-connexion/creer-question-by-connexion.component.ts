@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EnseignantServiceService } from 'src/app/Enseignant/service/enseignant-service.service';
 import { EtudiantServiceService } from 'src/app/Etudiant/service/etudiant-service.service';
 import { Discussion } from 'src/app/model/discussion.model';
@@ -38,7 +38,7 @@ export class CreerQuestionByConnexionComponent {
   
       this.discussionForm = this.formBuilder.group(
         {
-          question:[null],
+          question:[null, [Validators.required, Validators.maxLength(50)]],
           date: new FormControl(new Date()),
           dateTime: new FormControl(new Date()),
 
