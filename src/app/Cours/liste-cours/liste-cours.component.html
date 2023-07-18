@@ -7,7 +7,7 @@
     <div class="thead">
     <thead>
         <tr>
-            <th scope="col">Id</th>
+            <th class="idhead" scope="col">Id</th>
             <th scope="col">Nom du cours</th>
             <th scope="col">Attribuer une note au cours</th>
             <th scope="col">Notation generale</th>
@@ -17,7 +17,7 @@
     <div class="tbody">
     <tbody>
         <tr *ngFor="let c of listeCours | async; let i = index">
-            <th scope="row">{{c.idCours}}</th>
+            <td class="idhead" scope="row">{{c.idCours}}</td>
             <td>{{c.nom}}</td>
             <td>		
                 <div class="stars">
