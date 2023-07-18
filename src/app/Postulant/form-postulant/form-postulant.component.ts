@@ -18,6 +18,7 @@ export class FormPostulantComponent implements OnInit {
   isSave!:boolean;
   listeMatiere!:Observable<Matiere[]>;
   messagePostForm!:string;
+  selectedMatiereId!:number;
   @ViewChild('resetButtonRef') resetButton!: ElementRef;
 
   ngOnInit(): void {
@@ -39,7 +40,13 @@ export class FormPostulantComponent implements OnInit {
     )
   }
 
+  onReset(){
+    this.formPostulant.reset();
+  }
+
   savePostulant(): Promise<boolean> {
+    this.formPostulant.get("statut")?.setValue("En attente");
+    
     return new Promise<boolean>((resolve, reject) => {
       this.postulantService.savePostulantMatiere(this.formPostulant.value, this.formPostulant.value.idMatiere).subscribe(
         result => {
@@ -52,9 +59,6 @@ export class FormPostulantComponent implements OnInit {
 
   async savePostulantAwait(){
 
-
-
-
     this.isSave = await this.savePostulant();
     
 
@@ -64,14 +68,6 @@ export class FormPostulantComponent implements OnInit {
     else{
     this.messagePostForm= "Votre candidature n'a pas aboutis veuillez réessayer ou contacter le support"
     }
-    this.resetButtonClick();
+    this.onReset();
   }
-  resetButtonClick(){
-    this.resetButton.nativeElement.click();
-  }
-
-
-
-
-  
 }

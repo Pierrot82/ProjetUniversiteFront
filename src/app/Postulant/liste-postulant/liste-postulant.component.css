@@ -25,6 +25,10 @@ img {
     width: 330px;
     margin: auto;
     cursor: pointer;
+    background-color: aliceblue;
+}
+.card:hover{
+  border: grey 3px solid;
 }
 .statut{
     font-style: italic;
