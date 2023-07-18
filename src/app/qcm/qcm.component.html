@@ -15,7 +15,7 @@
 
 <div class="qcm">
     <div>{{intitule}}</div>
-    <input type="number" placeholder="Entrez votre id Etudiant" [(ngModel)]="idEtudiant"/>
+    <input *ngIf="classe != 'etudiant'" type="number" placeholder="Entrez votre id Etudiant" [(ngModel)]="idEtudiant"/>
     <h2>{{ currentQuestion.q }}</h2>
     <ul>
       <li *ngFor="let answer of currentQuestion.a">

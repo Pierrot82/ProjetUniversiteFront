@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { EtudiantServiceService } from '../Etudiant/service/etudiant-service.service';
 import { CopieService } from '../Copie/service/copie.service';
 import { NotExpr } from '@angular/compiler';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -32,9 +33,12 @@ export class QcmComponent implements OnInit{
      idEtudiant!: number;
      idExamen: number = 1;
      roundedScore!:string;
+     idUser = null;
+     classe = null;
 
-     constructor(private exs:ExamenService, private cs: CopieService, private ets:EtudiantServiceService){
-    
+     constructor(private exs:ExamenService, private cs: CopieService, private ets:EtudiantServiceService, private ar:ActivatedRoute){
+      this.idUser = ar.snapshot.params["idUser"];
+      this.classe = ar.snapshot.params["classe"]
     }
 
   ngOnInit(): void {
@@ -127,6 +131,11 @@ export class QcmComponent implements OnInit{
           
         }
       } else {
+        
+        if (this.idUser != null){
+
+          this.idEtudiant = this.idUser;
+        }
         // Toutes les questions ont été répondues, calcul de la note sur 20
         const score = (this.correctAnswers / this.totalQuestions) * 20;
         this.roundedScore = score.toFixed(1); // Arrondi à une décimale

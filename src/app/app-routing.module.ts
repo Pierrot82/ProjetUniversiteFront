@@ -25,6 +25,7 @@ import { CreerQcmComponent } from './Examen/creerExamen/creer-qcm/creer-qcm.comp
 import { AfficherCVComponent } from './Postulant/afficher-cv/afficher-cv.component';
 
 
+
 const routes: Routes = [
 
   { path: 'ajouterEnseignant', component: FormEnseignantComponent },
@@ -42,6 +43,11 @@ const routes: Routes = [
   { path: 'statistiques', component: StatistiquesComponent },
   { path: 'qcm', component: QcmComponent },
   { path: 'listeExamen', component: ExamenComponent },
+  { path: ':classe/:idUser/listeExamen', component: ExamenComponent },
+  { path: ':classe/:idUser/qcm', component: QcmComponent },
+
+
+
   { path: 'getListeCopie', component: CopieComponent },
   { path: ':classe/connexion', component: LoginEtudiantComponent},
   { path: ':classe/:idUser/getListeDiscussion1', component: ListeQuestionByConnexionComponent},

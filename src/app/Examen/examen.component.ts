@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ExamenService } from '../Examen/service/examen.service';
 import { Examen} from 'src/app/model/examen.model';
 
@@ -11,8 +11,13 @@ import { Examen} from 'src/app/model/examen.model';
 })
 export class ExamenComponent implements OnInit {
 
-  constructor(private examen: ExamenService, private route: Router) {}
+  constructor(private examen: ExamenService, private route: Router, private ar:ActivatedRoute) {
+    this.idUser = ar.snapshot.params["idUser"];
+    this.classe = ar.snapshot.params["classe"];
+  }
   listeExamen!: Observable<Examen[]>;
+  idUser;
+  classe;
 
   ngOnInit(): void {
     this.listeExamen = this.examen.listeExamen();
@@ -39,6 +44,11 @@ export class ExamenComponent implements OnInit {
 
   deposerExamen(id:number){
     this.route.navigateByUrl("qcm/" + id);
+  }
+
+
+  qcmEtudiant(){
+    this.route.navigateByUrl('etudiant/' + this.idUser + '/qcm');
   }
 
 }

@@ -12,7 +12,9 @@
       </div>
       <div class="boutons">
         <div class="ligne1">
-          <button class="passerExamen" routerLink="/qcm">Passer l'examen</button>
+          <button *ngIf="classe !='etudiant'" class="passerExamen" routerLink="/qcm">Passer l'examen</button>
+          <button *ngIf="classe =='etudiant'" class="passerExamen" (click)="qcmEtudiant()">Passer l'examen</button>
+
           <button class="boutonsupprimer" (click)="deleteExamen(examen.idExamen)">Supprimer</button>          
         </div>
       </div>

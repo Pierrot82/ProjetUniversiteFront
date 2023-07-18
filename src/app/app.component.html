@@ -8,7 +8,15 @@
         <li><a class="sousection" routerLink="listeCours">Liste des cours</a></li>
         <li *ngIf="classeShared !='etudiant'"><a class="sousection" routerLink="listeEnseignant">Liste des enseignants</a></li>
         <li *ngIf="classeShared =='etudiant'"><a class="sousection" [routerLink]="'etudiant/' + idUserShared + '/listeEnseignant'">Liste des enseignants</a></li>
-        <li><a class="sousection" routerLink="listeExamen">Liste des examens</a></li>
+        
+        
+        
+        <li *ngIf="classeShared != 'etudiant'"><a class="sousection" routerLink="listeExamen">Liste des examens</a></li>
+        <li *ngIf="classeShared == 'etudiant'"><a class="sousection" [routerLink]="'etudiant/' + idUserShared + '/listeExamen'">Liste des examens</a></li>
+
+
+
+
         <li *ngIf="classeShared != 'etudiant'"><a class="sousection" routerLink="getListeCopie">Liste des notes</a></li>
         <li *ngIf="classeShared == 'etudiant'"><a class="sousection" [routerLink]="'etudiant/' + idUserShared + '/notes'">Liste des notes</a></li>
         <li *ngIf="classeShared != 'etudiant'"><a class="sousectionlast" routerLink="etudiant/connexion">Liste des discussion</a></li>

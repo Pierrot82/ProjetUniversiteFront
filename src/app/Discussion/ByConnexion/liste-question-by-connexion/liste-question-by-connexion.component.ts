@@ -84,9 +84,9 @@ this.listeLastReponseFixe= await this.listeLastReponse1();
     supprimerQuestion(id:number){
       this.ds.supprimerDiscussion(id).subscribe();
       this.route.navigate(["../getListeDiscussion1"], { relativeTo: this.ar });
-    }
+  }
 
-  
+    
 
     
   
