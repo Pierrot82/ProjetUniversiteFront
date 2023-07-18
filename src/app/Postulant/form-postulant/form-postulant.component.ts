@@ -35,6 +35,8 @@ export class FormPostulantComponent implements OnInit {
         dateNaissance:[null],
         cv:[null],
         fichiers:[null],
+        fichierUn:[null],
+        fichierDeux:[null],
         statut:["En attente"]
       }
     )
