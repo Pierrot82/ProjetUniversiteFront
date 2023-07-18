@@ -23,9 +23,11 @@ img {
 
 .card{
     width: 330px;
-    margin: auto;
+    height: 372px;
+    margin: 0 auto;
     cursor: pointer;
     background-color: aliceblue;
+    border: 3px transparent;
 }
 .card:hover{
   border: grey 3px solid;

@@ -1,3 +1,18 @@
+.conteneur {
+    background-color: bisque;
+    border-radius: 25px;
+    margin: 50px auto;
+    width: 80%;
+    padding: 50px;
+  }
+
+  h2{
+    margin: 35px auto;
+    width: 80%;
+    user-select: none;
+}
+
+
 #divFormPostulant{
     width: 70%;
     margin-left: auto;
