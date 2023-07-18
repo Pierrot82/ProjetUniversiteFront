@@ -22,6 +22,9 @@
         <li><a class="sousection" routerLink="enseignant/connexion">Connexion</a></li>
         <li><a class="sousection" routerLink="uploadImage">Déposer un support de cours</a></li>
         <li *ngIf="classeShared == 'enseignant'"><a class="sousection" [routerLink]="'enseignant/' + idUserShared + '/creerExamen'">Creer un Qcm</a></li>
+        <li *ngIf="classeShared != 'enseignant'"><a class="sousection" routerLink="enseignant/connexion">Creer un Qcm</a></li>
+
+
         <li *ngIf="classeShared != 'enseignant'"><a class="sousectionlast" routerLink="enseignant/connexion">Répondre aux questions</a></li>
         <li *ngIf="classeShared == 'enseignant'"><a class="sousectionlast" [routerLink]="'enseignant/' + idUserShared + '/getListeDiscussion1'">Répondre aux questions</a></li>
       </ul>
