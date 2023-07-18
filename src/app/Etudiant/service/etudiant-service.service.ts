@@ -36,6 +36,13 @@ export class EtudiantServiceService {
   getListeEtudiant():Observable<Etudiant[]>{
     return this.http.get<Etudiant[]>("http://localhost:8080/getListeEtudiant")
   }
+
+
+  getListeMoyEtudiant():Observable<number[]>{
+    return this.http.get<number[]>("http://localhost:8080/getListeMoyEtudiant")
+  }
+
+  
   
   getEtudiantbyId(id:number):Observable<Etudiant>{
     return this.http.get<Etudiant>("http://localhost:8080/getEtudiant/"+ id)

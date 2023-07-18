@@ -1,7 +1,7 @@
 <h2>Liste des étudiants</h2>
 <div class="conteneur">
     <div class="cards">
-    <div class="blocinfo" *ngFor="let etu of getListeEtudiant | async">
+    <div class="blocinfo" *ngFor="let etu of getListeEtudiant | async, let i=index">
         <div class="idicone">
             <img src="https://cdn1.iconfinder.com/data/icons/ionicons-sharp-vol-2/512/person-circle-sharp-1024.png" alt="profile" draggable="false">
             <div class="id">{{etu.id}} </div>
@@ -11,6 +11,7 @@
             <div class="nom"><b>Nom : </b>{{etu.nom}} </div>
             <div class="dateNaissance"><b>Date de naissance : </b>{{etu.dateNaissance}} </div>
             <div class="dateInscription"><b>Date d'inscription : </b>{{etu.dateInscription}} </div>
+            <div *ngIf="getListeMoyEtudiantFixe[i]" class="moyenne"><b>Moyenne : </b>{{getListeMoyEtudiantFixe[i]}}/20 </div>
         </div>
         <div class="boutons">
             <button class="boutonmodifier" (click)="getEtudiantById(etu.id)">Modifier</button>

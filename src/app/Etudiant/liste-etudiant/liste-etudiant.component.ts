@@ -15,10 +15,30 @@ export class ListeEtudiantComponent implements OnInit {
   constructor(private etu: EtudiantServiceService, private route: Router) {}
 
   getListeEtudiant!: Observable<Etudiant[]>;
+  getListeMoyEtudiantFixe!: number[];
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.getListeEtudiant = this.etu.getListeEtudiant();
+    this.getListeMoyEtudiantFixe = await this.fctListeMoyEtudiant();
   }
+
+
+  fctListeMoyEtudiant():Promise<number[]> {
+    return new Promise<number[]>((resolve, reject) => {
+      this.etu.getListeMoyEtudiant().subscribe(
+        result => {
+          this.getListeMoyEtudiantFixe = result;
+          resolve(this.getListeMoyEtudiantFixe);
+        }
+      );
+    });
+  }
+
+
+
+
+
+
 
   async deleteEtudiant(id: number) {
     try {
