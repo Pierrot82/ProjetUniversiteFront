@@ -86,6 +86,7 @@ this.listeLastReponseFixe= await this.listeLastReponse1();
       this.route.navigate(["../getListeDiscussion1"], { relativeTo: this.ar });
     }
 
+  
 
     
   
